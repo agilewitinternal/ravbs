@@ -1,0 +1,70 @@
+.StaffContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: #EBFBFF;
+}
+
+.StaffDescription {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 25.12px;
+    letter-spacing: 0.03em;
+    margin: 20px;
+
+
+}
+
+.MissionInfo {
+    color: white;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 13px;
+
+}
+
+.Misile {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.MissionContainer {
+    display: flex;
+    background: #25AAE1;
+    padding: 40px;
+
+}
+
+
+
+
+@media screen and (min-width:769px) {
+    .StaffContainer {
+        background: #EBFBFF;
+        padding: 40px;
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        justify-content: space-between;
+
+
+    }
+
+    .StaffDescription {
+        display: flex;
+        flex-direction: column;
+        align-self: flex-end;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 25.12px;
+        letter-spacing: 0.03em;
+        margin: 20px;
+
+
+    }
+}

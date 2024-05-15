@@ -1,0 +1,44 @@
+.PartnersTopLayer{
+    display: flex;
+   gap: 15px;
+
+  
+}
+.CompanyName{
+    color: grey;
+}
+.PartnerIcon{
+    border-radius: 60%;
+    width: 60px;
+    height: 60px;
+}
+.PartnerFirstLayer{
+    margin-top: 20px;
+    background-color: white;
+    padding: 20px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    font-size: 18px;
+    width: 250px;
+    
+}
+
+@media screen  and (min-width:767px) {
+    .PartnersTopLayer{
+        display: flex;
+       gap: 20px;
+    }
+    .CompanyName{
+        color: grey;
+    }
+    .PartnerIcon{
+        border-radius: 50%;
+        width: 90px;
+    }
+    .PartnerFirstLayer{
+        background-color: white;
+        padding: 30px;
+        margin: 20px;
+        width: fit-content;
+        font-size: 15px;
+    }  
+}

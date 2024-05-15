@@ -1,0 +1,90 @@
+.BottomPageTopLayer{
+    background: #322D2D;
+    padding: 20px;
+    flex-wrap: wrap;
+    color: white;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+
+}
+.BottomPageTopOne{
+    background: #322D2D;
+    
+}
+
+.Links{
+    text-decoration: none;
+    color: white;
+}
+
+.FinelLineContent{
+    color: white;
+    margin: 30px;
+    margin-bottom: 20px;
+}
+.ServiceRow{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 7.4px;
+    gap: 30px;
+    padding: 10px;
+}
+.SocialMediaIcons{
+    display: flex;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.BottomPageFirstLayer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.AgilewitBottomPageLogo{
+    height: 60px;
+}
+
+.CONTACT{
+    width: 200px;
+}
+.InfoMail{
+    color: #25AAE1;
+    margin-left: 10px;
+
+}
+.BottomPageline{
+    background-color: grey;
+}
+
+@media screen and (min-width:767px){
+    .BottomPageTopLayer{
+        background: #322D2D;
+        padding: 40px;
+        color: white;
+    
+    }
+    .BottomPageFirstLayer{
+        display: flex;
+        justify-content: start;
+        gap: 80px;
+    }
+
+    .AgilewitBottomPageLogo{
+        height: 100px;
+    }
+    .BottomPageServices{
+       font-size: 15px;
+       margin: 20px;
+    }
+    .CONTACT{
+        width: fit-content;
+    }
+    .ServiceRow{
+        flex-wrap: nowrap;
+        
+    }
+    .InfoMail{
+       
+        margin-left: 30px;
+    
+    }
+}

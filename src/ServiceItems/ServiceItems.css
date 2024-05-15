@@ -1,0 +1,50 @@
+.ServiceItemTop {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #386097;
+    padding: 10px;
+    font-size: 15px;
+   
+    margin: 10px;
+  
+}
+
+.ServiceIcon {
+    height: 80px;
+    display: flex;
+    align-self : flex-start;
+    
+}
+
+.SeeMore {
+    color: #25AAE1;
+    text-decoration: underline;
+    margin-top: 40px;
+
+}
+
+
+
+@media screen and (min-width:767px) {
+
+
+    .ServiceItemTop {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #386097;
+        padding: 10px;
+        margin: 10px;
+        font-size: 16px;
+        justify-content: space-between;
+
+        /* Aligns flex items vertically to the end */
+    }
+
+    .SeeMore {
+        color: #25AAE1;
+        text-decoration: underline;
+        margin-top: 90px;
+
+    }
+
+}

@@ -1,0 +1,25 @@
+.AchievmentitemTop{
+    text-align: center;
+    margin: 10px;
+    
+    font-size: 14px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+   
+}
+.AciementLogo{
+    height: 70px;
+}
+
+@media screen and (min-width:767px) {
+    .AchievmentitemTop{
+        text-align: center;
+        margin: 50px;
+        font-size: 20px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+       
+    }
+    .AciementLogo{
+        height: 120px;
+       
+    }
+}
