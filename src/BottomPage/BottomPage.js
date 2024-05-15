@@ -27,15 +27,15 @@ const BottomPage = () => {
                     </div>
 
                     <div className='BottomPageServices'>
-                        <h1>PRODUCT</h1>
-                        <Link className="Links" to="/AboutUs">
-                            <p>About Us</p>
+                        <h1> SERVICES</h1>
+                        <Link className="Links" to="/Counsulting">
+                            <p>Consulting</p>
                         </Link>
                         <p>Careers</p>
                         <p>Current Openings</p>
                     </div>
                     <div className='BottomPageServices'>
-                        <h1>SERVICES</h1>
+                        <h1>PRODUCT</h1>
                         <p>CONSEN</p>
 
                     </div>

@@ -58,4 +58,8 @@ const Patrtners = [
     }
 ]
 
-export { ServiceDetails, Achievment, Patrtners }
+const CunsultingItemsInfo=[
+"IBM Datastage", "Business Intelligence","Oracle BI Stack Components","Big Data Analytics","DATA SCIENCE"
+]
+
+export { ServiceDetails, Achievment, Patrtners,CunsultingItemsInfo }

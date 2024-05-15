@@ -1,0 +1,71 @@
+.CunsultingTopLayer{
+    background: #EBFBFF;
+
+}
+.CunsultingItems{
+    background: #92D5F0;
+    margin: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 5px;
+    
+    overflow-x: auto;
+    display: flex;
+   justify-content: space-between;
+    
+
+}
+
+.CunsultingTypeTopLayer{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+
+
+}
+
+.CunsultingLogo{
+    display: flex;
+    justify-self: center;
+}
+
+.OraclSecondLayer{
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: space-around;
+    
+}
+
+.SecondLayerTitile{
+    color: #25AAE1;
+
+}
+
+@media screen and   (min-width:767px) {
+    .CunsultingTopLayer{
+        background: #EBFBFF;
+    
+    }
+
+    .CunsultingItems{
+        background: #92D5F0;
+        margin: 20px;
+        padding: 20px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        font-size: 15px;
+        
+    
+    }
+    .OraclSecondLayer{
+        display: flex;
+        flex-direction: row;
+       
+        gap: 30px;
+        
+    }
+     
+}
