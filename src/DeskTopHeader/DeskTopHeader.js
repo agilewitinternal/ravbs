@@ -1,28 +1,30 @@
-import { Link } from 'react-router-dom'
-import AgilewitLogoBlue from '../Assets/AgilewitsLogo.svg'
-import FaceBookIcon from '../Assets/FaceBookIcon.svg'
-import LinkedInIcon from '../Assets/LinkedInIcon.svg'
-import TwitterIcon from '../Assets/TwitterIcon.svg'
-import './DeskTopHeader.css'
-const DeskTopHeader = () => {
+import { Link } from 'react-router-dom';
+import AgileWitLogoBlue from '../Assets/AgilewitLogo.svg';
+import FacebookIcon from '../Assets/FacebookIcon.svg';
+import LinkedInIcon from '../Assets/LinkedInIcon.svg';
+import TwitterIcon from '../Assets/TwitterIcon.svg';
+import {DeskTopHeaderContent} from '../Data/Data'
+import './DesktopHeader.css';
+
+const DesktopHeader = () => {
+    const{CompanyCaption,ContactInfo}=DeskTopHeaderContent
     return (
-        <div className="DeskTopHeaderTopLayer">
+        <div className="DesktopHeaderTopLayer">
             <div>
                 <Link to="/" className="Links">
-            <img className='LogoAgilewit' src={AgilewitLogoBlue} alt="AgilewitLogo" />
-            </Link>
-            <hr className="Hr" />
+                    <img className='LogoAgileWit' src={AgileWitLogoBlue} alt="AgileWit Logo" />
+                </Link>
+                <hr className="Hr" />
             </div>
-            <p className='DesktopIntro'>"Technology empowers us to dream beyond boundaries and make those dreams a reality."</p>
-            <p className='ContactInfo'>(516) 888-0089
-                info@agilewits.com</p>
-<div className='SocialMediaIcons'>
-<img src={FaceBookIcon} alt='FaceBookIcon'/>
-<img src={TwitterIcon} alt="TwitterIcon"/>
-<img src={LinkedInIcon} alt='LinkrdInIcon'/>
-</div>
+            <p className='DesktopIntro'>{CompanyCaption}</p>
+            <p className='ContactInfo'>{ContactInfo}</p>
+            <div className='SocialMediaIcons'>
+                <img src={FacebookIcon} alt='Facebook Icon'/>
+                <img src={TwitterIcon} alt="Twitter Icon"/>
+                <img src={LinkedInIcon} alt='LinkedIn Icon'/>
+            </div>
         </div>
-    )
+    );
 }
 
-export default DeskTopHeader
+export default DesktopHeader;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import "./Header.css"
-import AgilewitLogoBlue from '../Assets/AgilewitsLogo.svg'
+import AgilewitLogoBlue from '../Assets/AgilewitLogo.svg'
 import Options from "../Assets/Options.svg"
 const Header=()=>{
 return(

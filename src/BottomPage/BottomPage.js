@@ -1,64 +1,63 @@
-import { Link } from 'react-router-dom'
-import Agilewitswhite from '../Assets/Agilewitswhite.svg'
-import FaceBookIcon from '../Assets/FaceBookIcon.svg'
-import LinkedInIcon from '../Assets/LinkedInIcon.svg'
-import TwitterIcon from '../Assets/TwitterIcon.svg'
-import "./BottomPage.css"
+import { Link } from 'react-router-dom';
+import AgilewitsWhite from '../Assets/AgilewitsWhite.svg';
+import FacebookIcon from '../Assets/FacebookIcon.svg';
+import LinkedInIcon from '../Assets/LinkedInIcon.svg';
+import TwitterIcon from '../Assets/TwitterIcon.svg';
+import {BottomPageContent} from '../Data/Data'
+import "./BottomPage.css";
+
 const BottomPage = () => {
+    const{Explore,AboutUs,Career,Openings,AppDevelopment,Training,Service,Consulting,Product,Consent,Contact,CompanyUSAAddress,CompanyIndiaAddress,CompanyMail,EndTitle}=BottomPageContent
     return (
         <div className='BottomPageTopOne'>
             <div className="BottomPageTopLayer">
                 <div className='BottomPageFirstLayer'>
-                    <img className='AgilewitBottomPageLogo' src={Agilewitswhite} alt="Agilewit Logo" />
+                    <img className='AgilewitBottomPageLogo' src={AgilewitsWhite} alt="Agilewit Logo" />
                     <div className='SocialMediaIcons'>
-                        <img src={FaceBookIcon} alt='FaceBookIcon' />
+                        <img src={FacebookIcon} alt='FacebookIcon' />
                         <img src={TwitterIcon} alt="TwitterIcon" />
-                        <img src={LinkedInIcon} alt='LinkrdInIcon' />
+                        <img src={LinkedInIcon} alt='LinkedInIcon' />
                     </div>
                 </div>
                 <div className='ServiceRow'>
                     <div className='BottomPageServices'>
-                        <h1>EXPLORE</h1>
+                        <h1>{Explore}</h1>
                         <Link className="Links" to="/AboutUs">
-                            <p>About Us</p>
+                            <p>{AboutUs}</p>
                         </Link>
-                        <p>Careers</p>
-                        <p>Current Openings</p>
+                        <p>{Career}</p>
+                        <p>{Openings}</p>
                     </div>
 
                     <div className='BottomPageServices'>
-                        <h1> SERVICES</h1>
-                        <Link className="Links" to="/Counsulting">
-                            <p>Consulting</p>
+                        <h1> {Service}</h1>
+                        <Link className="Links" to="/Consulting">
+                            <p>{Consulting}</p>
+                          
+                            
                         </Link>
-                        <p>Careers</p>
-                        <p>Current Openings</p>
+                        <Link className="Links" to="/MobileAppDevelopment">
+                        <p>{AppDevelopment}</p>
+                        </Link>
+                        <p>{Training}</p>
+                       
                     </div>
                     <div className='BottomPageServices'>
-                        <h1>PRODUCT</h1>
-                        <p>CONSEN</p>
-
+                        <h1>{Product}</h1>
+                        <p>{Consent}</p>
                     </div>
                     <div className='BottomPageServices CONTACT'>
-                        <h1>CONTACT</h1>
-                        <p>AGILEWIT SOLUTIONS INC
-                            405 State Hwy 121 Bypass Suite A250,
-                            Lewisville TX 75067
-                            Phone Number: (516) 888-0089</p>
-                        <p>AGILEWIT SOLUTIONS PVT LTDH NO.3-1-101/6,Navodaya Colony,
-                            Road No 2,Sbh Venture-I, LB NagarHyderabad,Telangana,India,50074
-                            Phone Number: 040-48547228</p>
-
+                        <h1>{Contact}</h1>
+                        <p>{CompanyUSAAddress}</p>
+                        <p>{CompanyIndiaAddress}</p>
                     </div>
-
                 </div>
-                <p className='InfoMail'>info@agilewits.com</p>
-
+                <p className='InfoMail'>{CompanyMail}</p>
             </div>
-            <hr className='BottomPageline' />
-            <p className='FinelLineContent'>© Agilewit Solutions Inc</p>
+            <hr className='BottomPageLine' />
+            <p className='FinalLineContent'>{EndTitle}</p>
         </div>
     )
 }
 
-export default BottomPage
+export default BottomPage;

@@ -15,18 +15,15 @@
     line-height: 25.12px;
     letter-spacing: 0.03em;
     margin: 20px;
-
-
 }
 
 .MissionInfo {
     color: white;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     font-size: 13px;
-
 }
 
-.Misile {
+.Missile {
     display: flex;
     flex-direction: column;
     align-self: flex-start;
@@ -36,13 +33,9 @@
     display: flex;
     background: #25AAE1;
     padding: 40px;
-
 }
 
-
-
-
-@media screen and (min-width:769px) {
+@media screen and (min-width: 769px) {
     .StaffContainer {
         background: #EBFBFF;
         padding: 40px;
@@ -50,8 +43,6 @@
         flex-direction: row;
         gap: 60px;
         justify-content: space-between;
-
-
     }
 
     .StaffDescription {
@@ -64,7 +55,5 @@
         line-height: 25.12px;
         letter-spacing: 0.03em;
         margin: 20px;
-
-
     }
 }

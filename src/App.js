@@ -2,7 +2,7 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import Home from './Home/Home';
 import AboutUs from "./AboutUs/AboutUs"
 import Counsulting from './Counsulting/Counsulting'
-
+import MobileAppDevelopment from './MobileAppDevelopment/MobileAppDevelopment'
 function App() {
   return (
     <div>
@@ -10,7 +10,8 @@ function App() {
      <Switch>
       <Route exact path="/" component={Home}/>
       <Route exact path="/AboutUs" component={AboutUs}/>
-      <Route exact path="/Counsulting" component={Counsulting}/>
+      <Route exact path="/Consulting" component={Counsulting}/>
+      <Route exact path="/MobileAppDevelopment" component={MobileAppDevelopment}/>
      </Switch>
      </BrowserRouter>
     </div>

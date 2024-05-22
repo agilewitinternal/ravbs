@@ -1,8 +1,6 @@
 .HomeTopLayer {
     color: black;
-
 }
-
 
 .IntroDescription {
     font-family: Neue Haas Grotesk Display Pro;
@@ -14,29 +12,20 @@
     text-align: center;
     margin-left: 35px;
     width: 300px;
-
-
-
-
-
 }
 
 .HomeIntroduction {
     display: flex;
     flex-direction: column;
-
     top: 252px;
     padding: 30px;
     background: #25AAE1;
-
-
 }
 
 .AgilewitGreyLogo {
     display: flex;
     align-self: flex-end;
     height: 100px;
-
 }
 
 .Title {
@@ -47,13 +36,11 @@
     letter-spacing: 0.20em;
     text-align: left;
     color: white;
-
 }
 
 .TitleHeading {
     color: white;
     width: 298px;
-
     top: 380px;
     left: 31px;
     gap: 0px;
@@ -64,7 +51,6 @@
     line-height: 43.05px;
     letter-spacing: 0.03em;
     text-align: left;
-
 }
 
 .TitleDescription {
@@ -77,8 +63,7 @@
     color: white;
 }
 
-.LetsWorkToGether {
-
+.LetsWorkTogether {
     color: #25AAE1;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     font-size: 14px;
@@ -89,8 +74,6 @@
     padding: 10px;
     width: fit-content;
     background-color: white;
-
-
 }
 
 .DesktopOptionsIcon {
@@ -106,12 +89,10 @@
     display: none;
 }
 
-.HomePageDesription {
+.HomePageDescription {
     background: #EBFBFF;
     padding: 35px;
-
 }
-
 
 .CompanyIdeology {
     font-size: 17px;
@@ -123,65 +104,60 @@
     filter: grayscale(100%);
     margin-top: 40px;
     margin-bottom: 40px;
-   
-
 }
 
 .ClientCompanyLogo {
     height: 40px;
     margin: 12px;
-    
 }
-.ClientAssistance{
+
+.ClientAssistance {
     width: 140px;
 }
 
-.Services{
+.Services {
     display: flex;
     flex-direction: column;
-  
 }
 
-.AgilewitLogoBlue{
+.AgilewitLogoBlue {
     display: none;
 }
-.Achievments{
+
+.Achievements {
     display: flex;
-    
     justify-content: center;
     align-items: center;
     color: white;
     background: #25AAE1;
-padding: 40px;
+    padding: 40px;
 }
 
-.PartnersOpinion{
+.PartnersOpinion {
     background: #EBFBFF;
     padding: 40px;
+}
 
-   }
-
-   .PartnerTitle{
+.PartnerTitle {
     text-decoration: none;
     color: #25AAE1;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
 
-   }
-   .PartnersOpinioTittle{
+.PartnersOpinionTitle {
     text-align: center;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     font-size: 15px;
-   }
-.PartnerListforDesktop{
-    display: none;
+}
 
+.PartnerListForDesktop {
+    display: none;
 }
 
 @media screen and (min-width: 767px) {
     .HomeTopLayer {
         display: flex;
         height: 100vh;
-        
         overflow: hidden;
     }
 
@@ -190,16 +166,12 @@ padding: 40px;
     }
 
     .HomeIntroduction {
-
         padding: 40px;
         height: fit-content;
-
-
     }
 
     .AgilewitGreyLogo {
         height: 100px;
-
     }
 
     .Title {
@@ -210,7 +182,6 @@ padding: 40px;
         width: 550px;
         font-size: 60px;
         line-height: 67.22px;
-
     }
 
     .TitleDescription {
@@ -218,7 +189,7 @@ padding: 40px;
         line-height: 27.22px;
     }
 
-    .LetsWorkToGether {
+    .LetsWorkTogether {
         background-color: #25AAE1;
         color: white;
         font-size: 27px;
@@ -228,28 +199,18 @@ padding: 40px;
         display: flex;
         flex-direction: column;
         width: 100vw;
-
-
-
-
     }
-
-
 
     .DesktopOptionsIcon {
         display: flex;
         align-items: flex-end;
         height: 40px;
-
-
     }
 
     .SubHomeSecondLayer {
         display: flex;
         flex-direction: column;
         overflow-y: auto;
-
-
     }
 
     .HomeOptionsIcon {
@@ -257,7 +218,6 @@ padding: 40px;
         margin: 10px;
         height: 150px;
         align-self: flex-end;
-
     }
 
     .CompanyIdeology {
@@ -268,57 +228,56 @@ padding: 40px;
 
     .ClientCompanyLogo {
         height: 90px;
-
     }
-    .ClientCompanyLogos{
+
+    .ClientCompanyLogos {
         margin-top: 80px;
         margin-bottom: 80px;
     }
 
-   .ClientAssistance{
-    width: 180px;
-   }
-   .ServicesList {
-    display: flex;
-    flex-direction: row;
-    overflow-y: auto;
-  
-}
+    .ClientAssistance {
+        width: 180px;
+    }
 
-   .Services{
-display: flex;
-flex-direction: row
-   }
+    .ServicesList {
+        display: flex;
+        flex-direction: row;
+        overflow-y: auto;
+    }
 
-   .AgilewitLogoBlue{
-    display:flex;
-   margin-top: 80px;
-    height: 400px;
-   }
-   .Achievments{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    background: #25AAE1;
-padding: 40px;
-   }
+    .Services {
+        display: flex;
+        flex-direction: row;
+    }
 
-   .PartnersOpinion{
-    background: #EBFBFF;
+    .AgilewitLogoBlue {
+        display: flex;
+        margin-top: 80px;
+        height: 400px;
+    }
 
-   }
-   .PartnersOpinioTittle{
-  
-    font-size: 30px;
-   }
+    .Achievements {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background: #25AAE1;
+        padding: 40px;
+    }
 
-   .PartnerListforDesktop{
-    display: flex;
-    
-}
-.PartnerListforMobile{
-    display: none;
-}
+    .PartnersOpinion {
+        background: #EBFBFF;
+    }
 
+    .PartnersOpinionTitle {
+        font-size: 30px;
+    }
+
+    .PartnerListForDesktop {
+        display: flex;
+    }
+
+    .PartnerListForMobile {
+        display: none;
+    }
 }

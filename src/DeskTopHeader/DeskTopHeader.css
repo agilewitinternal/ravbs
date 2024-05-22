@@ -1,22 +1,20 @@
-.DeskTopHeaderTopLayer {
+.DesktopHeaderTopLayer {
     display: none;
 }
 
-
 @media screen and (min-width: 767px) {
-    .DeskTopHeaderTopLayer {
+    .DesktopHeaderTopLayer {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 60px;
         padding: 10px;
-        
         width: 300px;
         height: 100vh;
     }
 
-    .LogoAgilewit{
+    .LogoAgileWit {
         height: 150px;
         width: 300px;
     }
@@ -29,17 +27,14 @@
         line-height: 40.37px;
         letter-spacing: 0.03em;
         text-align: center;
-
     }
 
     .Hr {
         width: 220px;
         height: 4px;
         margin-top: 29px;
-
         background-color: black;
         border-radius: 10px 0px 0px 0px;
-
         color: black;
     }
 
@@ -50,7 +45,6 @@
         line-height: 24.6px;
         letter-spacing: 0.03em;
         text-align: center;
-
     }
 
     .SocialMediaIcons {
@@ -62,8 +56,5 @@
         flex-direction: row;
         justify-content: space-between;
         align-self: center;
-       
-
-
     }
 }
