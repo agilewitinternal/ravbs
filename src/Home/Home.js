@@ -60,6 +60,7 @@ const Home = () => {
                             <img className='ClientCompanyLogo' src={Alpine} alt="Client Company" />
                             <img className='ClientCompanyLogo' src={Info} alt="Client Company" />
                             <img src={Beaconhill} alt="Client Company Logo" />
+
                         </div>
 
                         <h3 className='ClientAssistance'>{HomeTitle}</h3>
