@@ -47,7 +47,9 @@ const BottomPage = () => {
                         <p>{Consent}</p>
                     </div>
                     <div className='BottomPageServices CONTACT'>
+                        <Link to="/ContactUs" className="Links">
                         <h1>{Contact}</h1>
+                        </Link>
                         <p>{CompanyUSAAddress}</p>
                         <p>{CompanyIndiaAddress}</p>
                     </div>

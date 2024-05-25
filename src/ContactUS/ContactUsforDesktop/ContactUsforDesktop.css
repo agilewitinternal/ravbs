@@ -1,0 +1,72 @@
+.Googlemap{
+    display: flex;
+    background: #EBFBFF;
+    padding: 40px;
+
+}
+
+
+
+
+
+.FirstName{
+    background: #EBFBFF;
+    border: 1.4px solid #08c4f3;
+    padding: 8px;
+    margin: 8px;
+    width: 204.5px;
+    height: 50px;
+}
+
+.Email{
+    background: #EBFBFF;
+    border: 1.4px solid #08c4f3;
+    padding: 8px;
+    margin: 8px;
+    width: 440px;
+    height: 50px;
+}
+
+.Message{
+    background: #EBFBFF;
+    border: 1.4px solid #08c4f3;
+    padding: 8px;
+    margin: 8px;
+    width: 440px;
+    height: 100px;
+}
+
+button{
+    width: 440px;
+    padding: 9px;
+    background-color: #08c4f3;
+    color: white;
+    border: 0 solid white;
+    font-size: 20px;
+    border-radius: 6px;
+}
+.Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.ContactSecondLayer{
+    height: 100vh;
+    overflow-y: auto;
+}
+.SuccessMessage{
+    color: green;
+   
+}
+
+@media screen and (max-width:767px){
+
+.ContactUsforDesktopTopLayer{
+    display: none;
+}
+
+
+}

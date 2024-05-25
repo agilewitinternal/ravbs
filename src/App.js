@@ -3,6 +3,7 @@ import Home from './Home/Home';
 import AboutUs from "./AboutUs/AboutUs"
 import Counsulting from './Counsulting/Counsulting'
 import MobileAppDevelopment from './MobileAppDevelopment/MobileAppDevelopment'
+import ContactUs from './ContactUS/ContactUs'
 function App() {
   return (
     <div>
@@ -12,6 +13,7 @@ function App() {
       <Route exact path="/AboutUs" component={AboutUs}/>
       <Route exact path="/Consulting" component={Counsulting}/>
       <Route exact path="/MobileAppDevelopment" component={MobileAppDevelopment}/>
+      <Route exact path="/ContactUs" component={ContactUs}/>
      </Switch>
      </BrowserRouter>
     </div>
