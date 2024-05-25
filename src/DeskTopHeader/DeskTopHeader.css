@@ -1,0 +1,60 @@
+.DesktopHeaderTopLayer {
+    display: none;
+}
+
+@media screen and (min-width: 767px) {
+    .DesktopHeaderTopLayer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        padding: 10px;
+        width: 300px;
+        height: 100vh;
+    }
+
+    .LogoAgileWit {
+        height: 150px;
+        width: 300px;
+    }
+
+    .DesktopIntro {
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 26.54px;
+        font-style: italic;
+        font-weight: 500;
+        line-height: 40.37px;
+        letter-spacing: 0.03em;
+        text-align: center;
+    }
+
+    .Hr {
+        width: 220px;
+        height: 4px;
+        margin-top: 29px;
+        background-color: black;
+        border-radius: 10px 0px 0px 0px;
+        color: black;
+    }
+
+    .ContactInfo {
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 24.6px;
+        letter-spacing: 0.03em;
+        text-align: center;
+    }
+
+    .SocialMediaIcons {
+        width: 103px;
+        height: 24px;
+        top: 639px;
+        left: 103px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-self: center;
+    }
+}

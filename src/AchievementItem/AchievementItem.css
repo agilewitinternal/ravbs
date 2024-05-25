@@ -1,0 +1,23 @@
+.AchievementItemTop {
+    text-align: center;
+    margin: 10px;
+    font-size: 14px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+
+.AchievementLogo {
+    height: 70px;
+}
+
+@media screen and (min-width: 767px) {
+    .AchievementItemTop {
+        text-align: center;
+        margin: 50px;
+        font-size: 20px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    }
+
+    .AchievementLogo {
+        height: 120px;
+    }
+}

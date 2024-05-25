@@ -1,0 +1,51 @@
+.AboutUsTopLayer {
+
+    background: #25AAE1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+}
+.AgilewitLogoAboutUs{
+    height: fit-content;
+    
+}
+
+.PropName {
+    color: white;
+    font-family: 'Neue Haas Grotesk Display Pro', Arial, sans-serif;
+   
+  
+   margin-left: 20px;
+   
+
+
+}
+
+@media screen and  (min-width:767px) {
+    .AboutUsTopLayer {
+
+        background: #25AAE1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0px;
+    }
+    
+    .AgilewitLogoAboutUs {
+        
+        height: 400px;
+    }
+    
+    .PropName {
+        color: white;
+        font-family: 'Neue Haas Grotesk Display Pro', Arial, sans-serif;
+       
+       font-size: 80px;
+       margin-left: 20px;
+       
+    
+    
+    }
+    
+}

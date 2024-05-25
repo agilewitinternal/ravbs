@@ -1,0 +1,45 @@
+@media screen and (max-width:767px) {
+
+    .AppleAnimation {
+        background: #25AAE1;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .AppleLogo {
+        height: 180px;
+        width: 260px;
+    }
+
+    .AppDevelopmentModels {
+        background-color: white;
+        padding: 20px;
+        font-size: 12px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .CapsLets {
+        color: #25AAE1;
+        background-color: white;
+        padding: 10px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 17.22px;
+        letter-spacing: 0.03em;
+        text-align: left;
+
+    }
+}
+
+@media screen and (min-width:767px) {
+
+    .MobileAppDevelopmentMobileViewTopLayer {
+        display: none;
+    }
+}
