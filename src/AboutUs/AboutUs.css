@@ -10,7 +10,8 @@
     flex-direction: column;
     align-self: flex-end;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
+    text-align: justify;
     font-weight: 500;
     line-height: 25.12px;
     letter-spacing: 0.03em;
@@ -20,7 +21,8 @@
 .MissionInfo {
     color: white;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
-    font-size: 13px;
+    font-size: 12px;
+    text-align: unset;
 }
 
 .Missile {
@@ -44,11 +46,14 @@
         gap: 60px;
         justify-content: space-between;
     }
-
+.MissionDescription{
+    font-size: 20px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
     .StaffDescription {
         display: flex;
         flex-direction: column;
-        align-self: flex-end;
+        align-self: flex-start;
         font-family: "Neue Haas Grotesk Display Pro", sans-serif;
         font-size: 16px;
         font-weight: 500;

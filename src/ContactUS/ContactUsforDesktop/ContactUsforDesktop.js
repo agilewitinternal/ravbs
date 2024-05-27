@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import DeskTopHeader from '../../DesktopHeader/DesktopHeader'
+import DeskTopHeader from '../../DeskTopHeader/DeskTopHeader'
 import Options from "../../Assets/Options.svg";
-import ChatIcon from '../../Assets/ChatIcon.svg';
+import ChatIcon from '../../Assets/Chaticon.svg';
 import ServiceHeaders from '../../ServiceHeaders/ServiceHeaders'
 import BottomPage from '../../BottomPage/BottomPage'
 import "./ContactUsforDesktop.css"

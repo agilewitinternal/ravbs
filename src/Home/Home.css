@@ -90,26 +90,49 @@
 }
 
 .HomePageDescription {
+    
     background: #EBFBFF;
     padding: 35px;
 }
 
 .CompanyIdeology {
     font-size: 17px;
+
 }
 
 .ClientCompanyLogos {
     display: flex;
-    overflow-x: auto;
-    filter: grayscale(100%);
+    overflow: hidden;
     margin-top: 40px;
     margin-bottom: 40px;
+    position: relative;
+}
+
+.logo-container {
+    display: flex;
+    animation: scroll 30s linear infinite;
 }
 
 .ClientCompanyLogo {
-    height: 40px;
-    margin: 12px;
+    width: 150px; /* Set a fixed width for logos */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 40px;
+    filter: grayscale(100%); /* Adjust spacing between logos */
 }
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+
 
 .ClientAssistance {
     width: 140px;
@@ -152,6 +175,11 @@
 
 .PartnerListForDesktop {
     display: none;
+}
+
+.IdeaDescription {
+
+    text-align: justify;
 }
 
 @media screen and (min-width: 767px) {
@@ -226,14 +254,13 @@
         font-size: 19.5px;
     }
 
-    .ClientCompanyLogo {
-        height: 90px;
+    .IdeaDescription {
+        width: 800px;
+        text-align: justify;
     }
 
-    .ClientCompanyLogos {
-        margin-top: 80px;
-        margin-bottom: 80px;
-    }
+
+    
 
     .ClientAssistance {
         width: 180px;

@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import Header from '../Header/Header'
-import DeskTopHeader from '../DesktopHeader/DesktopHeader'
+import DeskTopHeader from '../DeskTopHeader/DeskTopHeader'
 import BottomPage from '../BottomPage/BottomPage'
 import Options from '../Assets/Options.svg'
-import Chaticon from '../Assets/ChatIcon.svg'
+import Chaticon from '../Assets/Chaticon.svg'
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders'
-import { ConsultingItemsInfo, CunsultingPageContent } from '../Data/Data'
+import { ConsultingItemsInfo, CunsultingPageContent } from '../constant/Consulting'
 import bimage from "../Assets/bi.svg"
 import Oracles from '../Assets/Oracle.svg'
 import IBM from "../Assets/IBM.svg"

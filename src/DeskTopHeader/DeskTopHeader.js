@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import AgileWitLogoBlue from '../Assets/AgilewitLogo.svg';
-import FacebookIcon from '../Assets/FacebookIcon.svg';
+import FacebookIcon from '../Assets/FaceBookIcon.svg';
 import LinkedInIcon from '../Assets/LinkedInIcon.svg';
 import TwitterIcon from '../Assets/TwitterIcon.svg';
-import {DeskTopHeaderContent} from '../Data/Data'
-import './DesktopHeader.css';
+import {DeskTopHeaderContent} from '../constant/DeskTopHeader'
+import './DeskTopHeader.css';
 
 const DesktopHeader = () => {
     const{CompanyCaption,ContactInfo}=DeskTopHeaderContent

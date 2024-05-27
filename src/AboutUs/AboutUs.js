@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import Header from '../Header/Header';
-import DesktopHeader from '../DesktopHeader/DesktopHeader'
+import DesktopHeader from '../DeskTopHeader/DeskTopHeader'
 import Options from "../Assets/Options.svg";
-import ChatIcon from '../Assets/ChatIcon.svg';
+import ChatIcon from '../Assets/Chaticon.svg';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import Staff from '../Assets/Staff.svg';
 import Missile from '../Assets/Missile.svg';
-import { Partners,AboutUsContents } from '../Data/Data';
+import {AboutUsContents,Partners } from '../constant/AboutUs';
 import PartnerOpinionItems from '../PartnerOpinionItems/PartnerOpinionItems';
 import BottomPage from '../BottomPage/BottomPage';
 
@@ -45,8 +45,8 @@ const {WelcomeTitle,Introduction,MissionHeading,MissionDescription,PartnersOpini
                     </div>
                     <div className='MissionContainer'>
                         <div className='MissionInfo'>
-                            <h2>{MissionHeading}</h2>
-                            <p>{MissionDescription}</p>
+                            <h1>{MissionHeading}</h1>
+                            <p className='MissionDescription'>{MissionDescription}</p>
                         </div>
                         <img src={Missile} alt="Missile" className='Missile' />
                     </div>
