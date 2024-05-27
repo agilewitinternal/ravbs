@@ -1,9 +1,10 @@
-import DesktopHeader from '../../DesktopHeader/DesktopHeader'
+import DesktopHeader from '../../DeskTopHeader/DeskTopHeader'
 import Options from '../../Assets/Options.svg'
-import ChatIcon from '../../Assets/ChatIcon.svg';
+import ChatIcon from '../../Assets/Chaticon.svg';
 import Staff from '../../Assets/Staff.svg';
 import ServiceHeaders from '../../ServiceHeaders/ServiceHeaders'
-import { AboutUsContents,MobileDevelopment } from '../../Data/Data'
+import { MobileDevelopment } from '../../constant/MobileDevelopment'
+import {AboutUsContents} from '../../constant/AboutUs'
 import Apple from '../../Assets/Apple_App_Store.gif.large_2x.gif'
 import Android from '../../Assets/Android.svg'
 import PowerfulOption from '../../Assets/PowerfulOption.svg'

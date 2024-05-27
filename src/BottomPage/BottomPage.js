@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-import AgilewitsWhite from '../Assets/AgilewitsWhite.svg';
-import FacebookIcon from '../Assets/FacebookIcon.svg';
-import LinkedInIcon from '../Assets/LinkedInIcon.svg';
-import TwitterIcon from '../Assets/TwitterIcon.svg';
-import {BottomPageContent} from '../Data/Data'
+import AgilewitsWhite from '../Assets/Agilewitswhite.svg';
+
+import {BottomPageContent,SocialMediaIconsArray} from '../constant/BottomPage'
 import "./BottomPage.css";
 
 const BottomPage = () => {
@@ -14,14 +12,14 @@ const BottomPage = () => {
                 <div className='BottomPageFirstLayer'>
                     <img className='AgilewitBottomPageLogo' src={AgilewitsWhite} alt="Agilewit Logo" />
                     <div className='SocialMediaIcons'>
-                        <img src={FacebookIcon} alt='FacebookIcon' />
-                        <img src={TwitterIcon} alt="TwitterIcon" />
-                        <img src={LinkedInIcon} alt='LinkedInIcon' />
+                        {SocialMediaIconsArray.map((each)=>  <img src={each} alt='SocialMediaAppIcon' />)}
+                      
+                       
                     </div>
                 </div>
                 <div className='ServiceRow'>
                     <div className='BottomPageServices'>
-                        <h1>{Explore}</h1>
+                        <h3>{Explore}</h3>
                         <Link className="Links" to="/AboutUs">
                             <p>{AboutUs}</p>
                         </Link>
@@ -30,7 +28,7 @@ const BottomPage = () => {
                     </div>
 
                     <div className='BottomPageServices'>
-                        <h1> {Service}</h1>
+                        <h3> {Service}</h3>
                         <Link className="Links" to="/Consulting">
                             <p>{Consulting}</p>
                           
@@ -43,12 +41,12 @@ const BottomPage = () => {
                        
                     </div>
                     <div className='BottomPageServices'>
-                        <h1>{Product}</h1>
+                        <h3>{Product}</h3>
                         <p>{Consent}</p>
                     </div>
                     <div className='BottomPageServices CONTACT'>
                         <Link to="/ContactUs" className="Links">
-                        <h1>{Contact}</h1>
+                        <h3>{Contact}</h3>
                         </Link>
                         <p>{CompanyUSAAddress}</p>
                         <p>{CompanyIndiaAddress}</p>

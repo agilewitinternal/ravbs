@@ -1,7 +1,7 @@
 import { useEffect,useState } from 'react';
 import Header from '../../Header/Header'
 import Options from '../../Assets/Options.svg'
-import ChatIcon from '../../Assets/ChatIcon.svg';
+import ChatIcon from '../../Assets/Chaticon.svg';
 import BottomPage from '../../BottomPage/BottomPage'
 import ServiceHeaders from '../../ServiceHeaders/ServiceHeaders'
 import "./ContactUsforMobile.css"
