@@ -12,8 +12,7 @@ import PartnerOpinionItems from '../PartnerOpinionItems/PartnerOpinionItems';
 import AchievementItem from '../AchievementItem/Achievmentitem';
 import BottomPage from '../BottomPage/BottomPage';
 import ChatIcon from '../Assets/Chaticon.svg';
-import  Carousel  from 'react-carousel';
-import 'react-carousel/lib/react-carousel.css';
+
 import './Home.css';
 
 const Home = () => {
@@ -74,11 +73,11 @@ const Home = () => {
                     <div className='PartnersOpinion'>
 
                         <h1 className='PartnersOpinionTitle'>{PartnersOpinionTitlePartOne} <a href='k' className='PartnerTitle'>{PartnersOpinionTitlePartTwo}</a> {PartnersOpinionTitlePartThree}</h1>
-                        <Carousel>
+                       
                         <div className='PartnerListForDesktop'>
                             {Partners.map((each) => <PartnerOpinionItems PartnersInfo={each} />)}
                         </div>
-                        </Carousel>
+                       
                         <div className='PartnerListForMobile'>
                             <PartnerOpinionItems PartnersInfo={Partners[randomNumber]} />
                         </div>
