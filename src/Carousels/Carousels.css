@@ -1,0 +1,16 @@
+.Carousels-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    text-align: center;
+    
+}
+
+
+.Carousels-Arrows{
+    height: 60px;
+    margin-top: 100px;
+}
+

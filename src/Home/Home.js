@@ -11,6 +11,7 @@ import { AboutUsContents } from '../constant/AboutUs'
 import PartnerOpinionItems from '../PartnerOpinionItems/PartnerOpinionItems';
 import AchievementItem from '../AchievementItem/Achievmentitem';
 import BottomPage from '../BottomPage/BottomPage';
+import Carousels from '../Carousels/Carousels'
 import ChatIcon from '../Assets/Chaticon.svg';
 
 import './Home.css';
@@ -21,17 +22,7 @@ const Home = () => {
     const { HomeTitle, HomePageMainHeading, MobileViewCaption, HomePageTagLine, LetsWork, ShareYourIdea, IdeaDescription } = HomePageContent;
     const { PartnersOpinionTitlePartOne, PartnersOpinionTitlePartTwo, PartnersOpinionTitlePartThree } = AboutUsContents
 
-    useEffect(() => {
-        const Timer = setInterval(() => {
-            setRandomNumber(prevState => {
-                if (prevState === Partners.length - 1) {
-                    setRandomNumber(0);
-                }
-                return prevState + 1;
-            });
-        }, 2000);
-        return () => clearInterval(Timer);
-    }, []);
+  
 
     return (
         <div className='HomeTopLayer'>
@@ -74,13 +65,9 @@ const Home = () => {
 
                         <h1 className='PartnersOpinionTitle'>{PartnersOpinionTitlePartOne} <a href='k' className='PartnerTitle'>{PartnersOpinionTitlePartTwo}</a> {PartnersOpinionTitlePartThree}</h1>
                        
-                        <div className='PartnerListForDesktop'>
-                            {Partners.map((each) => <PartnerOpinionItems PartnersInfo={each} />)}
-                        </div>
+                    
                        
-                        <div className='PartnerListForMobile'>
-                            <PartnerOpinionItems PartnersInfo={Partners[randomNumber]} />
-                        </div>
+                       <Carousels/>
                     </div>
                     <BottomPage />
                 </div>
