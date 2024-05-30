@@ -1,16 +1,37 @@
-.Carousels-Container{
+.Carousels-Container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    overflow: hidden;
-    flex-wrap: nowrap;
-    text-align: center;
-    
+    animation: slideFromRight 1s ease-in-out forwards; /* Animation duration, timing function, and fill mode */
+    opacity: 0; /* Initially make it transparent */
+    transform: translateX(100%);
 }
 
 
-.Carousels-Arrows{
-    height: 60px;
-    margin-top: 100px;
+.Carousels-Arrows {
+    height: 13px;
+    margin-top: 140px;
 }
 
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%); /* Start off-screen to the right */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* End at its original position */
+    }
+}
+@media screen and (min-width:767px) {
+    .Carousels-Container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .Carousels-Arrows {
+        height: 30px;
+        margin-top: 150px;
+    }
+}

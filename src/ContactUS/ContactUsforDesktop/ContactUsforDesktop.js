@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 import DeskTopHeader from '../../DeskTopHeader/DeskTopHeader'
-import Options from "../../Assets/Options.svg";
-import ChatIcon from '../../Assets/Chaticon.svg';
 import ServiceHeaders from '../../ServiceHeaders/ServiceHeaders'
 import BottomPage from '../../BottomPage/BottomPage'
 import "./ContactUsforDesktop.css"
@@ -21,8 +19,8 @@ const ContactUsforDesktop = () => {
         <div className="ContactUsforDesktopTopLayer">
             <div className='HomeTopLayer'>
                 <DeskTopHeader />
-                <div className="HomeSecondLayer">
-                    <img src={Options} alt="Options Icons" className="HomeOptionsIcon" />
+              
+                    
                     <div className="SubHomeSecondLayer">
                         <ServiceHeaders ServiceHeadersInfo="Contact Us" />
                         <div className='Googlemap'>
@@ -50,8 +48,7 @@ const ContactUsforDesktop = () => {
                         </div>
                         <BottomPage />
                     </div>
-                    <img src={ChatIcon} alt="Chat" className="HomeOptionsIcon" />
-                </div>
+                 
             </div>
         </div>
     )

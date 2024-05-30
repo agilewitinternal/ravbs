@@ -32,8 +32,8 @@ const {WelcomeTitle,Introduction,MissionHeading,MissionDescription,PartnersOpini
         <div className='HomeTopLayer'>
             <Header />
             <DesktopHeader />
-            <div className='HomeSecondLayer'>
-                <img src={Options} alt="Options Icon" className="HomeOptionsIcon" />
+           
+                
                 <div className='SubHomeSecondLayer'>
                     <ServiceHeaders ServiceHeadersInfo="AboutUs" />
                     <div className='StaffContainer'>
@@ -56,8 +56,7 @@ const {WelcomeTitle,Introduction,MissionHeading,MissionDescription,PartnersOpini
                     </div>
                     <BottomPage />
                 </div>
-                <img src={ChatIcon} alt="Chat" className="HomeOptionsIcon" />
-            </div>
+           
         </div>
     );
 }

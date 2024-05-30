@@ -31,7 +31,7 @@ const Carousels = () => {
     return (
         <div className='Carousels-Container '>
             <img src={ArrowLeft} alt="ArrowLeft" className='Carousels-Arrows' onClick={Increase} />
-            <PartnerOpinionItems PartnersInfo={Partners[randomNumber]} className="Carousels-Item" />
+            <PartnerOpinionItems PartnersInfo={Partners[randomNumber]}  />
             <img src={ArrowRight} alt="ArrowRight" className='Carousels-Arrows' onClick={Increase}/>
         </div>
     )

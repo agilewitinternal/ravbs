@@ -21,9 +21,9 @@ const ContactUsforMobile = () => {
         <div className="ContactUsforMobileTopLayer">
             <div className='HomeTopLayer'>
                 <Header />
-                <div className="HomeSecondLayer">
+             
 
-                <img src={Options} alt="Options Icons" className="HomeOptionsIcon" />
+               
                     <div className="SubHomeSecondLayer">
                     <ServiceHeaders ServiceHeadersInfo="App Development" />
                     <div className='MobileGooglemap'>
@@ -52,8 +52,7 @@ const ContactUsforMobile = () => {
 
                         <BottomPage/>
                     </div>
-                    <img src={ChatIcon} alt="Chat" className="HomeOptionsIcon" />
-                </div>
+             
 
             </div>
         </div>
