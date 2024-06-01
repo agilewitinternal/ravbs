@@ -128,8 +128,7 @@ const Counsulting = () => {
         <div className='HomeTopLayer'>
             <Header />
             <DeskTopHeader />
-            <div className="HomeSecondLayer">
-                <img src={Options} alt="Options Icons" className="HomeOptionsIcon" />
+           
                 <div className="SubHomeSecondLayer">
                     <ServiceHeaders ServiceHeadersInfo="Consulting" />
 
@@ -147,8 +146,7 @@ const Counsulting = () => {
 
 
                 </div>
-                <img src={Chaticon} alt="Chat" className="HomeOptionsIcon" />
-            </div>
+            
         </div>
     )
 }

@@ -1,0 +1,67 @@
+.DropDownProfile {
+    position: fixed;
+    top: 10.5rem;
+    right: 0.5rem;
+    width: 964px;
+    height: 100vh;
+    padding: 60px;
+    text-decoration: none;
+    background: rgba(50, 45, 45, 1);
+    display: flex;
+    flex-direction: column;
+    color: white;
+    animation: fadeInDown 0.5s ease forwards;
+  }
+  .Links{
+    text-decoration: none;
+    color: black;
+  }
+
+  .LetWorktogether{
+    display: flex;
+
+align-self: flex-end;
+color: rgba(0, 183, 240, 1);
+
+  }
+  .DropDownSecondLayer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .DropDownFirstLayer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .DropDownIcone{
+  
+display: flex;
+
+align-self: flex-end;
+    height: 30px;
+    width: 30px;
+  
+  }
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+li{
+    list-style-type: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap: 10px;
+}
+.LetsWorkTogether{
+  display: flex;
+  align-items:flex-end;
+}

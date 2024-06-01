@@ -7,7 +7,7 @@ import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import Staff from '../Assets/Staff.svg';
 import Missile from '../Assets/Missile.svg';
 import {AboutUsContents,Partners } from '../constant/AboutUs';
-import PartnerOpinionItems from '../PartnerOpinionItems/PartnerOpinionItems';
+import Carousels from '../Carousels/Carousels'
 import BottomPage from '../BottomPage/BottomPage';
 
 import "./AboutUs.css";
@@ -32,8 +32,8 @@ const {WelcomeTitle,Introduction,MissionHeading,MissionDescription,PartnersOpini
         <div className='HomeTopLayer'>
             <Header />
             <DesktopHeader />
-            <div className='HomeSecondLayer'>
-                <img src={Options} alt="Options Icon" className="HomeOptionsIcon" />
+           
+                
                 <div className='SubHomeSecondLayer'>
                     <ServiceHeaders ServiceHeadersInfo="AboutUs" />
                     <div className='StaffContainer'>
@@ -52,17 +52,11 @@ const {WelcomeTitle,Introduction,MissionHeading,MissionDescription,PartnersOpini
                     </div>
                     <div className='PartnersOpinion'>
                         <h1 className='PartnersOpinionTitle'>{PartnersOpinionTitlePartOne} <a href='k' className='PartnerTitle'>{PartnersOpinionTitlePartTwo}</a> {PartnersOpinionTitlePartThree}</h1>
-                        <div className='PartnerListForDesktop'>
-                            {Partners.map((each) => <PartnerOpinionItems PartnersInfo={each} />)}
-                        </div>
-                        <div className='PartnerListForMobile'>
-                            <PartnerOpinionItems PartnersInfo={Partners[randomNumber]} />
-                        </div>
+                       <Carousels/>
                     </div>
                     <BottomPage />
                 </div>
-                <img src={ChatIcon} alt="Chat" className="HomeOptionsIcon" />
-            </div>
+           
         </div>
     );
 }

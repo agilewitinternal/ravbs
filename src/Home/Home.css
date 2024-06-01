@@ -110,24 +110,29 @@
 
 .logo-container {
     display: flex;
-    animation: scroll 30s linear infinite;
-}
+    overflow: auto;
+    white-space: nowrap;
 
-.ClientCompanyLogo {
-    width: 150px; /* Set a fixed width for logos */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 40px;
-    filter: grayscale(100%); /* Adjust spacing between logos */
+    animation: scroll 20s linear infinite;
 }
 
 @keyframes scroll {
     0% {
-        transform: translateX(0);
+        transform: translateX(100%);
     }
     100% {
         transform: translateX(-100%);
     }
 }
+
+.ClientCompanyLogo {
+    margin-left: 10px;
+  width: 57px;
+  height: 100px;
+filter: grayscale(100%); 
+}
+
+
 
 
 
@@ -205,6 +210,15 @@
     .Title {
         font-size: 22px;
     }
+
+    .ClientCompanyLogo {
+    
+        margin-left: 10px;
+        margin-right: 10px;
+          height: 120px;
+          width: 220px;
+          filter: grayscale(100%); 
+      }
 
     .TitleHeading {
         width: 550px;
