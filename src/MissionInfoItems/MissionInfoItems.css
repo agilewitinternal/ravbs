@@ -1,0 +1,19 @@
+.MissionInfoItemsTopLayer{
+    border: solid 1px white;
+    margin: 6px;
+    padding: 4px;
+    width: 270px;
+    font-size: 10px;
+    
+}
+
+
+@media screen and (min-width:767px) {
+    .MissionInfoItemsTopLayer{
+        border: solid 1px white;
+        margin: 6px;
+        padding: 10px;
+        width: 400px;
+        font-size: 15px;
+    } 
+}
