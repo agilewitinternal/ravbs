@@ -11,9 +11,7 @@ import { AboutUsContents } from '../constant/AboutUs';
 import AchievementItem from '../AchievementItem/Achievmentitem';
 import BottomPage from '../BottomPage/BottomPage';
 import Carousels from '../Carousels/Carousels';
-import ChatIcon from '../Assets/Chaticon.svg';
 
-import DropDown from '../DropDown/CloseIcon.png'
 
 import './Home.css';
 
