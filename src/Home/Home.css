@@ -100,44 +100,32 @@
 
 }
 
-.ClientCompanyLogos {
-    display: flex;
-    overflow: hidden;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    position: relative;
-}
 
 .logo-container {
     display: flex;
-    overflow: hidden; /* Hide the overflow to prevent the scrollbar */
-    white-space: nowrap;
+    flex-direction: row;
     animation: scroll 20s linear infinite;
+    position: relative;
+    width: fit-content;
+    height: 120px;
 }
+
+.ClientCompanyLogo {
+ margin-right: 10px;
+    width: 50px;
+    filter: grayscale(100%);
+}
+
 
 @keyframes scroll {
     0% {
-        transform: translateX(100%);
+        transform: translateX(120%);
     }
 
     100% {
         transform: translateX(-100%);
     }
 }
-
-.ClientCompanyLogo {
-    margin-left: 10px;
-    width: 57px;
-    height: 100px;
-    filter: grayscale(100%);
-    flex-shrink: 0; /* Prevents logos from shrinking */
-}
-
-
-
-
-
-
 
 
 
@@ -213,12 +201,18 @@
         font-size: 22px;
     }
 
-    .ClientCompanyLogo {
-
-        margin-left: 10px;
-        margin-right: 10px;
+    .logo-container {
+        display: flex;
+        flex-direction: row;
+        animation: scroll 20s linear infinite;
+        position: relative;
+        width: fit-content;
         height: 120px;
-        width: 220px;
+    }
+
+    .ClientCompanyLogo {
+        height: 90px;
+        width: 100px;
         filter: grayscale(100%);
     }
 
