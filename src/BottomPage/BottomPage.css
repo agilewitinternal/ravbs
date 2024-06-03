@@ -12,7 +12,7 @@
 
 .Links {
     text-decoration: none;
-    color: white;
+    color: white !important;
 }
 
 .FinalLineContent {
