@@ -35,6 +35,16 @@
     display: flex;
     background: #25AAE1;
     padding: 40px;
+    
+}
+.MissionItems{
+    display: flex;
+    flex-direction: column;
+    background: #25AAE1;
+    
+    flex-wrap: wrap;
+   color: white;
+   padding: 20px;
 }
 
 @media screen and (min-width: 769px) {
@@ -60,5 +70,13 @@
         line-height: 25.12px;
         letter-spacing: 0.03em;
         margin: 20px;
+    }
+    .MissionItems{
+        background: #25AAE1;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+       color: white;
+       padding: 40px;
     }
 }
