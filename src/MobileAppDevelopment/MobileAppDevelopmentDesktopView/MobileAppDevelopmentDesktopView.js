@@ -21,8 +21,8 @@ const MobileAppDevelopmentDesktopView=()=>{
             <div className='HomeTopLayer'>
                 <DesktopHeader />
                
-                <div className="HomeSecondLayer">
-                    <img src={Options} alt="Options Icons" className="HomeOptionsIcon" />
+               
+                   
                     <div className="SubHomeSecondLayer">
                         <ServiceHeaders ServiceHeadersInfo="App Development" />
                         <div className='StaffContainer'>
@@ -59,8 +59,8 @@ const MobileAppDevelopmentDesktopView=()=>{
 <img src={AppGallery} alt="AppGalery"/>
                      </div>
                         <BottomPage/>
-                    </div>
-                    <img src={ChatIcon} alt="Chat" className="HomeOptionsIcon" />
+                   
+                   
                 </div>
             </div>
 

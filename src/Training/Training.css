@@ -1,0 +1,15 @@
+
+.TrainingTopLayer{
+    height: 100vh;
+    overflow: auto;
+    width: 100vw;
+   
+}
+
+.TrainingLogos{
+    width: 90%;
+   margin: 20px;
+}
+.TrainingTitle{
+    text-align: center;
+}

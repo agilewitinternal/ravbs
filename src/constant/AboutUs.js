@@ -27,3 +27,27 @@ export const Partners = [
 ]
 
 
+export const MissionInfoArray=[
+    {
+        MissionTitle:"Improve Your Business",
+        MissionDescription:"Help our customers grow and improve their business."
+    
+    },
+    {
+        MissionTitle:"Workplace",
+        MissionDescription:"Create a workplace where employees can explore, learn and grow"
+    
+    },
+    {
+        MissionTitle:"Best Investment",
+        MissionDescription:"Deliver the best return on investment and create long-term value for our shareholders."
+    
+    },
+    {
+        MissionTitle:"Contributions",
+        MissionDescription:"Make contributions to enhance the well-being of the communities where we live and work."
+    
+    },
+    
+]
+

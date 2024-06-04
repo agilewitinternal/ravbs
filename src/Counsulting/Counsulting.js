@@ -45,9 +45,9 @@ const Counsulting = () => {
                     <img src={Oracles} className='ConsultingLogo' alt="OracleLogo" />
                     <div>
                         <h3 className='SecondLayerTitile'>{HyperionTitle}</h3>
-                        <ul>
+                        <ol>
                             {HyperionList.map((each) => <li>{each}</li>)}
-                        </ul>
+                        </ol>
                         <p style={{ textAlign: "center" }}>{OraclefirstBottom}</p>
                     </div>
                 </div>
@@ -62,9 +62,9 @@ const Counsulting = () => {
             <div className='ConsultingTypeTopLayer'>
                 <h3>{IBMDatastageTitle}</h3>
                 < h4 className='SecondLayerTitile'>{IBMDatastageSubTitle}</h4>
-                <ul>
+                <ol>
                     {IBMDatastageFirstList.map((each) => <li>{each}</li>)}
-                </ul>
+                </ol>
                 <img src={IBM} alt="IBM Logo" className='ConsultingLogo' />
 
                 <h4 className='SecondLayerTitile'>{DataStageAdvantages}</h4>
@@ -83,9 +83,9 @@ const Counsulting = () => {
                 <h1>{BigDataAnalyticsTitle}</h1>
                 <p>{BigDataAnalyticsDescription}</p>
                 <h4 className='SecondLayerTitile'>{BigDataAnalyticsSubTitle}</h4>
-                <ul>
+                <ol>
                     {BigDataAnalyticsFirstList.map((each) => <li>{each}</li>)}
-                </ul>
+                </ol>
                 <img src={BigData} className='ConsultingLogo' alt='BigData' />
                 <h4 className='SecondLayerTitile'>{Benifits}</h4>
                 <ul>
