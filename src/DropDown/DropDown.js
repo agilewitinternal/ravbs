@@ -48,7 +48,7 @@ const DropDown = () => {
 
                         </div>
                         <div>
-                            <Link to="/Concen" className="LinkRemove" >
+                            <Link to="/Consen" className="LinkRemove" >
                                 <p>{Consen}</p>
                             </Link>
                         </div>

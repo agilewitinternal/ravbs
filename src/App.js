@@ -9,6 +9,7 @@ import Options from './Assets/Options.svg';
 import ChatIcon from './Assets/Chaticon.svg';
 import DropDown from './DropDown/DropDown'
 import Training from './Training/Training'
+import Consen from './Consen/Consen'
 import "./App.css";
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path='/DropDown' element={<DropDown/>}/>
             <Route path='/Training' element={<Training/>}/>
+            <Route path="/Consen" element={<Consen/>}/>
           </Routes>
         </div>
     {Location.pathname!=="/DropDown"&&  Location.pathname !== "/ContactUs"&&<img className="chat-icon" src={ChatIcon} alt="Chat" />}
