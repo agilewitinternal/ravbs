@@ -27,6 +27,7 @@ function App() {
             <Route path="/MobileAppDevelopment" element={<MobileAppDevelopment />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path='/DropDown' element={<DropDown/>}/>
+            <Route path='/Training' element={<Training/>}/>
           </Routes>
         </div>
     {Location.pathname!=="/DropDown"&&  Location.pathname !== "/ContactUs"&&<img className="chat-icon" src={ChatIcon} alt="Chat" />}

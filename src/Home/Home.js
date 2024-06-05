@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../Header/Header';
 import DeskTopHeader from '../DeskTopHeader/DeskTopHeader';
 import AgilewitGrey from '../Assets/Agilewitgrey.svg';
-import Options from "../Assets/Options.svg";
 import AgilewitLogoBlue from '../Assets/AgilewitLogoBlue.svg';
 import ServiceItems from '../ServiceItems/ServiceItems';
 import { ServiceDetails } from '../constant/ServiceDetails';
@@ -11,9 +10,7 @@ import { AboutUsContents } from '../constant/AboutUs';
 import AchievementItem from '../AchievementItem/Achievmentitem';
 import BottomPage from '../BottomPage/BottomPage';
 import Carousels from '../Carousels/Carousels';
-import ChatIcon from '../Assets/Chaticon.svg';
 
-import DropDown from '../DropDown/CloseIcon.png'
 
 import './Home.css';
 

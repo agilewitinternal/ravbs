@@ -34,7 +34,7 @@ const DropDown = () => {
                             </Link>
                         </div>
                         <div>
-                            <Link to="/Counsulting" className="LinkRemove" >
+                            <Link to="/Consulting" className="LinkRemove" >
                                 <p>COUNSULTING</p>
                             </Link>
                             <Link className="LinkRemove" to="/AppDevelopment" >
