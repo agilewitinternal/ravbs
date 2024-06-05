@@ -55,8 +55,8 @@ const DropDown = () => {
 
                     </div>
                     <div className='LetsWorkTogetherContainer'>
-                        <Link to="/Contact" className="LinkRemove">
-                            <p className="LetWorktogether" >{Letsworktogether}</p>
+                        <Link to="/ContactUs" className="LinkRemove">
+                            <p className="LetWorktogethers" >{Letsworktogether}</p>
                         </Link>
                     </div>
                 </div>
