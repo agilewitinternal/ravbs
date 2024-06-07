@@ -32,7 +32,7 @@ function App() {
             <Route path="/Consen" element={<Consen/>}/>
           </Routes>
         </div>
-    {Location.pathname!=="/DropDown"&&  Location.pathname !== "/ContactUs"&&<img className="chat-icon" src={ChatIcon} alt="Chat" />}
+    {Location.pathname!=="/DropDown"&&  Location.pathname !== "/ContactUs"&&<Link to="/ContactUs"><img className="chat-icon" src={ChatIcon} alt="Chat" /> </Link>}
       
     </div>
   );
