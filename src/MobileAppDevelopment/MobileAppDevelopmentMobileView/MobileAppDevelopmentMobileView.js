@@ -10,6 +10,7 @@ import Android from '../../Assets/Android.svg'
 import PowerfulOption from '../../Assets/PowerfulOption.svg'
 import BottomPage from '../../BottomPage/BottomPage'
 import "./MobileAppDevelopmentMobileView.css"
+import { Link } from 'react-router-dom';
 const MobileAppDevelopmentMobileView = () => {
 
     const { WelcomeTitle, Introduction } = AboutUsContents
@@ -45,7 +46,9 @@ const MobileAppDevelopmentMobileView = () => {
                             <h3>{PowerfullOption}</h3>
                             <p>{PowerfullOptionDescription}</p>
                             </div>
+                            <Link to="/ContactUs" className='Links'>
                             <h1 className='CapsLets'>{CapsLets}</h1>
+                            </Link>
                         </div>
                      
                         <BottomPage/>

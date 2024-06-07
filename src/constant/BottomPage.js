@@ -6,10 +6,10 @@ export const BottomPageContent = {
     Explore: "EXPLORE",
     AboutUs: "About Us",
     AppDevelopment: "App Development",
-    Career: "Careers",
+    Careers: "Careers",
     Training: "Training",
-    Openings: "Current Openings",
-    Service: "SERVICES",
+    CurrentOpenings: "Current Openings",
+    Services: "SERVICES",
     Consulting: "Consulting",
     Product: "PRODUCT",
     Consent: "CONSENT",
@@ -22,5 +22,4 @@ export const BottomPageContent = {
     Patrika Nagar, Madhapur Hyderabad, Telangana`,
     CompanyMail: "info@agilewits.com",
     EndTitle: "© Agilewit Solutions Inc"
-
-}
+};

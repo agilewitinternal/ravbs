@@ -37,12 +37,16 @@ const BottomPage = () => {
                         <Link className="Links" to="/MobileAppDevelopment">
                         <p>{AppDevelopment}</p>
                         </Link>
+                        <Link to="/Training" className="Links">
                         <p>{Training}</p>
+                        </Link>
                        
                     </div>
                     <div className='BottomPageServices'>
                         <h3>{Product}</h3>
+                        <Link to="/Consen" className="Links">
                         <p>{Consent}</p>
+                        </Link>
                     </div>
                     <div className='BottomPageServices CONTACT'>
                         <Link to="/ContactUs" className="Links">

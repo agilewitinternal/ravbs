@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom'
 import CloseIcon from './CloseIcon.png'
 import DeskTopHeader from '../DeskTopHeader/DeskTopHeader'
+import {DropDownContent} from '../constant/DropDownContent'
 import "./DropDown.css"
 
 const DropDown = () => {
+    const{Expolre,Service,Product,AboutUS,CurrentOpening,Consulting,AppDevelopment,Training,Consen,Letsworktogether}=DropDownContent
     return (
 
         <div className='HomeTopLayer'>
@@ -17,44 +19,44 @@ const DropDown = () => {
 
                 <div className="DropDownFirstLayer">
                     <div className="DropDownSecondLayer">
-                        <h1>EXPLORE</h1>
-                        <h1>SERVICE</h1>
-                        <h1>PRODUCT</h1>
+                        <h1>{Expolre}</h1>
+                        <h1>{Service}</h1>
+                        <h1>{Product}</h1>
                     </div>
 
                     <div className="DropDownSecondLayer">
                         <div>
 
                             <Link className="LinkRemove" to="/About">
-                                <p>ABOUT US</p>
+                                <p>{AboutUS}</p>
                             </Link>
 
                             <Link to="/Jobs" className="LinkRemove" >
-                                <p>CAREER OPENINGS</p>
+                                <p>{CurrentOpening}</p>
                             </Link>
                         </div>
                         <div>
                             <Link to="/Consulting" className="LinkRemove" >
-                                <p>COUNSULTING</p>
+                                <p>{Consulting}</p>
                             </Link>
                             <Link className="LinkRemove" to="/AppDevelopment" >
-                                <p>APP DEVELOPEMENT</p>
+                                <p>{AppDevelopment}</p>
                             </Link>
                             <Link to="/Training" className="LinkRemove" >
-                                <p>TAINING</p>
+                                <p>{Training}</p>
                             </Link>
 
                         </div>
                         <div>
-                            <Link to="/Concen" className="LinkRemove" >
-                                <p>CONSEN</p>
+                            <Link to="/Consen" className="LinkRemove" >
+                                <p>{Consen}</p>
                             </Link>
                         </div>
 
                     </div>
                     <div className='LetsWorkTogetherContainer'>
-                        <Link to="/Contact" className="LinkRemove">
-                            <p className="LetWorktogether" >LETS WORK TOGETHER +</p>
+                        <Link to="/ContactUs" className="LinkRemove">
+                            <p className="LetWorktogethers" >{Letsworktogether}</p>
                         </Link>
                     </div>
                 </div>

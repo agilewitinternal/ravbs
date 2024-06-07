@@ -3,6 +3,10 @@
     height: 100vh;
     overflow: auto;
     width: 100vw;
+    background: #EBFBFF;
+    display: flex;
+    flex-direction: column;
+
    
 }
 
@@ -12,4 +16,29 @@
 }
 .TrainingTitle{
     text-align: center;
+}
+
+
+
+.BottomTitle{
+    text-align: center;
+    background: #25AAE1;
+    padding: 10px;
+    width: fit-content;
+    color: white;
+
+} 
+
+
+@media screen and (min-width:767px) {
+  
+.BottomTitle{
+    text-align: center;
+    color: black !important;
+    background: #EBFBFF;
+    text-align: center;
+   display: flex;
+   align-self: center;
+
+}
 }

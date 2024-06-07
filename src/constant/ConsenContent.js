@@ -1,0 +1,10 @@
+export const ConsenContent={
+
+    ConcenTitle:"CONSEN",
+    DocumentUpload:"https://s3-alpha-sig.figma.com/img/4aa7/487b/01791e58b9b94cf5aacfbeaba2cb926c?Expires=1718582400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=hWTS0SyTS~d1kV3h7-txdZnVblBWt5~gpER5uBokFgVmbgtjMBL2f-XGcS2buB-9eiVsBSiKQEq2BqIAb0HX5v1gaEVsgyBmJ2fNlWeenYwXjzXb3fZiYO8pNK~Bnb48lTLI9Vcz4w7lUVxw1JgJiA-osSgb7b4d2ql5P-UGpXd29g5l379TcldkljZpcGhhdc1VvhoGBPDvva2rUdVQDCK3sYxtM5NhwRoPyXLT3g0uOKXoQbAFYrpU8Fe15NzswCcBGOs~SWGqPU-dEipENVUsV4FQY5mE-H2SGWHjpcjsgP1glN5hp7FqGS-m6AfxUuY~v6VsEJaFqL6iSOfYxA__",
+    ConcenDescription:"CONSEN is one of the products of the AGILEWIT SOLUTIONS INC. This application reads the coulmn data provided in excel sheet and update the word document with the data provided in the excel sheet. Save the updated word document in the local directory. The updated Word documents are then converted into PDF. This PDF files are sent as a attachment to the email address provided in the excel sheet.",
+    LogInTitle:"LOGIN",
+    LoginArray:["Provide user name, password","Provide the SMTP/POP server name from which domain you are sending (servername: send.one.com and port number: 587(depends on the domain provider))","Make sure to check “Check label” not to repeat the details. If the details repeat close and run the application again"],
+    LogInDocuments:"LOAD DOCUMENTS",
+    LogInDocumentsArray:["Create two empty directories Like WORD_CREATED, PDF_FILES.","Word File: The original word file with editable merge fields in the desired positions How to add merge fields:","->Insert->Explore Quick parts->ields->MergeFields->Add a Field Name","The mergefield name should be same as Column Name in Excel.Press “Submit”","Excel File: The excel with the mergefield data Press “Submit”","Directory Path: Load the path of the Directory (WORD_CREATED, PDF_FILES) where to save the updated Documents Press “Submit”","Sheet Number: Provide the sheet number of the date","Make sure not to repeat the details","EXIT"]
+}
