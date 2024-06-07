@@ -2,6 +2,7 @@ export const Jobs = [
     {
         JobTitle: "Data Scientist",
         JobLocation: "Hyderabad, India",
+        Experiance:"4 Years",
         Description: [
             "Analyze large datasets to derive insights and support decision-making.",
             "Build predictive models and machine learning algorithms.",
@@ -18,6 +19,7 @@ export const Jobs = [
     {
         JobTitle: "Product Manager",
         JobLocation: "Hyderabad, India",
+        Experiance:"5 Years",
         Description: [
             "Lead the product development process from ideation to launch.",
             "Define product vision, strategy, and roadmap.",
@@ -35,6 +37,7 @@ export const Jobs = [
     {
         JobTitle: "UI/UX Designer",
         JobLocation: "Hyderabad, India",
+        Experiance:"4 Years",
         Description: [
             "Design user interfaces and create a seamless user experience.",
             "Conduct user research and usability testing.",
@@ -51,6 +54,7 @@ export const Jobs = [
     {
         JobTitle: "Software Developer",
         JobLocation: "Hyderabad, India",
+        Experiance:"5 Years",
         Description: [
             "Design, develop, and test software applications.",
             "Collaborate with cross-functional teams to deliver high-quality software solutions.",
@@ -67,6 +71,7 @@ export const Jobs = [
     {
         JobTitle: "HR Manager",
         JobLocation: "Hyderabad, India",
+        Experiance:"3 Years",
         Description: [
             "Oversee recruitment and hiring processes.",
             "Develop and implement HR policies and procedures.",
@@ -83,6 +88,7 @@ export const Jobs = [
     {
         JobTitle: "Network Engineer",
         JobLocation: "Hyderabad, India",
+        Experiance:"4 Years",
         Description: [
             "Design, implement, and manage network infrastructure.",
             "Monitor network performance and troubleshoot issues.",
@@ -99,6 +105,7 @@ export const Jobs = [
     {
         JobTitle: "Business Analyst",
         JobLocation: "Hyderabad, India",
+        Experiance:"5 Years",
         Description: [
             "Gather and analyze business requirements from stakeholders.",
             "Translate business requirements into functional specifications.",
@@ -115,6 +122,7 @@ export const Jobs = [
     {
         JobTitle: "Content Writer",
         JobLocation: "Hyderabad, India",
+        Experiance:"3 Years",
         Description: [
             "Create engaging and informative content for various platforms.",
             "Research industry-related topics.",
@@ -131,6 +139,7 @@ export const Jobs = [
     {
         JobTitle: "Quality Assurance Engineer",
         JobLocation: "Hyderabad, India",
+        Experiance:"3 Years",
         Description: [
             "Develop and execute test cases and test plans.",
             "Identify and report software defects.",

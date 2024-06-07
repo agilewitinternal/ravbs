@@ -49,7 +49,7 @@ export const Partners = [
 export const HomePageContent = {
     HomeTitle: "See what  we can do for you",
     HomePageMainingHeading: 'Innovate with Our Tech Experts.',
-    MobileViewCaption: "Technology empowers us to dream beyond boundaries and make those dreams a reality",
+    MobileViewCaption: `"Technology empowers us to dream beyond boundaries and make those dreams a reality"`,
     HomePageTagLine: "Elevate Your Business with Our Technology Consulting and Software Development Expertise",
     LetsWork: "LET WORK TO GOTHER +",
     ShareYourIdea: `You Share your idea We get it done`,
