@@ -1,0 +1,214 @@
+.JobTopLayer {
+    background: #EBFBFF;
+    padding: 40px;
+}
+
+.JobSearchContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.SearchButtons {
+    background: #25AAE1;
+    width: 160px;
+    font-weight: bold;
+}
+
+.Input {
+    background: #EBFBFF;
+    border: 1px solid black;
+    border-radius: 6px;
+    text-align: center;
+    width: 360px;
+    height: 30px;
+    margin: 10px;
+}
+
+.AdvanceSearch {
+    background-color: white;
+    width: 165px;
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+
+}
+
+.JobSecondLayer {
+    background: #25AAE1;
+    padding: 40px;
+}
+
+.JobTypeButton {
+    background: #D2F4F4;
+    padding: 6px;
+    color: #A6A6A6;
+    width: 150px;
+    border-radius: 8px;
+    margin: 10px;
+    font-family: Neue Haas Grotesk Display Pro;
+    font-size: 16px;
+    line-height: 17.68px;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+
+}
+
+.JobsMeetlogo {
+    max-width: 370px;
+}
+
+.JobsThirdLayer {
+    background: #EBFBFF;
+    padding: 40px;
+   
+
+}
+
+.JobsCategory-Container {
+    display: flex;
+}
+
+.JobsCategory-Item {
+    text-decoration: underline;
+   
+    font-size: 15px;
+    
+}
+
+.JobsFourthLayer {
+    background: #25AAE1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+   
+}
+.ViewJobsButton{
+    background: #25AAE1;
+    color: white;
+    border: 1px solid white;
+    width: fit-content;
+    text-align: center;
+}
+.AgilewitJobsLogo{
+    height: 400px;
+   }
+
+   .Volunteen-Info{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+   }
+
+
+
+
+@media screen and (min-width:767px) {
+    .JobTopLayer {
+        background: #EBFBFF;
+        padding: 40px;
+    }
+    
+    .JobSearchContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap:nowrap;
+    }
+    
+    .SearchButtons {
+        background: #25AAE1;
+        width: 200px;
+        font-weight: bold;
+    }
+    
+    .Input {
+        background: #EBFBFF;
+        border: 1px solid black;
+        border-radius: 6px;
+        text-align: center;
+        width: 360px;
+        height: 30px;
+    margin: 0px;
+    }
+    
+    .AdvanceSearch {
+        background-color: white;
+        width: 200px;
+        color: black;
+        border: 2px solid black;
+        font-weight: bold;
+    
+    }
+    
+    .JobSecondLayer {
+        background: #25AAE1;
+        padding: 40px;
+    }
+    
+    .JobTypeButton {
+        background: #D2F4F4;
+        padding: 6px;
+        color: #A6A6A6;
+        width: 230px;
+        border-radius: 8px;
+        margin: 10px;
+        font-family: Neue Haas Grotesk Display Pro;
+        font-size: 14px;
+        line-height: 17.68px;
+        letter-spacing: 0.03em;
+        text-align: center;
+    
+    
+    }
+    
+    .JobsMeetlogo {
+        max-width: 800px;
+    }
+    
+    .JobsThirdLayer {
+        background: #EBFBFF;
+        padding: 40px;
+    
+    }
+    
+    .JobsCategory-Container {
+        display: flex;
+    }
+    
+    .JobsCategory-Item {
+        text-decoration: underline;
+        margin: 10px;
+        padding: 10px;
+    }
+    
+    .JobsFourthLayer {
+        background: #25AAE1;
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        color: white;
+       
+    }
+    .ViewJobsButton{
+        background: #25AAE1;
+        color: white;
+        border: 1px solid white;
+        width: fit-content;
+        text-align: center;
+    }
+    .AgilewitJobsLogo{
+        height: 400px;
+       }
+    
+       .Volunteen-Info{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+       }
+    
+    
+}

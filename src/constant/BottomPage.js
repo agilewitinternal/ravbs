@@ -6,7 +6,7 @@ export const BottomPageContent = {
     Explore: "EXPLORE",
     AboutUs: "About Us",
     AppDevelopment: "App Development",
-    Careers: "Careers",
+    Career: "Careers",
     Training: "Training",
     CurrentOpenings: "Current Openings",
     Services: "SERVICES",
