@@ -24,7 +24,12 @@ const ContactUsforMobile = () => {
         const URL="https://agilewitsolutions-8398e-default-rtdb.firebaseio.com/.json"
         const Data=await axios.post(URL,{FirstName,LastName,Contact,Mail,Message})
         console.log(Data)
-        event.target.reset();
+        SetSuccessMessage("Your Details Sent Successfully")
+        SetFirstName("");
+        SetLastName("");
+        SetContact("");
+        SetMail("");
+        SetMessage("");
       }catch(error){
 console.log(error)
       }

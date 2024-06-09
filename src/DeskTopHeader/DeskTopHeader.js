@@ -12,7 +12,7 @@ const DesktopHeader = () => {
         <div className="DesktopHeaderTopLayer">
             <div>
                 <Link to="/" className="Links">
-                    <img className='LogoAgileWit' src={AgileWitLogoBlue} alt="AgileWit Logo" />
+                    <img className='LogoAgileWit' src={AgileWitLogoBlue} alt="AgileWitLogo" />
                 </Link>
                 <hr className="Hr" />
             </div>
