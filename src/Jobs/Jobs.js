@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Header from '../Header/Header'
 import DeskTopHeader from '../DeskTopHeader/DeskTopHeader'
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders'
@@ -7,6 +8,7 @@ import JobsLogo from '../Assets/Jobs.svg'
 import Agilewitswhite from '../Assets/AgilewitPNG.svg'
 import "./Jobs.css"
 const Jobs = () => {
+    const[advanceFilterStatus,setAdvanceFilterStatus]=useState(false)
     const { SearchJobs, AdvanceSearch, PopulerSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
     return (
         <div className='HomeTopLayer'>
