@@ -34,7 +34,7 @@ const BottomPage = () => {
                     <div className='BottomPageServices'>
                         <h3> {Service}</h3>
                         <Link className="Links" to="/Consulting">
-                            <p>{Consulting}</p>
+                            <h3>{Consulting}</h3>
 
 
                         </Link>

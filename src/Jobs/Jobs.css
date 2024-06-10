@@ -16,6 +16,31 @@
     font-weight: bold;
 }
 
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.JobSecondLayer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #25AAE1;
+    padding: 15px;
+    margin: 20px;
+    color: white;
+    font-family: 'Neue Haas Grotesk Display Pro';
+    animation: slideIn 0.5s ease-out;
+    font-size: 13px
+}
+
 .Input {
     background: #EBFBFF;
     border: 1px solid black;
@@ -35,9 +60,13 @@
 
 }
 
-.JobSecondLayer {
-    background: #25AAE1;
-    padding: 40px;
+
+
+
+.inline-block-container{
+    display: flex;
+    vertical-align: middle;
+    margin: 0; 
 }
 
 .JobTypeButton {
@@ -210,5 +239,27 @@
         align-self: center;
        }
     
+       @keyframes slideIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
     
+    .JobSecondLayer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: #25AAE1;
+        padding: 30px;
+        margin: 10px;
+        color: white;
+        font-size: medium;
+        font-family: 'Neue Haas Grotesk Display Pro';
+        animation: slideIn 0.5s ease-out;
+    }
 }

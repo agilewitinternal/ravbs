@@ -10,7 +10,7 @@ export const BottomPageContent = {
     Training: "Training",
     CurrentOpenings: "Current Openings",
     Services: "SERVICES",
-    Consulting: "Consulting",
+    Consulting: "CONSULTING",
     Product: "PRODUCT",
     Consent: "CONSENT",
     Contact: "CONTACT",

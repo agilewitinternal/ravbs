@@ -20,7 +20,7 @@ const ContactUsforDesktop = () => {
     const SendMail=async(event)=>{
         event.preventDefault()
       try{
-        const URL="https://agilewitsolutions-8398e-default-rtdb.firebaseio.com/.json"
+        const URL="https://agilewitjobs-default-rtdb.firebaseio.com/.json"
         const Data=await axios.post(URL,{FirstName,LastName,Contact,Mail,Message})
         console.log(Data)
         SetSuccessMessage("Your Details Sent Successfully")
