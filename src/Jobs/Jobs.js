@@ -14,6 +14,7 @@ const Jobs = () => {
     const [searchResult,setSearchResult]=useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
+    const [remoteType,setRemoteType]=useState(true)
     const {  AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
     const FetchData = async () => {
 
@@ -24,6 +25,12 @@ const Jobs = () => {
         console.log(arrays.flat())
         setJobArray(arrays.flat())
 
+    }
+
+
+    const UpdateRemoteType=()=>{
+        setRemoteType(!remoteType)
+        
     }
 
     useEffect(() => {
@@ -52,7 +59,7 @@ const Jobs = () => {
                 <div>
                     <h3>Job Type</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' />
+                        <input type='checkBox' className='Checkbox' onChange={UpdateRemoteType} />
                         <p>Remote</p>
                     </div>
                     <div className='inline-block-container'>
@@ -61,14 +68,14 @@ const Jobs = () => {
                     </div>
                 </div>
                 <div>
-                    <h3>Location</h3>
+                    <h3>Package</h3>
                     <div className='inline-block-container'>
                         <input type='checkBox' className='Checkbox' />
-                        <p>INDIA</p>
+                        <p>Less than 5 LPA</p>
                     </div>
                     <div className='inline-block-container'>
                         <input type='checkBox' className='Checkbox' />
-                        <p>USA</p>
+                        <p>More than 5 LPA</p>
                     </div>
                 </div>
 
@@ -90,7 +97,7 @@ const Jobs = () => {
         setJobType(A)
     }
 
-    
+  
     const CountryJobs=country?.toLowerCase() === "calcutta" ?jobArray.filter((each)=>each.Location==="INDIA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType):jobArray.filter((each)=>each.Location==="USA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType)
     return (
         <div className='HomeTopLayer'>
