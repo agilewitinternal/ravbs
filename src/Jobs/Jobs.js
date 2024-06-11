@@ -1,50 +1,73 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '../Header/Header'
-import CloseIcon from '../Assets/CloseIcon.png'
 import DeskTopHeader from '../DeskTopHeader/DeskTopHeader'
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders'
 import { JobContent } from '../constant/JobsFeature'
 import BottomPage from '../BottomPage/BottomPage'
 import Agilewitswhite from '../Assets/AgilewitPNG.svg'
+import axios from 'axios'
+import JobItems from '../JobItems/JobItems'
 import "./Jobs.css"
 const Jobs = () => {
     const [advanceFilterStatus, setAdvanceFilterStatus] = useState(false)
-    const { SearchJobs, AdvanceSearch, PopulerSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
+    const[jobType,setJobType]=useState("Software Engineer")
+    const [searchResult,setSearchResult]=useState("")
+    const [country, setCountry] = useState("")
+    const [jobArray, setJobArray] = useState([])
+    const {  AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
+    const FetchData = async () => {
+
+        const URL = "https://agilewitjobs-default-rtdb.firebaseio.com/.json"
+        const Responce = await axios.get(URL)
+        const arrays = Object.values(Responce.data);
+
+        console.log(arrays.flat())
+        setJobArray(arrays.flat())
+
+    }
+
+    useEffect(() => {
+        FetchData()
+        const location = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        setCountry(location?.split("/")[1])
+
+
+    }, [])
 
     const AdvanceSerach = () => {
         return (
             <div className='JobSecondLayer'>
-                
+
                 <div>
                     <h3>Date Of Posted</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' />
+                        <input type='checkBox' className='Checkbox' />
                         <p>TwoDays Back</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' />
+                        <input type='checkBox' className='Checkbox' />
                         <p>FiveDays Back</p>
                     </div>
                 </div>
                 <div>
                     <h3>Job Type</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' />
+                        <input type='checkBox' className='Checkbox' />
                         <p>Remote</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' />
+                        <input type='checkBox' className='Checkbox' />
                         <p>Onsite</p>
                     </div>
                 </div>
                 <div>
                     <h3>Location</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' />
+                        <input type='checkBox' className='Checkbox' />
                         <p>INDIA</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' />
+                        <input type='checkBox' className='Checkbox' />
                         <p>USA</p>
                     </div>
                 </div>
@@ -58,6 +81,17 @@ const Jobs = () => {
     const UpdateAdvanceStatus = () => {
         setAdvanceFilterStatus(!advanceFilterStatus)
     }
+
+    const UpdateSearchResult=(e)=>{
+        setSearchResult(e.target.value)
+    }
+
+    const UpdateJobType=(A)=>{
+        setJobType(A)
+    }
+
+    
+    const CountryJobs=country?.toLowerCase() === "calcutta" ?jobArray.filter((each)=>each.Location==="INDIA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType):jobArray.filter((each)=>each.Location==="USA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -66,26 +100,30 @@ const Jobs = () => {
                 <ServiceHeaders ServiceHeadersInfo="FIND JOBS " />
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
-                        <input type='search' placeholder='Job Tittle or KeyBoard' className='Input' />
-                        <button className='SearchButtons'>{SearchJobs}</button>
+                        <input type='search' placeholder='Job Tittle or KeyBoard' className='Input' onChange={UpdateSearchResult} />
+                        
+                        <button className='SearchButtons'>{`Search ${CountryJobs.length} jobs`}</button>
                         <button className='AdvanceSearch' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
                     </div>
+
+                    <h3>{`${CountryJobs.length} JOBS FOUND FOR YOU`}</h3>
                     {advanceFilterStatus && AdvanceSerach()}
-                    <h3>{PopulerSearch}</h3>
-                    {JobsTypes.map((each) => <button className='JobTypeButton'>{each}</button>)}
+                    
+                    {JobsTypes.map((each) => <button className={each===jobType?"JobTypeButtons":"JobTypeButton"} onClick={()=>{UpdateJobType(each)}}>{each}</button>)}
+                    <div className='JobsArray'>
+                        {CountryJobs.map((each) => <JobItems JobItemInfo={each} />)}
+                    </div>
+                   
+                
                 </div>
 
                 <div className='JobsThirdLayer'>
                     <h3>{JobsCategory}</h3>
                     <div className='JobsCategory-Container'>
-                        {JobsCategoryArray.map((each) => <p className='JobsCategory-Item'>{each}</p>)}
+                        {JobsCategoryArray.map((each) => <p className='JobsCategory-Item' onClick={()=>{UpdateJobType(each)}}>{each}</p>)}
                     </div>
-                    <div className='JobsCategory-Container'>
-                        {JobsCategoryArray.map((each) => <p className='JobsCategory-Item'>{each}</p>)}
-                    </div>
-                    <div className='JobsCategory-Container'>
-                        {JobsCategoryArray.map((each) => <p className='JobsCategory-Item'>{each}</p>)}
-                    </div>
+
+
                 </div>
                 <div className='JobsFourthLayer'>
                     <img src={Agilewitswhite} alt="CompanyLogo" className='AgilewitJobsLogo' />

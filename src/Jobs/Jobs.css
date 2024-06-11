@@ -17,6 +17,11 @@
 }
 
 
+.JobsArray{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 @keyframes slideIn {
     0% {
         opacity: 0;
@@ -83,6 +88,26 @@
     text-align: center;
 
 
+}
+
+.JobTypeButtons {
+    background: #D2F4F4;
+    padding: 6px;
+    color: black;
+    width: 150px;
+    border-radius: 8px;
+    margin: 10px;
+    font-family: Neue Haas Grotesk Display Pro;
+    font-size: 16px;
+    line-height: 17.68px;
+    letter-spacing: 0.03em;
+    text-align: center;
+
+
+}
+
+.Checkbox{
+    background: #25AAE1;
 }
 
 .JobsMeetlogo {

@@ -4,7 +4,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "4 Years",
         DateOfPosted: "2024-06-10",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"Remote",
         JobCategory:"Software Engineer",
         Description:
@@ -17,7 +17,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "5 Years",
         DateOfPosted: "2024-06-10",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"OnSite",
         JobCategory:"Software Engineer",
         Description:
@@ -31,7 +31,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "4 Years",
         DateOfPosted: "2024-06-07",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"OnSite",
         JobCategory:"Software Engineer",
         Description:
@@ -45,7 +45,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "5 Years",
         DateOfPosted: "2024-06-10",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"OnSite",
         JobCategory:"Software Engineer",
         Description:
@@ -58,7 +58,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "3 Years",
         DateOfPosted: "2024-06-05",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"OnSite",
         JobCategory:"Software Engineer",
         Description:
@@ -72,7 +72,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "4 Years",
         DateOfPosted: "2024-06-05",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"OnSite",
         JobCategory:"Software Engineer",
         Description:
@@ -85,7 +85,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "5 Years",
         DateOfPosted: "2024-06-03",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"OnSite",
         JobCategory:"Software Engineer",
         Description: "Gather and analyze business requirements from stakeholders.Translate business requirements into functional specifications.Work with development teams to ensure the successful implementation of requirements.Create and maintain documentation related to business processes and requirements.Conduct data analysis to identify trends and insights.Collaborate with project managers to define project scope and objectives.Assist in the development of project plans and timelines.Provide support and guidance to end-users during project implementation.",
@@ -97,7 +97,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "3 Years",
         DateOfPosted: "2024-06-01",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"OnSite",
         JobCategory:"information technology",
         Description:
@@ -111,7 +111,7 @@ export const Jobs = [
         JobLocation: "Hyderabad, India",
         Experiance: "3 Years",
         DateOfPosted: "2024-06-01",
-        Location: "INDIA",
+        Location: "USA",
         JobType:"OnSite",
         JobCategory:"manufacturing & production",    
         Description:

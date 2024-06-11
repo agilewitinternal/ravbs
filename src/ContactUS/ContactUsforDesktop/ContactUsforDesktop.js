@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import DeskTopHeader from '../../DeskTopHeader/DeskTopHeader'
 import ServiceHeaders from '../../ServiceHeaders/ServiceHeaders'
 import axios from 'axios';
+import {Jobs} from "../../constant/Jobs"
 import BottomPage from '../../BottomPage/BottomPage'
 import "./ContactUsforDesktop.css"
 const ContactUsforDesktop = () => {
@@ -21,7 +22,7 @@ const ContactUsforDesktop = () => {
         event.preventDefault()
       try{
         const URL="https://agilewitjobs-default-rtdb.firebaseio.com/.json"
-        const Data=await axios.post(URL,{FirstName,LastName,Contact,Mail,Message})
+        const Data=await axios.post(URL,Jobs)
         console.log(Data)
         SetSuccessMessage("Your Details Sent Successfully")
         SetFirstName("");
