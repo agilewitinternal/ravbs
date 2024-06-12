@@ -1,0 +1,14 @@
+.ApplicationTopLayer {
+    background: #EBFBFF;
+
+}
+
+.file-input {
+    color: white;
+    background-color: #4c9eaf;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    content: 'Select a file';
+}

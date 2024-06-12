@@ -11,6 +11,7 @@ import DropDown from './DropDown/DropDown'
 import Training from './Training/Training'
 import Consen from './Consen/Consen'
 import Jobs from './Jobs/Jobs'
+import Apply from './Apply/Apply'
 import "./App.css";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
             <Route path='/Training' element={<Training/>}/>
             <Route path="/Consen" element={<Consen/>}/>
             <Route path='/Jobs' element={<Jobs/>}/>
+            <Route path='/Apply' element={<Apply/>}/>
           </Routes>
         </div>
     {Location.pathname!=="/DropDown"&&  Location.pathname !== "/ContactUs"&&<Link to="/ContactUs"><img className="chat-icon" src={ChatIcon} alt="Chat" /> </Link>}

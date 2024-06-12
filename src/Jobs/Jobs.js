@@ -14,11 +14,11 @@ const Jobs = () => {
     const [searchResult,setSearchResult]=useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-   const [anuelPackage,setPackage]=useState(9)
     const[jobMode,setJobMode]=useState("OnSite")
+    const[packageFilter,setPackageFilter]=useState("<=")
     const {  AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
     const FetchData = async () => {
-
+     
         const URL = "https://agilewitjobs-default-rtdb.firebaseio.com/.json"
         const Responce = await axios.get(URL)
         const arrays = Object.values(Responce.data);
@@ -27,6 +27,20 @@ const Jobs = () => {
         setJobArray(arrays.flat())
 
     }
+
+   
+const UpdateLessThanTen=(event)=>{
+    if(event.target.checked){
+        setPackageFilter("<=")
+    }
+}
+
+const UpdateMorethanTen=(event)=>{
+    if(event.target.value){
+        setPackageFilter(">=")
+    }
+}
+    
 
     const UpdateJobMode=(event)=>{
       
@@ -86,12 +100,12 @@ const Jobs = () => {
                 <div>
                     <h3>Package</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' />
-                        <p>Less than 5 LPA</p>
+                        <input type='checkBox' className='Checkbox' checked={packageFilter==="<="} onChange={UpdateLessThanTen} />
+                        <p>Less than 10 LPA</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' />
-                        <p>More than 5 LPA</p>
+                        <input type='checkBox' className='Checkbox' checked={packageFilter===">="} onChange={UpdateMorethanTen}  />
+                        <p>More than 10 LPA</p>
                     </div>
                 </div>
 
@@ -114,7 +128,7 @@ const Jobs = () => {
     }
 
   
-    const CountryJobs=country?.toLowerCase() === "calcutta" ?jobArray.filter((each)=>each.Location==="INDIA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType&&each.JobType===jobMode&&each.Package.slice(0,2)<=anuelPackage):jobArray.filter((each)=>each.Location==="USA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType&&each.JobType===jobMode)
+    const CountryJobs=country?.toLowerCase() === "calcutta" ?jobArray.filter((each)=>each.Location==="INDIA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType&&each.JobType===jobMode&&((packageFilter === ">=" && parseFloat(each.Package) >= 10) || (packageFilter === "<=" && parseFloat(each.Package) <= 10))):jobArray.filter((each)=>each.Location==="USA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType&&each.JobType===jobMode)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -123,7 +137,7 @@ const Jobs = () => {
                 <ServiceHeaders ServiceHeadersInfo="FIND JOBS " />
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
-                    
+                
                         <input type='search' placeholder='Job Tittle or KeyBoard' className='Input' onChange={UpdateSearchResult} />
                         
                         <button className='SearchButtons'>{`Search ${CountryJobs.length} jobs`}</button>

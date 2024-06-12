@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { GoChevronDown ,GoChevronUp} from "react-icons/go";
+import {Link} from 'react-router-dom'
 import "./JobItems.css";
 
 const JobItems = (props) => {
     const[viewStatus,setViewStatus]=useState(false)
     const { JobItemInfo } = props;
-    const { JobTitle, JobLocation, Experiance, DateOfPosted, Location, JobType, JobCategory, Description, Package } = JobItemInfo;
+    const { JobTitle, JobLocation, Experiance, DateOfPosted,  JobType, Description, Package } = JobItemInfo;
     const descriptionParts = Description.split('.', 2);
 
     const UpdateViewStaus=()=>{
@@ -32,8 +33,9 @@ const JobItems = (props) => {
                
                 
                <p className="Description">{Description.split('.', 4)}</p>
-                
+                <Link to="/Apply">
                 <button className="ApplyButton">Apply</button>
+                </Link>
             </div>}
 
         </div>
