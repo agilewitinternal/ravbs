@@ -14,7 +14,8 @@ const Jobs = () => {
     const [searchResult,setSearchResult]=useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [remoteType,setRemoteType]=useState(true)
+   const [anuelPackage,setPackage]=useState(9)
+    const[jobMode,setJobMode]=useState("OnSite")
     const {  AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
     const FetchData = async () => {
 
@@ -27,11 +28,26 @@ const Jobs = () => {
 
     }
 
-
-    const UpdateRemoteType=()=>{
-        setRemoteType(!remoteType)
-        
+    const UpdateJobMode=(event)=>{
+      
+        if (event.target.checked) {
+            setJobMode("Remote");
+        } else {
+            setJobMode(''); 
+        }
     }
+
+    const UpdatetoOnset=(event)=>{
+      
+        if (event.target.checked) {
+            setJobMode("OnSite");
+        } else {
+            setJobMode(''); 
+        }
+    }
+
+
+
 
     useEffect(() => {
         FetchData()
@@ -59,11 +75,11 @@ const Jobs = () => {
                 <div>
                     <h3>Job Type</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' onChange={UpdateRemoteType} />
+                        <input type='checkBox' className='Checkbox' checked={jobMode==="Remote"}  onChange={UpdateJobMode}  />
                         <p>Remote</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' />
+                        <input type='checkBox' className='Checkbox' checked={jobMode==="OnSite"} onChange={UpdatetoOnset} />
                         <p>Onsite</p>
                     </div>
                 </div>
@@ -98,7 +114,7 @@ const Jobs = () => {
     }
 
   
-    const CountryJobs=country?.toLowerCase() === "calcutta" ?jobArray.filter((each)=>each.Location==="INDIA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType):jobArray.filter((each)=>each.Location==="USA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType)
+    const CountryJobs=country?.toLowerCase() === "calcutta" ?jobArray.filter((each)=>each.Location==="INDIA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType&&each.JobType===jobMode&&each.Package.slice(0,2)<=anuelPackage):jobArray.filter((each)=>each.Location==="USA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType&&each.JobType===jobMode)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -107,6 +123,7 @@ const Jobs = () => {
                 <ServiceHeaders ServiceHeadersInfo="FIND JOBS " />
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
+                    
                         <input type='search' placeholder='Job Tittle or KeyBoard' className='Input' onChange={UpdateSearchResult} />
                         
                         <button className='SearchButtons'>{`Search ${CountryJobs.length} jobs`}</button>
@@ -118,7 +135,7 @@ const Jobs = () => {
                     
                     {JobsTypes.map((each) => <button className={each===jobType?"JobTypeButtons":"JobTypeButton"} onClick={()=>{UpdateJobType(each)}}>{each}</button>)}
                     <div className='JobsArray'>
-                        {CountryJobs.map((each) => <JobItems JobItemInfo={each} />)}
+                        {CountryJobs.map((each,index) => <JobItems key={index}  JobItemInfo={each} />)}
                     </div>
                    
                 

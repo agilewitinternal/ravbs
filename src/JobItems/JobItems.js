@@ -14,7 +14,7 @@ const JobItems = (props) => {
 
     return (
         <div className="JobItemTopLayer">
-            <div >
+            <div className="JobItemFirst-Container">
                
             <h3>{JobTitle}</h3>
             <p>{descriptionParts[0]}</p>
@@ -22,14 +22,18 @@ const JobItems = (props) => {
             {viewStatus?     <GoChevronUp onClick={UpdateViewStaus} className="ArrowIcon"/>:<GoChevronDown onClick={UpdateViewStaus} className="ArrowIcon" />}
           </div>
             {viewStatus&& <div className="JobItemSecondLayer">
-                <h3>{JobLocation}</h3>
-                <h3>{Experiance}</h3>
-                <h3>{DateOfPosted}</h3>
-                <h3>{Location}</h3>
-                <h3>{JobType}</h3>
-                <h3>{JobCategory}</h3>
-               <p>{Description}</p>
-                <h3>{Package}</h3>
+                
+                <h4>{`Experiance: ${Experiance}`}</h4>
+                <h4>{`Package: ${Package}`}</h4>
+                <h4>{`Location:${JobLocation}`}</h4>
+                <h4>{`Posted On: ${DateOfPosted}`}</h4>
+                
+                <h4>{JobType}</h4>
+               
+                
+               <p className="Description">{Description.split('.', 4)}</p>
+                
+                <button className="ApplyButton">Apply</button>
             </div>}
 
         </div>
