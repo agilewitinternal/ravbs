@@ -31,7 +31,7 @@ const Apply = () => {
             setResume(event.target.result);
           };
           reader.readAsDataURL(file);
-        }
+       }
     
     }
 
@@ -92,7 +92,7 @@ const Apply = () => {
                             <option>2 Month</option>
                             <option>3 Month</option>
                         </select>
-                       
+                       <p className='Upload'>Upload Resume</p>
                         <input type='file' className='file-input' onChange={UpdateResume} />
                         <button style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === "") ? 0.2 : 1 }} type="submit">Send Application</button>
                         <p className="SuccessMessage">{SuccessMessage}</p>
