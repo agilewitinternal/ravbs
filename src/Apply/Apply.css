@@ -1,14 +1,30 @@
 .ApplicationTopLayer {
     background: #EBFBFF;
+    
 
 }
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+}
+
+
 
 .file-input {
-    color: white;
-    background-color: #4c9eaf;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    content: 'Select a file';
+   margin: 10px;
+   padding: 10px;
+    height: 40px;
+  text-align: center;
+  background-color: lightblue;
+  border: 1px solid black;
+  border-radius: 7px;
+  color: black;
+    
 }
+
