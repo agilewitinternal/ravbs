@@ -5,10 +5,11 @@ import ServiceHeaders from '../ServiceHeaders/ServiceHeaders'
 import BottomPage from '../BottomPage/BottomPage'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
+import {ApplyConstant} from '../constant/Apply'
 import "./Apply.css"
 const Apply = () => {
     const navigate = useNavigate();
-   
+   const {FillApplication,Experiance,Fresher,TwoYears,FourYears,SixYears,EightYears,UploadResume,NoticePeriod,ImmediateJointer,OneMonth,TwoMonth,ThreeMonth}=ApplyConstant
     const [applicantFirstName, setApplicantFirstName] = useState("")
     const [applicantLastName, setApplicantLastName] = useState("")
     const [applicantContact, setApplicantContact] = useState("")
@@ -50,7 +51,7 @@ const Apply = () => {
             setApplicantContact("");
             setApplicantMail("");
             setResume("");
-            navigate("/");
+            navigate("/Jobs");
         } catch (error) {
             console.error('Error uploading details:', error);
 
@@ -66,7 +67,7 @@ const Apply = () => {
                 <ServiceHeaders ServiceHeadersInfo="Application" />
                 <div className='ApplicationTopLayer'>
                     <form className="Form" onSubmit={UploadDetails}>
-                        <h3>Fill Application</h3>
+                        <h3>{FillApplication}</h3>
                         <div >
                             <input type="text" value={applicantFirstName} placeholder="First Name" pattern="[A-Za-z]+" name="name" className="FirstName" onChange={(e) => { setApplicantFirstName(e.target.value) }} />
 
@@ -77,22 +78,22 @@ const Apply = () => {
 
                         <input type="text" value={applicantMail} placeholder="E-mail" pattern=".*@.*" className="Email" name="from_name" onChange={(e) => { setApplicantMail(e.target.value) }} />
                         <select className="Email" onChange={(e)=>setExperiance(e.target.value)}>
-                            <option selected>Experiance</option>
-                            <option value=" Fresher">Fresher</option>
-                            <option value=" 0-2 Years">0-2 Years</option>
-                            <option value="2-4Years">2-4Years</option>
-                            <option value="4-6Years">4-6Years</option>
-                            <option value="6-8Years">6-8Years</option>
+                            <option selected>{Experiance}</option>
+                            <option value=" Fresher">{Fresher}</option>
+                            <option value=" 0-2 Years">{TwoYears}</option>
+                            <option value="2-4Years">{FourYears}</option>
+                            <option value="4-6Years">{SixYears}</option>
+                            <option value="6-8Years">{EightYears}</option>
                         </select>
 
                         <select className="Email" onChange={(e)=>{setNoticePeriod(e.target.value)}}>
-                            <option>Notice Period</option>
-                            <option>Immediate Jointer</option>
-                            <option>1 Month</option>
-                            <option>2 Month</option>
-                            <option>3 Month</option>
+                            <option>{NoticePeriod}</option>
+                            <option value="Immediate Jointer">{ImmediateJointer}</option>
+                            <option value="1 Month">{OneMonth}</option>
+                            <option value="2 Month">{TwoMonth}</option>
+                            <option value="3 Month">{ThreeMonth}</option>
                         </select>
-                       <p className='Upload'>Upload Resume</p>
+                       <p className='Upload'>{UploadResume}</p>
                         <input type='file' className='file-input' onChange={UpdateResume} />
                         <button style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === "") ? 0.2 : 1 }} type="submit">Send Application</button>
                         <p className="SuccessMessage">{SuccessMessage}</p>
