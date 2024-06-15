@@ -10,15 +10,15 @@ import JobItems from '../JobItems/JobItems'
 import "./Jobs.css"
 const Jobs = () => {
     const [advanceFilterStatus, setAdvanceFilterStatus] = useState(false)
-    const[jobType,setJobType]=useState("Software Engineer")
-    const [searchResult,setSearchResult]=useState("")
+    const [jobType, setJobType] = useState("Software Engineer")
+    const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const[jobMode,setJobMode]=useState("OnSite")
-    const[packageFilter,setPackageFilter]=useState("<=")
-    const {  AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
+    const [jobMode, setJobMode] = useState("OnSite")
+    const [packageFilter, setPackageFilter] = useState("<=")
+    const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
     const FetchData = async () => {
-     
+
         const URL = "https://agilewitjobs-default-rtdb.firebaseio.com/.json"
         const Responce = await axios.get(URL)
         const arrays = Object.values(Responce.data);
@@ -28,35 +28,36 @@ const Jobs = () => {
 
     }
 
-   
-const UpdateLessThanTen=(event)=>{
-    if(event.target.checked){
-        setPackageFilter("<=")
-    }
-}
 
-const UpdateMorethanTen=(event)=>{
-    if(event.target.value){
-        setPackageFilter(">=")
-    }
-}
-    
 
-    const UpdateJobMode=(event)=>{
-      
+    const UpdateLessThanTen = (event) => {
         if (event.target.checked) {
-            setJobMode("Remote");
-        } else {
-            setJobMode(''); 
+            setPackageFilter("<=")
         }
     }
 
-    const UpdatetoOnset=(event)=>{
-      
+    const UpdateMorethanTen = (event) => {
+        if (event.target.value) {
+            setPackageFilter(">=")
+        }
+    }
+
+
+    const UpdateJobMode = (event) => {
+
+        if (event.target.checked) {
+            setJobMode("Remote");
+        } else {
+            setJobMode('');
+        }
+    }
+
+    const UpdatetoOnset = (event) => {
+
         if (event.target.checked) {
             setJobMode("OnSite");
         } else {
-            setJobMode(''); 
+            setJobMode('');
         }
     }
 
@@ -89,22 +90,22 @@ const UpdateMorethanTen=(event)=>{
                 <div>
                     <h3>Job Type</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' checked={jobMode==="Remote"}  onChange={UpdateJobMode}  />
+                        <input type='checkBox' className='Checkbox' checked={jobMode === "Remote"} onChange={UpdateJobMode} />
                         <p>Remote</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' checked={jobMode==="OnSite"} onChange={UpdatetoOnset} />
+                        <input type='checkBox' className='Checkbox' checked={jobMode === "OnSite"} onChange={UpdatetoOnset} />
                         <p>Onsite</p>
                     </div>
                 </div>
                 <div>
                     <h3>Package</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' checked={packageFilter==="<="} onChange={UpdateLessThanTen} />
+                        <input type='checkBox' className='Checkbox' checked={packageFilter === "<="} onChange={UpdateLessThanTen} />
                         <p>Less than 10 LPA</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' checked={packageFilter===">="} onChange={UpdateMorethanTen}  />
+                        <input type='checkBox' className='Checkbox' checked={packageFilter === ">="} onChange={UpdateMorethanTen} />
                         <p>More than 10 LPA</p>
                     </div>
                 </div>
@@ -119,16 +120,16 @@ const UpdateMorethanTen=(event)=>{
         setAdvanceFilterStatus(!advanceFilterStatus)
     }
 
-    const UpdateSearchResult=(e)=>{
+    const UpdateSearchResult = (e) => {
         setSearchResult(e.target.value)
     }
 
-    const UpdateJobType=(A)=>{
+    const UpdateJobType = (A) => {
         setJobType(A)
     }
 
-  
-    const CountryJobs=country?.toLowerCase() === "calcutta" ?jobArray.filter((each)=>each.Location==="INDIA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType&&each.JobType===jobMode&&((packageFilter === ">=" && parseFloat(each.Package) >= 10) || (packageFilter === "<=" && parseFloat(each.Package) <= 10))):jobArray.filter((each)=>each.Location==="USA"&&each.JobTitle.includes(searchResult)&&each.JobCategory===jobType&&each.JobType===jobMode)
+
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode && ((packageFilter === ">=" && parseFloat(each.Package) >= 10) || (packageFilter === "<=" && parseFloat(each.Package) <= 10))) : jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -137,28 +138,28 @@ const UpdateMorethanTen=(event)=>{
                 <ServiceHeaders ServiceHeadersInfo="FIND JOBS " />
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
-                
+
                         <input type='search' placeholder='Job Tittle or KeyBoard' className='Input' onChange={UpdateSearchResult} />
-                        
-                        <button className='SearchButtons'>{`Search ${CountryJobs.length} jobs`}</button>
+
+                        <button className='SearchButtons'>{`${CountryJobs.length} jobs`}</button>
                         <button className='AdvanceSearch' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
                     </div>
 
                     <h3>{`${CountryJobs.length} JOBS FOUND FOR YOU`}</h3>
                     {advanceFilterStatus && AdvanceSerach()}
-                    
-                    {JobsTypes.map((each) => <button className={each===jobType?"JobTypeButtons":"JobTypeButton"} onClick={()=>{UpdateJobType(each)}}>{each}</button>)}
+
+                    {JobsTypes.map((each) => <button className={each === jobType ? "JobTypeButtons" : "JobTypeButton"} onClick={() => { UpdateJobType(each) }}>{each}</button>)}
                     <div className='JobsArray'>
-                        {CountryJobs.map((each,index) => <JobItems key={index}  JobItemInfo={each} />)}
+                        {CountryJobs.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
                     </div>
-                   
-                
+
+
                 </div>
 
                 <div className='JobsThirdLayer'>
                     <h3>{JobsCategory}</h3>
                     <div className='JobsCategory-Container'>
-                        {JobsCategoryArray.map((each) => <p className='JobsCategory-Item' onClick={()=>{UpdateJobType(each)}}>{each}</p>)}
+                        {JobsCategoryArray.map((each) => <p className='JobsCategory-Item' onClick={() => { UpdateJobType(each) }}>{each}</p>)}
                     </div>
 
 

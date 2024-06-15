@@ -14,11 +14,11 @@ export const BottomPageContent = {
     Product: "PRODUCT",
     Consent: "CONSENT",
     Contact: "CONTACT",
-    CompanyUSAAddress: `AGILEWIT SOLUTIONS INC
+    CompanyUSAAddress: `USA:
                         405 State Hwy 121 Bypass Suite A250,
                         Lewisville, TX 75067
                         Phone Number: (516) 888-0089`,
-    CompanyIndiaAddress: `H.No.1-90/7/53/P, Second Floor Blossom Heights, Plot No. 53 
+    CompanyIndiaAddress: ` India: H.No.1-90/7/53/P, Second Floor Blossom Heights, Plot No. 53 
     Patrika Nagar, Madhapur Hyderabad, Telangana`,
     CompanyMail: "info@agilewits.com",
     EndTitle: "© Agilewit Solutions Inc"

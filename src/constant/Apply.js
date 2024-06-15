@@ -12,6 +12,8 @@ export const ApplyConstant={
     OneMonth:"1 Month",
     TwoMonth:"2 Month",
     ThreeMonth:"3 Month",
+    BackToJobs:"Cancel",
+    ContactWarning:"Please enter exactly 10 digits."
 
 
 }

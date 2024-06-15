@@ -6,10 +6,11 @@ import BottomPage from '../BottomPage/BottomPage'
 import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 import {ApplyConstant} from '../constant/Apply'
+import { Link } from 'react-router-dom'
 import "./Apply.css"
 const Apply = () => {
     const navigate = useNavigate();
-   const {FillApplication,Experiance,Fresher,TwoYears,FourYears,SixYears,EightYears,UploadResume,NoticePeriod,ImmediateJointer,OneMonth,TwoMonth,ThreeMonth}=ApplyConstant
+   const {FillApplication,Experiance,Fresher,TwoYears,UploadResume,FourYears,SixYears,EightYears,BackToJobs,NoticePeriod,ImmediateJointer,OneMonth,TwoMonth,ThreeMonth}=ApplyConstant
     const [applicantFirstName, setApplicantFirstName] = useState("")
     const [applicantLastName, setApplicantLastName] = useState("")
     const [applicantContact, setApplicantContact] = useState("")
@@ -66,7 +67,7 @@ const Apply = () => {
             <div className='SubHomeSecondLayer'>
                 <ServiceHeaders ServiceHeadersInfo="Application" />
                 <div className='ApplicationTopLayer'>
-                    <form className="Form" onSubmit={UploadDetails}>
+                    <form className="Form Applys" onSubmit={UploadDetails}>
                         <h3>{FillApplication}</h3>
                         <div >
                             <input type="text" value={applicantFirstName} placeholder="First Name" pattern="[A-Za-z]+" name="name" className="FirstName" onChange={(e) => { setApplicantFirstName(e.target.value) }} />
@@ -93,10 +94,12 @@ const Apply = () => {
                             <option value="2 Month">{TwoMonth}</option>
                             <option value="3 Month">{ThreeMonth}</option>
                         </select>
-                       <p className='Upload'>{UploadResume}</p>
+                      <p className='Upload'>{UploadResume}</p>
                         <input type='file' className='file-input' onChange={UpdateResume} />
+                        
                         <button style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === "") ? 0.2 : 1 }} type="submit">Send Application</button>
                         <p className="SuccessMessage">{SuccessMessage}</p>
+                        <button className='BacktoJobs'>{BackToJobs}</button>
                     </form>
                 </div>
                 <BottomPage />
