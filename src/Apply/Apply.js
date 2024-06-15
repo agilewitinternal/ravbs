@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 import "./Apply.css"
 const Apply = () => {
     const navigate = useNavigate();
-   const {FillApplication,Experiance,Fresher,TwoYears,UploadResume,FourYears,SixYears,EightYears,BackToJobs,NoticePeriod,ImmediateJointer,OneMonth,TwoMonth,ThreeMonth}=ApplyConstant
+   const {FillApplication,Experiance,Fresher,TwoYears,ContactWarning,UploadResume,FourYears,SixYears,EightYears,BackToJobs,NoticePeriod,ImmediateJointer,OneMonth,TwoMonth,ThreeMonth}=ApplyConstant
     const [applicantFirstName, setApplicantFirstName] = useState("")
     const [applicantLastName, setApplicantLastName] = useState("")
     const [applicantContact, setApplicantContact] = useState("")
@@ -74,8 +74,22 @@ const Apply = () => {
 
                             <input type="text" value={applicantLastName} placeholder="Last Name" pattern="[A-Za-z]+" name="name" className="FirstName" onChange={(e) => { setApplicantLastName(e.target.value) }} />
                         </div>
-
-                        <input type="text" value={applicantContact} placeholder="Contact Details" className="Email" name="number" pattern="[0-9]*" onChange={(e) => { setApplicantContact(e.target.value) }} />
+                        <div>
+            <input
+                type="text"
+                value={applicantContact}
+                placeholder="Contact Details"
+                className="Email"
+                name="number"
+                inputMode="numeric"
+                pattern="d{10}"
+                maxLength="10"
+                onChange={(e) => setApplicantContact(e.target.value)}
+            />
+            <span className="error-message" style={{ display: !/^\{10}$/.test(applicantContact) && applicantContact.length === 10 ? 'block' : 'none' }}>
+            {ContactWarning}
+            </span>
+        </div>
 
                         <input type="text" value={applicantMail} placeholder="E-mail" pattern=".*@.*" className="Email" name="from_name" onChange={(e) => { setApplicantMail(e.target.value) }} />
                         <select className="Email" onChange={(e)=>setExperiance(e.target.value)}>
@@ -99,7 +113,9 @@ const Apply = () => {
                         
                         <button style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === "") ? 0.2 : 1 }} type="submit">Send Application</button>
                         <p className="SuccessMessage">{SuccessMessage}</p>
+                        <Link to="/Jobs">
                         <button className='BacktoJobs'>{BackToJobs}</button>
+                        </Link>
                     </form>
                 </div>
                 <BottomPage />
