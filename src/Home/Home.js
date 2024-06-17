@@ -33,7 +33,7 @@ const Home = () => {
                 </div>
                 <div className='HomePageDescription'>
                     <div className='CompanyIdeology'>
-                        <h3>{ShareYourIdea}</h3>
+                        <h3 className='ShareYourIdeaTitle'>{ShareYourIdea}</h3>
                         <p className='IdeaDescription'>{IdeaDescription}</p>
                     </div>
                     <div className="logo-container">

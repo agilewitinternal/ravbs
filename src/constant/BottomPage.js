@@ -1,7 +1,24 @@
 import FacebookIcon from '../Assets/FaceBookIcon.svg'
 import LinkedInIcon from '../Assets/LinkedInIcon.svg';
 import TwitterIcon from '../Assets/TwitterIcon.svg';
-export const SocialMediaIconsArray=[FacebookIcon,LinkedInIcon,TwitterIcon]
+export const SocialMediaIconsArray=[
+
+
+    {SocialMediaIcon:FacebookIcon,
+        SocialMediLink:"https://www.facebook.com/profile.php?id=61557301585575"
+
+    },
+    {
+        SocialMediaIcon:TwitterIcon,
+        SocialMediLink:"https://x.com/agilewitsol"   
+    },
+{
+    SocialMediaIcon:LinkedInIcon,
+    SocialMediLink:""
+}
+    
+
+]
 export const BottomPageContent = {
     Explore: "EXPLORE",
     AboutUs: "About Us",

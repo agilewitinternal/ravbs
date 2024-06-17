@@ -12,10 +12,15 @@ const BottomPage = () => {
                 <div className='BottomPageFirstLayer'>
                     <img className='AgilewitBottomPageLogo' src={AgilewitsWhite} alt="Agilewit Logo" />
                     <div className='SocialMediaIcons'>
-                        {SocialMediaIconsArray.map((each) => <img src={each} alt='SocialMediaAppIcon' />)}
-
-
-                    </div>
+    {SocialMediaIconsArray.map((each, index) => 
+        
+            <Link key={index} href={each.SocialMediLink} target='_blank'>
+                <img src={each.SocialMediaIcon} alt='SocialMediaAppIcon' />
+            </Link>
+        
+    )}
+</div>
+                    
                 </div>
                 <div className='ServiceRow'>
                     <div className='BottomPageServices'>

@@ -14,6 +14,11 @@
     width: 300px;
 }
 
+.ClientAssistance{
+    width: 160px;
+    flex-wrap: wrap;
+    
+}
 .HomeIntroduction {
     display: flex;
     flex-direction: column;
@@ -129,9 +134,7 @@
 
 
 
-.ClientAssistance {
-    width: 140px;
-}
+
 
 .Services {
     display: flex;
@@ -172,9 +175,10 @@
     display: none;
 }
 
-.IdeaDescription {
+.ShareYourIdeaTitle {
 
-    text-align: justify;
+ width: 200px;
+ flex-wrap: wrap;
 }
 
 @media screen and (min-width: 767px) {
@@ -193,7 +197,9 @@
         padding: 40px;
         height: fit-content;
     }
-
+.ShareYourIdeaTitle{
+    width: 400px;
+}
     .AgilewitGreyLogo {
         height: 100px;
     }
