@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
 import AgileWitLogoBlue from '../Assets/AgilewitLogo.svg';
-import FacebookIcon from '../Assets/FaceBookIcon.svg';
-import LinkedInIcon from '../Assets/LinkedInIcon.svg';
-import TwitterIcon from '../Assets/TwitterIcon.svg';
 import {DeskTopHeaderContent} from '../constant/DeskTopHeader'
+import { SocialMediaIconsArray } from '../constant/BottomPage'
 import './DeskTopHeader.css';
 
 const DesktopHeader = () => {
@@ -19,10 +17,14 @@ const DesktopHeader = () => {
             <p className='DesktopIntro'>{CompanyCaption}</p>
             <p className='ContactInfo'>{ContactInfo}</p>
             <div className='SocialMediaIcons'>
-                <img src={FacebookIcon} alt='Facebook Icon'/>
-                <img src={TwitterIcon} alt="Twitter Icon"/>
-                <img src={LinkedInIcon} alt='LinkedIn Icon'/>
-            </div>
+    {SocialMediaIconsArray.map((each, index) => 
+        
+            <a key={index} href={each.SocialMediLink} target='_blank' rel='noopener noreferrer'>
+                <img src={each.SocialMediaIcon} alt='SocialMediaAppIcon' style={{height:"20px"}} />
+            </a>
+        
+    )}
+</div>
         </div>
     );
 }

@@ -1,5 +1,5 @@
 import FacebookIcon from '../Assets/FaceBookIcon.svg'
-import LinkedInIcon from '../Assets/LinkedInIcon.svg';
+import LinkedInIcon from '../Assets/LinkedInIcon.png';
 import TwitterIcon from '../Assets/TwitterIcon.svg';
 export const SocialMediaIconsArray=[
 
@@ -14,7 +14,7 @@ export const SocialMediaIconsArray=[
     },
 {
     SocialMediaIcon:LinkedInIcon,
-    SocialMediLink:""
+    SocialMediLink:"https://www.instagram.com/agile_wits/"
 }
     
 

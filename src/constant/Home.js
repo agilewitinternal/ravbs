@@ -51,7 +51,7 @@ export const HomePageContent = {
     HomePageMainingHeading: 'Innovate with Our Tech Experts.',
     MobileViewCaption: `"Technology empowers us to dream beyond boundaries and make those dreams a reality"`,
     HomePageTagLine: "Elevate Your Business with Our Technology Consulting and Software Development Expertise",
-    LetsWork: "LET WORK TO GOTHER +",
+    LetsWork: "LET WORK TOGOTHER +",
     ShareYourIdea: `You Share your idea We get it done`,
     IdeaDescription: `Agilewit Solutions is incorporated as a Technology Consulting services and Software product development firm. Headquartered in Texas and Offshore development centers in India, we are involved in creating strategy, implementing, deploying, and supporting a wide range of
     solutions for clients worldwide.`

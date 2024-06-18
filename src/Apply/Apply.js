@@ -52,6 +52,7 @@ const Apply = () => {
             setApplicantContact("");
             setApplicantMail("");
             setResume("");
+            alert("Your Application Sent Successfullly")
             navigate("/Jobs");
         } catch (error) {
             console.error('Error uploading details:', error);
@@ -82,7 +83,7 @@ const Apply = () => {
                 className="Email"
                 name="number"
                 inputMode="numeric"
-                pattern="d{10}"
+                pattern="{10}"
                 maxLength="10"
                 onChange={(e) => setApplicantContact(e.target.value)}
             />
