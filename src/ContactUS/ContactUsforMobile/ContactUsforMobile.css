@@ -6,8 +6,14 @@
 
 }
 
+.Email{
+    max-width: 380px;
+}
 
-
+.FirstName{
+    max-width: 174px;
+    
+}
 
 
 .MobileFirstName {

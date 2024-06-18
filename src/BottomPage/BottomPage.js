@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import AgilewitsWhite from '../Assets/Agilewitswhite.svg';
-
 import { BottomPageContent, SocialMediaIconsArray } from '../constant/BottomPage'
 import "./BottomPage.css";
 
@@ -12,10 +11,15 @@ const BottomPage = () => {
                 <div className='BottomPageFirstLayer'>
                     <img className='AgilewitBottomPageLogo' src={AgilewitsWhite} alt="Agilewit Logo" />
                     <div className='SocialMediaIcons'>
-                        {SocialMediaIconsArray.map((each) => <img src={each} alt='SocialMediaAppIcon' />)}
-
-
-                    </div>
+    {SocialMediaIconsArray.map((each, index) => 
+        
+            <a key={index} href={each.SocialMediLink} target='_blank' rel='noopener noreferrer'>
+                <img src={each.SocialMediaIcon} alt='SocialMediaAppIcon' style={{height:"20px"}} />
+            </a>
+        
+    )}
+</div>
+                    
                 </div>
                 <div className='ServiceRow'>
                     <div className='BottomPageServices'>
