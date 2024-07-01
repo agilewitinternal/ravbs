@@ -15,7 +15,7 @@
     padding: 8px;
     margin: 8px;
     width: 202px;
-    height: 50px;
+ 
 }
 
 .Email{
@@ -24,7 +24,7 @@
     padding: 8px;
     margin: 8px;
     width: 440px;
-    height: 50px;
+   
 }
 
 .Message{
@@ -32,7 +32,7 @@
     border: 1.4px solid #08c4f3;
     padding: 8px;
     margin: 8px;
-    width: 440px;
+    width: 384px;
     height: 100px;
 }
 

@@ -21,11 +21,15 @@
 
 
 .BottomTitle{
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
     background: #25AAE1;
-    padding: 10px;
+    padding: 8px;
     width: fit-content;
     color: white;
+    margin: 10px;
 
 } 
 
