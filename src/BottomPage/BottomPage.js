@@ -55,6 +55,9 @@ const BottomPage = () => {
                         <Link to="/Consen" className="Links">
                             <p>{Consent}</p>
                         </Link>
+                        <Link to="/TimeSheet" className='Links'>TimeSheet
+
+                        </Link>
                     </div>
                     <div className='BottomPageServices CONTACT'>
                         <Link to="/ContactUs" className="Links">
