@@ -5,6 +5,7 @@ import './Admin.css'
 const Admin = () => {
     const [postPassword, setPostPassword] = useState("");
     const [Check,SetCheck]=useState("")
+
     console.log(Check)
     const [warnmsg,ActivateWarnMsg]=useState("")
 
@@ -21,9 +22,16 @@ const Admin = () => {
 
     };
 
+    const UpdateEmployName=(e)=>{
+        
+        localStorage.setItem("EmployName",e.target.value)
+
+    }
+
     return (
         <div className="AdminTopLayer">
-         <select className="EmploysNames">
+            
+         <select className="EmploysNames" onChange={UpdateEmployName}>
             {Employs_Names.map((each)=><option>{each}</option>)}
          </select>
             <input
