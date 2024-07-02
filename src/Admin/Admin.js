@@ -15,7 +15,7 @@ const Admin = () => {
     const PasswordPosting = () => {
         localStorage.setItem("EmployeePassword", postPassword);
         SetCheck(localStorage.getItem("EmployeePassword"))
-        if(postPassword!=="Thala77"){
+        if(postPassword!=="Sidd07"){
             ActivateWarnMsg("* Please enter valid credentials to log in")
         }
 
