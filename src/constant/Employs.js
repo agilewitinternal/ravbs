@@ -1,7 +1,2 @@
-export const Employs_List=[
-    {
-        Name:'Siddu',
-        Password:"Thala@7"
-    }
+export const Employs_Names=["Siddu","Balesh","Yadgiri"]
 
-]

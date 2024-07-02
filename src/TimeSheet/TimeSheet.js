@@ -5,7 +5,6 @@ import Header from "../Header/Header";
 import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
-import { Employs_List } from '../constant/Employs';
 import axios from 'axios';
 import './TimeSheet.css';
 
@@ -13,6 +12,7 @@ const TimeSheet = () => {
     const [employesInfo, setEmployesInfo] = useState([]);
     const [passwordStorage, setPasswordStorage] = useState("");
     const [validation, setValidation] = useState(false);
+    
     
     const fetchEmployDetails = async () => {
         try {
@@ -34,6 +34,7 @@ const TimeSheet = () => {
             setValidation(true);
         } else {    
             setValidation(false);
+            
            
         }
     }, [employesInfo, passwordStorage]);
@@ -47,7 +48,7 @@ const TimeSheet = () => {
             <DesktopHeader />
             <div className='SubHomeSecondLayer'>
                 <ServiceHeaders ServiceHeadersInfo="TimeSheet" />
-                <p>{passwordStorage}</p>
+              
                 {validation ? <Employes /> : <Admin />}
               
                 <BottomPage />
