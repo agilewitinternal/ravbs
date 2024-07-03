@@ -1,10 +1,12 @@
 import { useState } from "react";
 import {Employs_Names} from '../constant/Employs'
+import AdminePageLogo from '../Assets/AdminePageLogo.png'
 import './Admin.css'
 
 const Admin = () => {
     const [postPassword, setPostPassword] = useState("");
     const [Check,SetCheck]=useState("")
+    const [intalEmployName,setIntailEmployName]=useState("Siddu")
 
     console.log(Check)
     const [warnmsg,ActivateWarnMsg]=useState("")
@@ -23,15 +25,16 @@ const Admin = () => {
     };
 
     const UpdateEmployName=(e)=>{
-        
+        setIntailEmployName(e.target.value)
         localStorage.setItem("EmployName",e.target.value)
 
     }
 
     return (
         <div className="AdminTopLayer">
-            
-         <select className="EmploysNames" onChange={UpdateEmployName}>
+            <img className="AdminLogo" src={AdminePageLogo} alt="AdminaPageLogo"/>
+            <div className="Login-input">            
+         <select  className="EmploysNames" onChange={UpdateEmployName}>
             {Employs_Names.map((each)=><option>{each}</option>)}
          </select>
             <input
@@ -40,10 +43,12 @@ const Admin = () => {
                 type="password"
                 className="PasswordInput"
             />
-            <button onClick={PasswordPosting}>Log In</button>
+            <button className="LoginButton" onClick={PasswordPosting}>Log In</button>
     
             <p className='WarningMsg'>{warnmsg}</p>
-          
+           
+            </div>
+
         </div>
     );
 };
