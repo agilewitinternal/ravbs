@@ -46,7 +46,7 @@ const Admin = () => {
             <button className="LoginButton" onClick={PasswordPosting}>Log In</button>
     
             <p className='WarningMsg'>{warnmsg}</p>
-            <p>WarningMsg</p>
+            <h1>Warn</h1>
            
             </div>
 
