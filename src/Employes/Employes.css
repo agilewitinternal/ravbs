@@ -1,0 +1,39 @@
+.EmployeTop-Layer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   gap: 130px;
+    padding: 20px;
+    background: #EBFBFF;
+}
+
+.NameofEmploy{
+    text-align: center;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}
+
+.EmployLogo{
+    height: 400px;
+    width: 400px;
+    border-radius: 400px;
+}
+.Buttond-Row{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+}
+.LogInButton{
+    width: fit-content;
+    margin: 10px;
+}
+.LogIn-Info{
+    width: 500px;
+    text-align: center;
+    border: solid 1px black;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+}

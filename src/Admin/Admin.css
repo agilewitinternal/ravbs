@@ -1,0 +1,92 @@
+.AdminTopLayer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #EBFBFF;
+    padding: 10px;
+    }
+    
+    .PasswordInput{
+        width: 150px;
+        text-align: center;
+        margin: 10px;
+    }
+    .EmploysNames{
+        width: 150px;
+        text-align: center;
+    }
+    
+    .Login-input{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        margin: 10px;
+        font-size: 10px;
+        border-radius: 6px;
+        border: solid 1px black;
+        
+    }
+    
+    .LoginButton{
+        width: fit-content;
+        font-weight: bold;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        
+    }
+    
+    .AdminLogo{
+        width: 200px;
+        height: 200px;
+    }
+
+
+
+@media screen and (min-width:767px){
+    .AdminTopLayer{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        background: #EBFBFF;
+        padding: 10px;
+        }
+        
+        .PasswordInput{
+            width: 250px;
+            text-align: center;
+            margin: 10px;
+        }
+        .EmploysNames{
+            width: 250px;
+            text-align: center;
+        }
+        
+        .Login-input{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 40px;
+            margin: 10px;
+            font-size: 20px;
+            border-radius: 6px;
+            border: solid 1px black;
+            
+        }
+        
+        .LoginButton{
+            width: fit-content;
+            font-weight: bold;
+            font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        }
+        
+        .AdminLogo{
+            width: 400px;
+            height: 400px;
+        }
+}
