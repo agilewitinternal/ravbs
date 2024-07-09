@@ -5,43 +5,67 @@ import Header from "../Header/Header";
 import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
+import AdminePageLogo from '../Assets/AdminePageLogo.png'
 import axios from 'axios';
 import './TimeSheet.css';
 
+
+
+
 const TimeSheet = () => {
-    const [employesInfo, setEmployesInfo] = useState([]);
-    const [passwordStorage, setPasswordStorage] = useState("");
-    const [validation, setValidation] = useState(false);
-   
+    const [adminStatus, setAdminStatus] = useState(true)
+    const[userName,setUserName]=useState("")
+    const[password,setPassword]=useState("")
+    const[employsList,setEmploysList]=useState([])
+    const[filterEmploys,setFilterEmploys]=useState([])
+    const[warning,setWarningMessage]=useState("")
+
+
+    const FetchEmplysDetails = async () => {
+        const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json"
+        const Code = await axios.get(URL)
+        const FinelOutPut = Object.values(Code.data)
+        setEmploysList(FinelOutPut.flat())
+
+        
+
+    }
+
+
     
-    
-    const fetchEmployDetails = async () => {
-        try {
-            const URL = "https://agilewitemploys-default-rtdb.firebaseio.com/.json";
-            const postEmployDetails = await axios.get(URL);
-            const importedEmployesData = Object.values(postEmployDetails.data);
-            setEmployesInfo(importedEmployesData.flat());
-        } catch (error) {
-            console.log(error);
-        }
-    };
+
+    useEffect(()=>{
+        FetchEmplysDetails()
+    },[])
 
 
+    const UpdateUserName=(e)=>{
+        setUserName(e.target.value)
 
-    useEffect(() => {
-        fetchEmployDetails();
-        setPasswordStorage(localStorage.getItem("EmployeePassword"));
-        if (employesInfo.some(each => each.Password === passwordStorage)) {
-            setValidation(true);
-        } else {    
-            setValidation(false);
-            
-           
-        }
-    }, [employesInfo, passwordStorage]);
+    }
 
-   
-    console.log(validation);
+    const UpdatePassword=(e)=>{
+setPassword(e.target.value)
+    }
+
+const Verification=()=>{
+
+
+    const Result=employsList.filter((each)=>(each.Name===userName)&&(each.Password===password))
+
+    setFilterEmploys(Result)
+
+    if(filterEmploys.length!==0){
+        setAdminStatus(!adminStatus)
+    }
+
+    if (filterEmploys.length===0){
+        setWarningMessage("EnterProperDetails")
+    }
+
+}
+
+
 
     return (
         <div className='HomeTopLayer'>
@@ -49,9 +73,56 @@ const TimeSheet = () => {
             <DesktopHeader />
             <div className='SubHomeSecondLayer'>
                 <ServiceHeaders ServiceHeadersInfo="TimeSheet" />
-              
-                {validation ? <Employes /> : <Admin />}
-              
+
+               
+
+                {adminStatus? <div className='TimeSheet-Input'>
+                    <img className='AdminLogo' src={AdminePageLogo} alt="AdminLogo" />
+                    <div className='Employ-Details'>
+                        <div>
+                            <p>Employ ID</p>
+                        
+                            <input type='Text'value={userName} placeholder='Enter your Employ ID' onChange={UpdateUserName} />
+                        </div>
+                        <div>
+                          
+                            <p>Password</p>
+                            <input type='password'value={password} placeholder='Enter Your Password' onChange={UpdatePassword} />
+                        </div>
+                        <button className='Login-Button' onClick={Verification}>Login</button>
+                        <p className='WarningMsg'>{warning}</p>
+                    </div>
+                </div>:<div>
+                {filterEmploys.map((each)=><div>
+
+                    <p>{each.Name}</p>
+                   {each.Type==="Admin"?<p>Admin</p>:<p>Employ</p>}
+                   <table>
+                    <tr>
+                        <th>Project Name</th>
+                        <th>Monday</th>
+                        <th>TuesDay</th>
+                        <th>Wednes Day</th>
+                        <th>Thurs Day</th>
+                        <th>Fri Day</th>
+                        <th>Satur Day</th>
+                        <th> Sunday</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                   </table>
+                </div>)}
+
+            
+                    </div>}
+
                 <BottomPage />
             </div>
         </div>

@@ -1,4 +1,105 @@
-.WarningMsg{
+
+
+.Employ-Details {
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 6px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-right: 80px;
+    
+}
+
+table,th,tr,td{
+    border: solid 1px black;
+    border-collapse: collapse;
+    padding: 10px;
+    margin: 10px;
+}
+
+.WarningMsg {
     color: red;
     text-align: center;
+}
+
+.TimeSheet-Input {
+    background: #EBFBFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.AdminLogo {
+    height: 200px;
+    display: flex;
+}
+
+.Employ-Details {
+    border: solid 1px black;
+    padding: 10px;
+    border-radius: 6px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    
+}
+
+.Login-Button {
+    width: fit-content;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    
+    align-self: center;
+    font-weight: bold;
+  
+}
+
+@media screen and (min-width:767px) {
+    .WarningMsg {
+        color: red;
+        text-align: center;
+    }
+    
+    .TimeSheet-Input {
+        background: #EBFBFF;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        
+    }
+    
+    .AdminLogo {
+        height: 400px;
+        display: flex;
+    }
+    
+    .Employ-Details {
+        border: solid 1px black;
+        padding: 10px;
+        border-radius: 6px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        margin-right: 80px;
+        
+    }
+    
+    .Login-Button {
+        width: fit-content;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+        
+        align-self: center;
+        font-weight: bold;
+      
+    }
 }
