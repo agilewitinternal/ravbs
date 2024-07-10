@@ -23,7 +23,7 @@ const WeekNavigator = () => {
 
     return (
         <div className='Toping'>
-            
+
             <div className='Week-Button'>
                 <button className='Next-weekButton' onClick={handlePreviousWeek}>Previous Week</button>
                 <h2>Week from {startOfWeek.format('MMM DD')} to {endOfWeek.format('MMM DD')}</h2>
@@ -34,10 +34,9 @@ const WeekNavigator = () => {
                     <div key={day.format('YYYY-MM-DD')}>
                         <table>
                             <tr>
-                               
                                 <th>
-                                <div>{day.format('ddd')}</div>
-                <div>{day.format('MMM DD')}</div>
+                                    <div>{day.format('ddd')}</div>
+                                    <div>{day.format('MMM DD')}</div>
                                 </th>
                             </tr>
                             <tr>
@@ -48,10 +47,10 @@ const WeekNavigator = () => {
                     </div>
                 ))}
             </div>
-<div className='Week-Button'>
-    <button className='Next-weekButton'> WithDraw </button>
-    <button className='Next-weekButton'> Submit</button>
-</div>
+            <div className='Week-Button'>
+                <button className='Next-weekButton'> WithDraw </button>
+                <button className='Next-weekButton'> Submit</button>
+            </div>
         </div>
     );
 };
