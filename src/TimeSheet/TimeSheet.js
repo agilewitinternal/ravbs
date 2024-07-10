@@ -5,6 +5,7 @@ import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
 import AdminePageLogo from '../Assets/AdminePageLogo.png'
+import AdminGreen from '../Assets/AdminGreen.png'
 import axios from 'axios';
 import './TimeSheet.css';
 
@@ -105,8 +106,8 @@ const TimeSheet = () => {
                 </div> : <div>
                     {filterEmploys.map((each) => <div>
 
-                        <p>{each.Name}</p>
-                        {each.Type === "Admin" ? <div> <p>{each.Type}</p>   <WeekNavigator /></div> : <p>Employ</p>}
+                       
+                        {each.Type === "Admin" ? <div className='Dash-Board'> <div className='DashBoard-FirstLayer'><img className='Admin-green' src={AdminGreen} alt='Admin-Logo'/>  <p>{each.Name}</p><p>{each.Type}</p></div>   <WeekNavigator /></div> : <p>Employ</p>}
 
 
                     </div>)}

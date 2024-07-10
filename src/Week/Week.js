@@ -23,12 +23,11 @@ const WeekNavigator = () => {
 
     return (
         <div className='Toping'>
-            <h2>
-                Week from {startOfWeek.format('MMM DD')} to {endOfWeek.format('MMM DD')}
-            </h2>
+            
             <div className='Week-Button'>
-                <button onClick={handlePreviousWeek}>Previous Week</button>
-                <button onClick={handleNextWeek}>Next Week</button>
+                <button className='Next-weekButton' onClick={handlePreviousWeek}>Previous Week</button>
+                <h2>Week from {startOfWeek.format('MMM DD')} to {endOfWeek.format('MMM DD')}</h2>
+                <button className='Next-weekButton' onClick={handleNextWeek}>Next Week</button>
             </div>
             <div className='Table-Row'>
                 {days.map(day => (
@@ -49,7 +48,10 @@ const WeekNavigator = () => {
                     </div>
                 ))}
             </div>
-
+<div className='Week-Button'>
+    <button className='Next-weekButton'> WithDraw </button>
+    <button className='Next-weekButton'> Submit</button>
+</div>
         </div>
     );
 };

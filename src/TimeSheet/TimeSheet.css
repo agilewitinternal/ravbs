@@ -55,6 +55,19 @@
   
 }
 
+.Dash-Board{
+    display: flex;
+
+}
+.DashBoard-FirstLayer{
+    background-color: lightgreen;
+    padding: 20px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    text-align: center;
+}
+.Admin-green{
+    height: 100px;
+}
 @media screen and (min-width:767px) {
     .WarningMsg {
         color: red;
