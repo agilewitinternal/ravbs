@@ -22,12 +22,12 @@ const WeekNavigator = () => {
     };
 
     return (
-        <div className='Toping'>
+        <div className='Topping'>
 
             <div className='Week-Button'>
-                <button className='Next-weekButton' onClick={handlePreviousWeek}>Previous Week</button>
+                <button className='WeekButton' onClick={handlePreviousWeek}>Previous Week</button>
                 <h2>Week from {startOfWeek.format('MMM DD')} to {endOfWeek.format('MMM DD')}</h2>
-                <button className='Next-weekButton' onClick={handleNextWeek}>Next Week</button>
+                <button className='WeekButton' onClick={handleNextWeek}>Next Week</button>
             </div>
             <div className='Table-Row'>
                 {days.map(day => (
@@ -40,7 +40,7 @@ const WeekNavigator = () => {
                                 </th>
                             </tr>
                             <tr>
-                                <td>Login Timeings</td>
+                                <td>Login Timings</td>
                             </tr>
                         </table>
 
@@ -48,11 +48,11 @@ const WeekNavigator = () => {
                 ))}
             </div>
             <div className='Week-Button'>
-                <button className='Next-weekButton'> WithDraw </button>
-                <button className='Next-weekButton'> Submit</button>
+                <button className='WeekButton'> Withdraw </button>
+                <button className='WeekButton'> Submit</button>
             </div>
         </div>
     );
 };
 
-export default WeekNavigator;
+export default WeekNavigator
