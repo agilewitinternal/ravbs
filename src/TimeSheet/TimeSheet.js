@@ -18,7 +18,7 @@ const TimeSheet = () => {
     const [warning, setWarningMessage] = useState("");
 
     useEffect(() => {
-        fetchEmployeesDetails();
+        fetchEmployeesDetails()
     }, []);
 
     const fetchEmployeesDetails = async () => {
@@ -37,7 +37,7 @@ const TimeSheet = () => {
     }
 
     const verifyCredentials = () => {
-        const result = employeesList.filter((each) => (each.Name === userName) && (each.Password === password));
+        const result = employeesList.filter((each) => (each.FirstName === userName) && (each.Password === password));
         setFilteredEmployees(result);
 
         if (result.length !== 0) {
@@ -53,6 +53,7 @@ const TimeSheet = () => {
             <DesktopHeader />
             <div className='SubHomeSecondLayer'>
                 <ServiceHeaders ServiceHeadersInfo="TimeSheet" />
+               
                 {adminStatus ? (
                     <div className='TimeSheet-Input'>
                         <img className='AdminLogo' src={AdminPageLogo} alt="AdminLogo" />
