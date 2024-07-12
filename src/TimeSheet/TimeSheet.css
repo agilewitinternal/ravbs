@@ -58,12 +58,27 @@
     display: flex;
 
 }
+
+.EmploysInfoContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Arrow{
+    height: 30px;
+}
 .DashBoard-FirstLayer{
     background-color: lightgreen;
     font-size: 24px;
     padding: 20px;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     text-align: center;
+    height: 400px;
+    overflow: auto;
+}
+.EmploysInfoTag{
+    font-size: 17px;
 }
 .Admin-green{
     height: 100px;

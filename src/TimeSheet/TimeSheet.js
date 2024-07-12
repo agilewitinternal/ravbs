@@ -5,7 +5,10 @@ import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
 import AdminPageLogo from '../Assets/AdminePageLogo.png';
+import UpArrow from '../Assets/Up-Arrow.png'
+import DownArrow from '../Assets/Down-Arrow.png'
 import AdminGreen from '../Assets/AdminGreen.png';
+import EmploysListItem from '../EmploysListItem/EmploysListItem'
 import axios from 'axios';
 import './TimeSheet.css';
 
@@ -16,6 +19,7 @@ const TimeSheet = () => {
     const [employeesList, setEmployeesList] = useState([]);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [warning, setWarningMessage] = useState("");
+    const [arrowStatus,setArrowStatus]=useState(false)
 
     useEffect(() => {
         fetchEmployeesDetails()
@@ -47,13 +51,16 @@ const TimeSheet = () => {
         }
     }
 
+    const UpdateArrowStatus=()=>{
+        setArrowStatus(!arrowStatus)
+    }
+
     return (
         <div className='HomeTopLayer'>
             <Header />
             <DesktopHeader />
             <div className='SubHomeSecondLayer'>
                 <ServiceHeaders ServiceHeadersInfo="TimeSheet" />
-                <h1>Sidd</h1>
                
                 {adminStatus ? (
                     <div className='TimeSheet-Input'>
@@ -79,8 +86,16 @@ const TimeSheet = () => {
                                     <div className='Dash-Board'>
                                         <div className='DashBoard-FirstLayer'>
                                             <img className='Admin-green' src={AdminGreen} alt='Admin-Logo' />
-                                            <h1>{each.Name}</h1>
+                                            <h1>{each.FirstName}</h1>
                                             <h1>{each.Type}</h1>
+                                            <div className='EmploysInfoContainer'>
+                                <p className='EmploysInfoTag'>Employ's Info </p>
+                                {arrowStatus?<img className='Arrow' onClick={UpdateArrowStatus} src={UpArrow} alt='UpArrow'/>:<img className='Arrow' onClick={UpdateArrowStatus} src={DownArrow} alt='DownArrow'/>}
+
+
+                                
+                                </div>
+                                            {arrowStatus&&<div>{employeesList.map((each)=><EmploysListItem EmployInfo={each}/>)}</div>}
                                         </div>
                                         <WeekNavigator />
                                     </div>
