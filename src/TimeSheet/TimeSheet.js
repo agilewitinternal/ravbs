@@ -78,6 +78,7 @@ const TimeSheet = () => {
                         
                             <button className='Login-Button' >Register</button>
                             <p className='WarningMsg'>{warning}</p>
+                            <p>Resgisration</p>
                         </div>
                     </div>
                 ) : (
