@@ -11,6 +11,11 @@
     
 }
 
+.New{
+    color: blue;
+    text-decoration: none;
+    font-size: 10px !important;
+}
 
 
 .WarningMsg {

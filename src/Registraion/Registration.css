@@ -1,0 +1,24 @@
+.Registrtion-TopLayer{
+    background: #EBFBFF;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.RegisterNow{
+    height: 150px;
+   
+}
+
+.Registration-Form{
+    text-align: justify;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    width: fit-content;
+}

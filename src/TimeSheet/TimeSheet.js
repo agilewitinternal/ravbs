@@ -11,6 +11,7 @@ import AdminGreen from '../Assets/AdminGreen.png';
 import EmploysListItem from '../EmploysListItem/EmploysListItem'
 import axios from 'axios';
 import './TimeSheet.css';
+import { Link } from 'react-router-dom';
 
 const TimeSheet = () => {
     const [adminStatus, setAdminStatus] = useState(true);
@@ -19,7 +20,7 @@ const TimeSheet = () => {
     const [employeesList, setEmployeesList] = useState([]);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [warning, setWarningMessage] = useState("");
-    const [arrowStatus,setArrowStatus]=useState(false)
+    const [arrowStatus, setArrowStatus] = useState(false)
 
     useEffect(() => {
         fetchEmployeesDetails()
@@ -51,7 +52,7 @@ const TimeSheet = () => {
         }
     }
 
-    const UpdateArrowStatus=()=>{
+    const UpdateArrowStatus = () => {
         setArrowStatus(!arrowStatus)
     }
 
@@ -61,7 +62,7 @@ const TimeSheet = () => {
             <DesktopHeader />
             <div className='SubHomeSecondLayer'>
                 <ServiceHeaders ServiceHeadersInfo="TimeSheet" />
-               
+
                 {adminStatus ? (
                     <div className='TimeSheet-Input'>
                         <img className='AdminLogo' src={AdminPageLogo} alt="AdminLogo" />
@@ -75,10 +76,10 @@ const TimeSheet = () => {
                                 <input type='password' className='Input-Value' value={password} placeholder='Enter Your Password' onChange={updatePassword} />
                             </div>
                             <button className='Login-Button' onClick={verifyCredentials}>Login</button>
-                        
-                            <button className='Login-Button' >Register</button>
+                            <p>New User? Register Here! </p>
+                            <Link to="/Registration" className='LinksNew' >CLICK HERE</Link>
                             <p className='WarningMsg'>{warning}</p>
-                            <p>Resgisration</p>
+
                         </div>
                     </div>
                 ) : (
@@ -92,13 +93,13 @@ const TimeSheet = () => {
                                             <h1>{each.FirstName}</h1>
                                             <h1>{each.Type}</h1>
                                             <div className='EmploysInfoContainer'>
-                                <p className='EmploysInfoTag'>Employ's Info </p>
-                                {arrowStatus?<img className='Arrow' onClick={UpdateArrowStatus} src={UpArrow} alt='UpArrow'/>:<img className='Arrow' onClick={UpdateArrowStatus} src={DownArrow} alt='DownArrow'/>}
+                                                <p className='EmploysInfoTag'>Employ's Info </p>
+                                                {arrowStatus ? <img className='Arrow' onClick={UpdateArrowStatus} src={UpArrow} alt='UpArrow' /> : <img className='Arrow' onClick={UpdateArrowStatus} src={DownArrow} alt='DownArrow' />}
 
 
-                                
-                                </div>
-                                            {arrowStatus&&<div>{employeesList.map((each)=><EmploysListItem EmployInfo={each}/>)}</div>}
+
+                                            </div>
+                                            {arrowStatus && <div>{employeesList.map((each) => <EmploysListItem EmployInfo={each} />)}</div>}
                                         </div>
                                         <WeekNavigator />
                                     </div>
