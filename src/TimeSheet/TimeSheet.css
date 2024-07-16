@@ -22,9 +22,10 @@
     background: #EBFBFF;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+   
     align-items: center;
     padding: 20px;
+    border: solid 1px black;
     
 }
 
@@ -33,14 +34,16 @@
     display: flex;
 }
 
-.Employ-Details {
+.Employee-Details {
     border: solid 1px black;
     padding: 10px;
     border-radius: 6px;
     height: fit-content;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     margin-right: 20px;
+    
     
 }
 
@@ -83,6 +86,9 @@
 .Admin-green{
     height: 100px;
 }
+.Input-Value{
+    text-align: center;
+}
 @media screen and (min-width:767px) {
     .WarningMsg {
         color: red;
@@ -93,9 +99,10 @@
         background: #EBFBFF;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+      justify-content: space-between;
         align-items: center;
         padding: 20px;
+       
         
     }
     
@@ -104,8 +111,9 @@
         display: flex;
     }
     
-    .Employ-Details {
+    .Employee-Details {
         border: solid 1px black;
+       text-align: center;
         padding: 10px;
         border-radius: 6px;
         height: fit-content;
@@ -118,9 +126,7 @@
     .Login-Button {
         width: fit-content;
         padding: 10px;
-        margin: 10px;
         display: flex;
-        
         align-self: center;
         font-weight: bold;
       

@@ -68,13 +68,15 @@ const TimeSheet = () => {
                         <div className='Employee-Details'>
                             <div>
                                 <p>Employee ID</p>
-                                <input type='text' value={userName} placeholder='Enter your Employee ID' onChange={updateUserName} />
+                                <input type='text' className='Input-Value' value={userName} placeholder='Enter your Employee ID' onChange={updateUserName} />
                             </div>
                             <div>
                                 <p>Password</p>
-                                <input type='password' value={password} placeholder='Enter Your Password' onChange={updatePassword} />
+                                <input type='password' className='Input-Value' value={password} placeholder='Enter Your Password' onChange={updatePassword} />
                             </div>
                             <button className='Login-Button' onClick={verifyCredentials}>Login</button>
+                        
+                            <button className='Login-Button' >Register</button>
                             <p className='WarningMsg'>{warning}</p>
                         </div>
                     </div>
