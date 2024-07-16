@@ -68,7 +68,6 @@ const Registration = () => {
                 <div className="Registrtion-TopLayer">
                     <img src={RegisterNow} alt="RegisterNow" className="RegisterNow" />
                     <form className="Registration-Form" onSubmit={SubmitDetails}>
-                        <p>{newUser.password}</p>
                         <div>
                             <label htmlFor="firstName">First Name:</label>
                             <input
