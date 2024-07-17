@@ -1,38 +1,46 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
 import RegisterNow from '../Assets/RegisterNow.png'
 import axios from "axios";
+import { v4 as uuidv4 } from 'uuid';
 import './Registration.css';
 
 const Registration = () => {
     const [newUser, setNewUser] = useState({
-        firstName: 'Siddu',
-        lastName: 'T',
-        dateOfJoining: '2',
-        password: 'Dhoni'
+        Id:uuidv4(),
+        FirstName: '',
+        LastName: '',
+        DateOfJoining: '',
+        Password: '',
+        Type: "Employ"
     })
     const [verificationPassword, setVerificationPassword] = useState("")
     const [passwordWarningMessage, setPasswordWarningMessage] = useState("")
+    const navigate = useNavigate();
 
     const UpdateFirstName = (e) => {
         setNewUser({
-            firstName: e.target.value
+            ...newUser,
+            FirstName: e.target.value
         });
     };
 
     const UpdateLastName = (e) => {
         setNewUser({
-            lastName: e.target.value
+            ...newUser,
+            LastName: e.target.value
         })
     }
 
 
     const UpdateDateOfJoing = (e) => {
         setNewUser({
-            dateOfJoining: e.target.value
+            ...newUser,
+            DateOfJoining: e.target.value
         })
 
     }
@@ -45,20 +53,33 @@ const Registration = () => {
 
     const UpdateFinelPassword = (e) => {
         setNewUser({
-            password: e.target.value
+            ...newUser,
+            Password: e.target.value
         })
     }
 
-    const SubmitDetails = async(e) => {
+    const SubmitDetails = async (e) => {
         e.preventDefault();
-       
-        const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json";
-
-        const NewDeatilsPosting=await axios.post(URL,newUser)
-
-        console.log(NewDeatilsPosting)
-
-    }
+    
+        if (verificationPassword !== newUser.Password) {
+            setPasswordWarningMessage("Password Not Matching");
+        } else {
+            setPasswordWarningMessage("Registered Successfully");
+            const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json";
+    
+            try {
+                const newDetailsPosting = await axios.post(URL, newUser);
+                console.log(newDetailsPosting);
+    
+                navigate('./TimeSheet');
+                
+            } catch (error) {
+                console.error("Error during registration:", error);
+            
+            }
+        }
+    };
+    
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -69,6 +90,7 @@ const Registration = () => {
                     <img src={RegisterNow} alt="RegisterNow" className="RegisterNow" />
                     <form className="Registration-Form" onSubmit={SubmitDetails}>
                         <div>
+                        
                             <label htmlFor="firstName">First Name:</label>
                             <input
                                 type="text"
@@ -84,8 +106,9 @@ const Registration = () => {
                                 type="text"
                                 id="lastName"
                                 name="lastName"
-                                onChange={UpdateLastName}
                                 required
+                                onChange={UpdateLastName}
+
                             />
                         </div>
                         <div>
@@ -94,8 +117,9 @@ const Registration = () => {
                                 type="date"
                                 id="dateOfJoining"
                                 name="dateOfJoining"
-                                onChange={UpdateDateOfJoing}
                                 required
+                                onChange={UpdateDateOfJoing}
+
                             />
                         </div>
                         <div>
@@ -104,8 +128,9 @@ const Registration = () => {
                                 type="password"
                                 id="password"
                                 name="password"
-                                onChange={UpdateFirstPassword}
                                 required
+                                onChange={UpdateFirstPassword}
+
                             />
                         </div>
                         <div>
@@ -114,8 +139,9 @@ const Registration = () => {
                                 type="password"
                                 id="password"
                                 name="password"
-                                onChange={UpdateFinelPassword}
                                 required
+                                onChange={UpdateFinelPassword}
+
                             />
                         </div>
                         <button type="submit" className="Login-Button">Register</button>
