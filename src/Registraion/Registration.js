@@ -71,7 +71,7 @@ const Registration = () => {
                 const newDetailsPosting = await axios.post(URL, newUser);
                 console.log(newDetailsPosting);
     
-                navigate('./TimeSheet');
+                navigate('/TimeSheet');
                 
             } catch (error) {
                 console.error("Error during registration:", error);
