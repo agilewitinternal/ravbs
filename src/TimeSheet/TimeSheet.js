@@ -21,6 +21,7 @@ const TimeSheet = () => {
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [warning, setWarningMessage] = useState("");
     const [arrowStatus, setArrowStatus] = useState(false)
+    const [searchEmploys,SetSearchEmploys]=useState("")
 
     useEffect(() => {
         fetchEmployeesDetails()
@@ -56,6 +57,11 @@ const TimeSheet = () => {
         setArrowStatus(!arrowStatus)
     }
 
+    const UpdateSearchEmploys=(e)=>{
+        SetSearchEmploys(e.target.value)
+    }
+
+const SearchResult=employeesList.filter((each)=>each.FirstName.includes(searchEmploys))
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -99,7 +105,11 @@ const TimeSheet = () => {
 
 
                                             </div>
-                                            {arrowStatus && <div>{employeesList.map((each) => <EmploysListItem EmployInfo={each} />)}</div>}
+                                            {arrowStatus && <div>
+
+                                                <input type='Search' className='SearchBar' onChange={UpdateSearchEmploys} placeholder='Search By EmployName'/>
+                                                
+                                                {SearchResult.map((each) => <EmploysListItem EmployInfo={each} />)}</div>}
                                         </div>
                                         <WeekNavigator />
                                     </div>

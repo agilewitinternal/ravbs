@@ -17,6 +17,10 @@
     font-size: 10px !important;
 }
 
+.SearchBar{
+    text-align: center;
+}
+
 
 .WarningMsg {
     color: red;
