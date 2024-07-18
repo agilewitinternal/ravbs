@@ -82,6 +82,9 @@ const SearchResult=employeesList.filter((each)=>each.FirstName.includes(searchEm
                                 <input type='password' className='Input-Value' value={password} placeholder='Enter Your Password' onChange={updatePassword} />
                             </div>
                             <button className='Login-Button' onClick={verifyCredentials}>Login</button>
+                            <Link to="/ResetPassword">
+                            <p>Forgot Password</p>
+                            </Link>
                             <p>New User? Register Here! </p>
                             <Link to="/Registration" className='LinksNew' >CLICK HERE</Link>
                             <p className='WarningMsg'>{warning}</p>
