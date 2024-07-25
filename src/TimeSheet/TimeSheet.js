@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import WeekNavigator from '../Week/Week';
 import Header from "../Header/Header";
@@ -25,7 +26,7 @@ const TimeSheet = () => {
 
     useEffect(() => {
         fetchEmployeesDetails()
-    }, []);
+    }, [employeesList]);
 
     const fetchEmployeesDetails = async () => {
         const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json";

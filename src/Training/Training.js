@@ -23,7 +23,7 @@ const Training = () => {
         return () => {
             clearInterval(interval);
         };
-    }, [Random]);
+    }, []);
 
     return (
         <div className='HomeTopLayer'>
