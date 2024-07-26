@@ -5,6 +5,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px;
+    
 }
 
 .RegisterNow{
@@ -21,4 +22,11 @@
     padding: 10px;
     border: 1px solid black;
     width: fit-content;
+    
+}
+.Designation{
+    width: 140px;
+}
+.Designation-Container{
+    display: flex;
 }

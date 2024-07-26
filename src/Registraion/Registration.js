@@ -14,7 +14,9 @@ const Registration = () => {
         Id:uuidv4(),
         FirstName: '',
         LastName: '',
+        Designation:'',
         DateOfJoining: '',
+        Email:"",
         Password: '',
         Type: "Employ"
     })
@@ -36,6 +38,12 @@ const Registration = () => {
         })
     }
 
+    const UpdateDesignation=(e)=>{
+        setNewUser({
+            ...newUser,
+            Designation: e.target.value
+        });
+    }
 
     const UpdateDateOfJoing = (e) => {
         setNewUser({
@@ -43,6 +51,14 @@ const Registration = () => {
             DateOfJoining: e.target.value
         })
 
+    }
+
+
+    const UpdateEmail=(e)=>{
+        setNewUser({
+            ...newUser,
+            Email: e.target.value
+        })
     }
 
 
@@ -89,9 +105,9 @@ const Registration = () => {
                 <div className="Registrtion-TopLayer">
                     <img src={RegisterNow} alt="RegisterNow" className="RegisterNow" />
                     <form className="Registration-Form" onSubmit={SubmitDetails}>
+                        <h3>Register Now !</h3>
                         <div>
-                        
-                            <label htmlFor="firstName">First Name:</label>
+                        <label htmlFor="firstName">First Name:</label>
                             <input
                                 type="text"
                                 id="firstName"
@@ -111,6 +127,17 @@ const Registration = () => {
 
                             />
                         </div>
+                        <div className="Designation-Container">
+                        <label>Select Your Designation :</label>
+                        <select className="Designation" onChange={UpdateDesignation}>
+                            <option>Choose</option>
+                            <option value="	Sr.Bench Sales Recruiters">Sr.Bench Sales Recruiters</option>
+                            <option value="Bench sales recruiter">Bench sales recruiter</option>
+                            <option value="OPT recruiter">OPT recruiter</option>
+                            <option value="WebDeveloper">Web Developer</option>
+
+                        </select>
+                        </div>
                         <div>
                             <label htmlFor="dateOfJoining">Date of Joining:</label>
                             <input
@@ -119,6 +146,17 @@ const Registration = () => {
                                 name="dateOfJoining"
                                 required
                                 onChange={UpdateDateOfJoing}
+
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="Email">Email:</label>
+                            <input
+                                type="email"
+                                id="Email"
+                                name="Email"
+                                required
+                                onChange={UpdateEmail}
 
                             />
                         </div>
@@ -144,6 +182,7 @@ const Registration = () => {
 
                             />
                         </div>
+            
                         <button type="submit" className="Login-Button">Register</button>
                         <p className="WarningMsg">{passwordWarningMessage}</p>
                     </form>
