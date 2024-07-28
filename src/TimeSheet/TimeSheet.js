@@ -11,6 +11,7 @@ import AdminGreen from '../Assets/AdminGreen.png';
 import EmploysListItem from '../EmploysListItem/EmploysListItem'
 import axios from 'axios';
 import './TimeSheet.css';
+import { Link } from 'react-router-dom';
 
 const TimeSheet = () => {
     const [adminStatus, setAdminStatus] = useState(true);
@@ -18,27 +19,28 @@ const TimeSheet = () => {
     const [password, setPassword] = useState("");
     const [employeesList, setEmployeesList] = useState([]);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
-    const [warning, setWarningMessage] = useState("");
-    const [arrowStatus,setArrowStatus]=useState(false)
+    const [warning, setWarning] = useState("");
+    const [arrowStatus, setArrowStatus] = useState(false);
+    const [searchEmploys, setSearchEmploys] = useState("");
 
     useEffect(() => {
-        fetchEmployeesDetails()
-    }, []);
+        fetchEmployeesDetails();
+    }, []); // Removed employeesList from dependency array
 
     const fetchEmployeesDetails = async () => {
         const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json";
         const response = await axios.get(URL);
         const finalOutput = Object.values(response.data);
         setEmployeesList(finalOutput.flat());
-    }
+    };
 
     const updateUserName = (e) => {
         setUserName(e.target.value);
-    }
+    };
 
     const updatePassword = (e) => {
         setPassword(e.target.value);
-    }
+    };
 
     const verifyCredentials = () => {
         const result = employeesList.filter((each) => (each.FirstName === userName) && (each.Password === password));
@@ -47,13 +49,19 @@ const TimeSheet = () => {
         if (result.length !== 0) {
             setAdminStatus(!adminStatus);
         } else {
-            setWarningMessage("Wrong Username or Password");
+            setWarning("Wrong Username or Password");
         }
-    }
+    };
 
-    const UpdateArrowStatus=()=>{
-        setArrowStatus(!arrowStatus)
-    }
+    const updateArrowStatus = () => {
+        setArrowStatus(!arrowStatus);
+    };
+
+    const updateSearchEmploys = (e) => {
+        setSearchEmploys(e.target.value.toLowerCase());
+    };
+
+    const searchResult = employeesList.filter((each) => each.FirstName.toLowerCase().includes(searchEmploys));
 
     return (
         <div className='HomeTopLayer'>
@@ -61,7 +69,7 @@ const TimeSheet = () => {
             <DesktopHeader />
             <div className='SubHomeSecondLayer'>
                 <ServiceHeaders ServiceHeadersInfo="TimeSheet" />
-               
+
                 {adminStatus ? (
                     <div className='TimeSheet-Input'>
                         <img className='AdminLogo' src={AdminPageLogo} alt="AdminLogo" />
@@ -75,15 +83,18 @@ const TimeSheet = () => {
                                 <input type='password' className='Input-Value' value={password} placeholder='Enter Your Password' onChange={updatePassword} />
                             </div>
                             <button className='Login-Button' onClick={verifyCredentials}>Login</button>
-                        
-                            <button className='Login-Button' >Register</button>
+                            <Link to="/ResetPassword">
+                                <p>Forgot Password</p>
+                            </Link>
+                            <p>New User? Register Here! </p>
+                            <Link to="/Registration" className='LinksNew' >CLICK HERE</Link>
                             <p className='WarningMsg'>{warning}</p>
                         </div>
                     </div>
                 ) : (
                     <div>
                         {filteredEmployees.map((each) => (
-                            <div key={each.Name}>
+                            <div key={each.FirstName + each.LastName}>
                                 {each.Type === "Admin" ? (
                                     <div className='Dash-Board'>
                                         <div className='DashBoard-FirstLayer'>
@@ -91,13 +102,17 @@ const TimeSheet = () => {
                                             <h1>{each.FirstName}</h1>
                                             <h1>{each.Type}</h1>
                                             <div className='EmploysInfoContainer'>
-                                <p className='EmploysInfoTag'>Employ's Info </p>
-                                {arrowStatus?<img className='Arrow' onClick={UpdateArrowStatus} src={UpArrow} alt='UpArrow'/>:<img className='Arrow' onClick={UpdateArrowStatus} src={DownArrow} alt='DownArrow'/>}
-
-
-                                
-                                </div>
-                                            {arrowStatus&&<div>{employeesList.map((each)=><EmploysListItem EmployInfo={each}/>)}</div>}
+                                                <p className='EmploysInfoTag'>Employ's Info </p>
+                                                {arrowStatus ? <img className='Arrow' onClick={updateArrowStatus} src={UpArrow} alt='UpArrow' /> : <img className='Arrow' onClick={updateArrowStatus} src={DownArrow} alt='DownArrow' />}
+                                            </div>
+                                            {arrowStatus && (
+                                                <div>
+                                                    <input type='search' className='SearchBar' onChange={updateSearchEmploys} placeholder='Search By EmployName' />
+                                                    {searchResult.map((each) => (
+                                                        <EmploysListItem key={each.FirstName + each.LastName} EmployInfo={each} />
+                                                    ))}
+                                                </div>
+                                            )}
                                         </div>
                                         <WeekNavigator />
                                     </div>

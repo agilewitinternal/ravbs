@@ -8,7 +8,7 @@ const EmploysListItem=(props)=>{
 setInfoStatus(!infoStatus)
     }
     return(
-        <div>
+        <div className="EmploysListItem-TopLayer">
 <p>{FirstName}</p>
 {infoStatus?<button className="InfoButton" onClick={UpdateinfoStatus}>HideDetails</button>:<button className=" InfoButton" onClick={UpdateinfoStatus}>ShowDetails</button>}
 {infoStatus&&<div className="InfoLayerTwo">

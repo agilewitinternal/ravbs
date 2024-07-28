@@ -13,6 +13,8 @@ import Consen from './Consen/Consen'
 import Jobs from './Jobs/Jobs'
 import Apply from './Apply/Apply'
 import TimeSheet from './TimeSheet/TimeSheet'
+import Registration from './Registraion/Registration'
+import ResetPassword from "./ResetPassword/ResetPassword"
 import "./App.css";
 
 function App() {
@@ -36,6 +38,8 @@ function App() {
             <Route path='/Jobs' element={<Jobs/>}/>
             <Route path='/Apply' element={<Apply/>}/>
             <Route path='/TimeSheet' element={<TimeSheet/>}/>
+            <Route path='/Registration' element={<Registration/>}/>
+            <Route path='/ResetPassword' element={<ResetPassword/>}/>
           </Routes>
         </div>
     {Location.pathname!=="/DropDown"&&  Location.pathname !== "/ContactUs"&&<Link to="/ContactUs"><img className="chat-icon" src={ChatIcon} alt="Chat" /> </Link>}
