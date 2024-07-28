@@ -11,12 +11,7 @@
     
 }
 
-table,th,tr,td{
-    border: solid 1px black;
-    border-collapse: collapse;
-    padding: 10px;
-    margin: 10px;
-}
+
 
 .WarningMsg {
     color: red;
@@ -27,9 +22,10 @@ table,th,tr,td{
     background: #EBFBFF;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+   
     align-items: center;
     padding: 20px;
+    border: solid 1px black;
     
 }
 
@@ -38,14 +34,16 @@ table,th,tr,td{
     display: flex;
 }
 
-.Employ-Details {
+.Employee-Details {
     border: solid 1px black;
     padding: 10px;
     border-radius: 6px;
     height: fit-content;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
     margin-right: 20px;
+    
     
 }
 
@@ -54,12 +52,43 @@ table,th,tr,td{
     padding: 10px;
     margin: 10px;
     display: flex;
-    
     align-self: center;
     font-weight: bold;
   
 }
 
+.Dash-Board{
+    display: flex;
+
+}
+
+.EmploysInfoContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Arrow{
+    height: 30px;
+}
+.DashBoard-FirstLayer{
+    background-color: lightgreen;
+    font-size: 24px;
+    padding: 20px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    text-align: center;
+    height: 400px;
+    overflow: auto;
+}
+.EmploysInfoTag{
+    font-size: 17px;
+}
+.Admin-green{
+    height: 100px;
+}
+.Input-Value{
+    text-align: center;
+}
 @media screen and (min-width:767px) {
     .WarningMsg {
         color: red;
@@ -70,9 +99,10 @@ table,th,tr,td{
         background: #EBFBFF;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+      justify-content: space-between;
         align-items: center;
         padding: 20px;
+       
         
     }
     
@@ -81,8 +111,9 @@ table,th,tr,td{
         display: flex;
     }
     
-    .Employ-Details {
+    .Employee-Details {
         border: solid 1px black;
+       text-align: center;
         padding: 10px;
         border-radius: 6px;
         height: fit-content;
@@ -95,9 +126,7 @@ table,th,tr,td{
     .Login-Button {
         width: fit-content;
         padding: 10px;
-        margin: 10px;
         display: flex;
-        
         align-self: center;
         font-weight: bold;
       
