@@ -1,6 +1,44 @@
 .Registrtion-TopLayer{
     background: #EBFBFF;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    
+}
+
+.RegisterNow{
+    height: 50px;
+   
+}
+
+.Registration-Form{
+    text-align: justify;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    width: fit-content;
+    
+}
+.Designation{
+    width: 140px;
+}
+.Designation-Container{
+    display: flex;
+}
+
+
+ 
+@media  screen and (min-width:767px)  {
+.Registrtion-TopLayer{
+    background: #EBFBFF;
+    display: flex;
+    gap: 0px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -29,4 +67,8 @@
 }
 .Designation-Container{
     display: flex;
+}
+
+
+    
 }
