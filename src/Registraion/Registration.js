@@ -106,6 +106,7 @@ const Registration = () => {
                     <img src={RegisterNow} alt="RegisterNow" className="RegisterNow" />
                     <form className="Registration-Form" onSubmit={SubmitDetails}>
                         <h3>Register Now !</h3>
+                        <h1>Sidd</h1>
                         <div>
                         <label htmlFor="firstName">First Name:</label>
                             <input
