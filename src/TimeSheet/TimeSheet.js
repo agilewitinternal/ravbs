@@ -105,7 +105,7 @@ const TimeSheet = () => {
                                             <h1>{each.FirstName}</h1>
                                             <h1>{each.Type}</h1>
                                             <button className='Login-Button'>
-                                                <Link to="/Registration" className='LinksNew' >{NewEmployRegistration}</Link>
+                                                <Link to="/Registration" className='Login-Button' >{NewEmployRegistration}</Link>
                                             </button>
                                             <div className='EmploysInfoContainer'>
                                                 <p className='EmploysInfoTag'>{EmployInfo}</p>
