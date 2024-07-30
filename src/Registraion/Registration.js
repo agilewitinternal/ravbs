@@ -4,9 +4,10 @@ import Header from "../Header/Header";
 import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
-import RegisterNow from '../Assets/RegisterNow.png'
+import RegisterNows from '../Assets/RegisterNow.png'
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
+import {RegistrationContent} from '../constant/TimeSheet'
 import './Registration.css';
 
 const Registration = () => {
@@ -23,6 +24,7 @@ const Registration = () => {
     const [verificationPassword, setVerificationPassword] = useState("")
     const [passwordWarningMessage, setPasswordWarningMessage] = useState("")
     const navigate = useNavigate();
+    const {RegisterNow,FirstName,LastName,SelectYourDesignation,DesignationList,DateofJoining,Email,Password,ReEnterPassword,Register}=RegistrationContent
 
     const UpdateFirstName = (e) => {
         setNewUser({
@@ -103,12 +105,11 @@ const Registration = () => {
             <div className='SubHomeSecondLayer'>
                 <ServiceHeaders ServiceHeadersInfo="Registration" />
                 <div className="Registrtion-TopLayer">
-                    <img src={RegisterNow} alt="RegisterNow" className="RegisterNow" />
+                    <img src={RegisterNows} alt="RegisterNow" className="RegisterNow" />
                     <form className="Registration-Form" onSubmit={SubmitDetails}>
-                        <h3>Register Now !</h3>
-                        <h1>Sidd</h1>
+                        <h3>{RegisterNow}</h3>
                         <div>
-                        <label htmlFor="firstName">First Name:</label>
+                        <label htmlFor="firstName">{FirstName}</label>
                             <input
                                 type="text"
                                 id="firstName"
@@ -118,7 +119,7 @@ const Registration = () => {
                             />
                         </div>
                         <div>
-                            <label htmlFor="lastName">Last Name:</label>
+                            <label htmlFor="lastName">{LastName}</label>
                             <input
                                 type="text"
                                 id="lastName"
@@ -129,18 +130,14 @@ const Registration = () => {
                             />
                         </div>
                         <div className="Designation-Container">
-                        <label>Select Your Designation :</label>
+                        <label>{SelectYourDesignation}</label>
                         <select className="Designation" onChange={UpdateDesignation}>
-                            <option>Choose</option>
-                            <option value="	Sr.Bench Sales Recruiters">Sr.Bench Sales Recruiters</option>
-                            <option value="Bench sales recruiter">Bench sales recruiter</option>
-                            <option value="OPT recruiter">OPT recruiter</option>
-                            <option value="WebDeveloper">Web Developer</option>
-
+                           {DesignationList.map((each)=><option value={each}>{each}</option>)}
                         </select>
+    
                         </div>
                         <div>
-                            <label htmlFor="dateOfJoining">Date of Joining:</label>
+                            <label htmlFor="dateOfJoining">{DateofJoining}</label>
                             <input
                                 type="date"
                                 id="dateOfJoining"
@@ -151,7 +148,7 @@ const Registration = () => {
                             />
                         </div>
                         <div>
-                            <label htmlFor="Email">Email:</label>
+                            <label htmlFor="Email">{Email}</label>
                             <input
                                 type="email"
                                 id="Email"
@@ -162,7 +159,7 @@ const Registration = () => {
                             />
                         </div>
                         <div>
-                            <label htmlFor="password">Password:</label>
+                            <label htmlFor="password">{Password}</label>
                             <input
                                 type="password"
                                 id="password"
@@ -173,7 +170,7 @@ const Registration = () => {
                             />
                         </div>
                         <div>
-                            <label htmlFor="password">Re-EnterPassword:</label>
+                            <label htmlFor="password">{ReEnterPassword}</label>
                             <input
                                 type="password"
                                 id="password"
@@ -184,7 +181,7 @@ const Registration = () => {
                             />
                         </div>
             
-                        <button type="submit" className="Login-Button">Register</button>
+                        <button type="submit" className="Login-Button">{Register}</button>
                         <p className="WarningMsg">{passwordWarningMessage}</p>
                     </form>
                 </div>

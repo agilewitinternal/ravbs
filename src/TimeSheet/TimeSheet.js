@@ -10,6 +10,7 @@ import DownArrow from '../Assets/Down-Arrow.png'
 import AdminGreen from '../Assets/AdminGreen.png';
 import EmploysListItem from '../EmploysListItem/EmploysListItem'
 import axios from 'axios';
+import {AuthenticationContent} from '../constant/TimeSheet'
 import './TimeSheet.css';
 import { Link } from 'react-router-dom';
 
@@ -22,10 +23,13 @@ const TimeSheet = () => {
     const [warning, setWarning] = useState("");
     const [arrowStatus, setArrowStatus] = useState(false);
     const [searchEmploys, setSearchEmploys] = useState("");
+    const{EmployeeID,Password,ForgotPassword,Login,NewEmployRegistration,EmployInfo,Employee}=AuthenticationContent
+    
+
 
     useEffect(() => {
         fetchEmployeesDetails();
-    }, []); // Removed employeesList from dependency array
+    }, []); 
 
     const fetchEmployeesDetails = async () => {
         const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json";
@@ -75,19 +79,18 @@ const TimeSheet = () => {
                         <img className='AdminLogo' src={AdminPageLogo} alt="AdminLogo" />
                         <div className='Employee-Details'>
                             <div>
-                                <p>Employee ID</p>
+                                <p>{EmployeeID}</p>
                                 <input type='text' className='Input-Value' value={userName} placeholder='Enter your Employee ID' onChange={updateUserName} />
                             </div>
                             <div>
-                                <p>Password</p>
+                                <p>{Password}</p>
                                 <input type='password' className='Input-Value' value={password} placeholder='Enter Your Password' onChange={updatePassword} />
                             </div>
-                            <button className='Login-Button' onClick={verifyCredentials}>Login</button>
+                            <button className='Login-Button' onClick={verifyCredentials}>{Login}</button>
                             <Link to="/ResetPassword">
-                                <p>Forgot Password</p>
+                                <p>{ForgotPassword}</p>
                             </Link>
-                            <p>New User? Register Here! </p>
-                            <Link to="/Registration" className='LinksNew' >CLICK HERE</Link>
+
                             <p className='WarningMsg'>{warning}</p>
                         </div>
                     </div>
@@ -101,8 +104,11 @@ const TimeSheet = () => {
                                             <img className='Admin-green' src={AdminGreen} alt='Admin-Logo' />
                                             <h1>{each.FirstName}</h1>
                                             <h1>{each.Type}</h1>
+                                            <button className='Login-Button'>
+                                                <Link to="/Registration" className='LinksNew' >{NewEmployRegistration}</Link>
+                                            </button>
                                             <div className='EmploysInfoContainer'>
-                                                <p className='EmploysInfoTag'>Employ's Info </p>
+                                                <p className='EmploysInfoTag'>{EmployInfo}</p>
                                                 {arrowStatus ? <img className='Arrow' onClick={updateArrowStatus} src={UpArrow} alt='UpArrow' /> : <img className='Arrow' onClick={updateArrowStatus} src={DownArrow} alt='DownArrow' />}
                                             </div>
                                             {arrowStatus && (
@@ -117,7 +123,7 @@ const TimeSheet = () => {
                                         <WeekNavigator />
                                     </div>
                                 ) : (
-                                    <p>Employee</p>
+                                    <p>{Employee}</p>
                                 )}
                             </div>
                         ))}

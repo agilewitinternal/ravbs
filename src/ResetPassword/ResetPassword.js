@@ -6,6 +6,7 @@ import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
 import Reset from '../Assets/Reset.png';
+import {ResetPasswordContent} from '../constant/TimeSheet'
 import axios from "axios";
 import './ResetPassword.css';
 
@@ -21,6 +22,7 @@ const ResetPassword = () => {
   const [verifiedOTP, setverifiedOTP] = useState("")
   const [otpSentMsg, setotpSentMsg] = useState("")
   const [resetMsg, setResetMsg] = useState("")
+  const{EnterYourRegisterdEmail,Submit,EnterOTP,VerifyYourOTP,EnteryourNewPassword}=ResetPasswordContent
 
   console.log(employeesList)
 
@@ -69,10 +71,10 @@ const ResetPassword = () => {
     return (
 
       <form ref={form} onSubmit={sendEmail} className="Forgot">
-        <h3>Enter Your Registerd Email</h3>
+        <h3>{EnterYourRegisterdEmail}</h3>
         <input name="from_name" onChange={UpdateMail} type="email" required placeholder="Enter Your Registerd Gmail" />
         <input name="message" value={randomNumber} type="mail" placeholder="Enter Your Rehisterd Gmail" style={{ display: "none" }} />
-        <button className="Reset-Button" onClick={sendEmail}>Submit</button>
+        <button className="Reset-Button" onClick={sendEmail}>{Submit}</button>
         <p className="OTP-SentMsg">*{otpSentMsg}</p>
       </form>
     )
@@ -90,9 +92,9 @@ const ResetPassword = () => {
   const OTPValidation = () => {
     return (
       <div className="Forgot">
-        <h3>Enter OTP</h3>
+        <h3>{EnterOTP}</h3>
         <input type="Text" placeholder="Enter OTP sent to your Mail" onChange={(e) => setverifiedOTP(e.target.value)} />
-        <button className="Reset-Button" onClick={OtpVerification}>Verify Your OTP</button>
+        <button className="Reset-Button" onClick={OtpVerification}>{VerifyYourOTP}</button>
 
       </div>
     )
@@ -101,12 +103,12 @@ const ResetPassword = () => {
   const PasswordUpdate = () => {
     return (
       <div className="New-Password">
-        <h3>Enter your New Password</h3>
+        <h3>{EnteryourNewPassword}</h3>
         <input type="password" onChange={(e) => setPassword(e.target.value)} placeholder="Enter New Password" />
         <div>
           <input type="password" onChange={(e) => setReEnterPassword(e.target.value)} placeholder="Re-Enter Password" />
         </div>
-        <button className="Reset-Button" onClick={UpdatePassword}>Submit</button>
+        <button className="Reset-Button" onClick={UpdatePassword}>{Submit}</button>
         <p>{resetMsg}</p>
       </div>
     )
