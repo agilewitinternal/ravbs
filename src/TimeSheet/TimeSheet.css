@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     margin-right: 80px;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     
 }
 
@@ -39,7 +40,7 @@
 }
 
 .AdminLogo {
-    height: 200px;
+    height: 150px;
     display: flex;
 }
 
@@ -69,6 +70,7 @@
 
 .Dash-Board{
     display: flex;
+    flex-direction: column;
 
 }
 
@@ -87,7 +89,7 @@
     padding: 20px;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     text-align: center;
-    height: 400px;
+    height: fit-content;
     overflow: auto;
 }
 .EmploysInfoTag{
@@ -98,8 +100,26 @@
 }
 .Input-Value{
     text-align: center;
+    margin: 8px;
+}
+.Admin-FirstBlock{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10px;
+}
+.Registraion-Button{
+    width: fit-content;
+    text-decoration: none;
+    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+    color: white;
 }
 @media screen and (min-width:767px) {
+    .Admin-FirstBlock{
+        display: flex;
+        flex-direction: column;
+    }
     .WarningMsg {
         color: red;
         text-align: center;

@@ -47,12 +47,12 @@ console.log(error)
                             <iframe className='MapFrame' src={country?.toLowerCase() === "calcutta" ? `https://maps.google.com/maps?q=H.No.1-90/7/53/P%20Second%20Floor%20Blossom%20Heights%20Plot%20No.%2053%20Patrika%20Nagar%20Madhapur%20Hyderabad%20Telangana%20500081&t=&z=13&ie=UTF8&iwloc=&output=embed` : `https://maps.google.com/maps?q=405%20state%20hyway%20121%20bypass%20lewisville%20TX%2075067&t=&z=13&ie=UTF8&iwloc=&output=embed`} width="500" height="450" title="Maps" frameborder="0" style={{ border: 0 }} allowfullscreen></iframe>
 
                             <form className="MobileForm" onSubmit={SendMail}>
-                            <div >
+                        
                                 <input type="text" value={FirstName} placeholder="First Name" pattern="[A-Za-z]+" name="name" className="MobileFirstName" onChange={(e)=>SetFirstName(e.target.value)}  />
 
                               
                                 <input type="text" value={LastName} placeholder="Last Name" pattern="[A-Za-z]+" name="name" className="MobileFirstName" onChange={(e)=>SetLastName(e.target.value)}  />
-                            </div>
+                            
 
                             <input type="text" value={Contact} placeholder="Contact Details" className="MobileEmail" name="number"  pattern="[0-9]*" onChange={(e)=>SetContact(e.target.value)}/>
 

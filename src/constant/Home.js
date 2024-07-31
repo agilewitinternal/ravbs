@@ -35,13 +35,13 @@ export const Partners = [
         PartnerName: "Raj",
         PartnerIcon: Raj,
         PartnerCompany: "HCL",
-        PartnerOpinion: "“ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.”"
+        PartnerOpinion: "“ Placeholder text has been a fundamental tool in the printing and typesetting industry for centuries. This practice dates back to the 1500s when an unknown printer created a type specimen book by scrambling a galley of type. This dummy text has since become the industry's standard, allowing designers to focus on layout and design elements without the distraction of actual content.”"
     },
     {
         PartnerName: "Akshara",
         PartnerIcon: Akshara,
         PartnerCompany: "Director Of SK Instistution",
-        PartnerOpinion: "“Lorem Ipsum is a simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.”"
+        PartnerOpinion: "“In the printing and typesetting industry, placeholder text has been a key component for centuries. Dating back to the 1500s, printers have used nonsensical text to create type specimen books, allowing for the evaluation of typefaces and layouts without the influence of meaningful content. This method has remained a standard practice, aiding designers in focusing purely on design elements.”"
     }
 ]
 

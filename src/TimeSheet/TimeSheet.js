@@ -101,12 +101,17 @@ const TimeSheet = () => {
                                 {each.Type === "Admin" ? (
                                     <div className='Dash-Board'>
                                         <div className='DashBoard-FirstLayer'>
+                                        <div className='Admin-FirstBlock'>
                                             <img className='Admin-green' src={AdminGreen} alt='Admin-Logo' />
+                                            <div>
                                             <h1>{each.FirstName}</h1>
                                             <h1>{each.Type}</h1>
-                                            <button className='Login-Button'>
-                                                <Link to="/Registration" className='Login-Button' >{NewEmployRegistration}</Link>
+                                            
+                                                <Link to="/Registration" ><button className='Registraion-Button'>{NewEmployRegistration}
                                             </button>
+                                            </Link>
+                                            </div>
+                                            </div>
                                             <div className='EmploysInfoContainer'>
                                                 <p className='EmploysInfoTag'>{EmployInfo}</p>
                                                 {arrowStatus ? <img className='Arrow' onClick={updateArrowStatus} src={UpArrow} alt='UpArrow' /> : <img className='Arrow' onClick={updateArrowStatus} src={DownArrow} alt='DownArrow' />}
