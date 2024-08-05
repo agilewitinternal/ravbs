@@ -13,6 +13,7 @@ const Training = () => {
     const {Letsworktogether}=DropDownContent
     const [Timer, SetTimer] = useState(0)
     const Random = Math.ceil(Math.random() * 3)
+    console.log(Random)
     useEffect(() => {
         const interval = setInterval(() => {
             const randomValue = Math.ceil(Math.random() * TrainingArray.length-1);
@@ -22,7 +23,7 @@ const Training = () => {
         return () => {
             clearInterval(interval);
         };
-    }, [Random]);
+    }, []);
 
     return (
         <div className='HomeTopLayer'>

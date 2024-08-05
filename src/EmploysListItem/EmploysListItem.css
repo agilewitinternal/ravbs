@@ -1,0 +1,17 @@
+.InfoButton{
+    width: fit-content;
+}
+.InfoLayerTwo{
+    border: 1px solid black;
+    border-radius: 6px;
+    font-size: 10px;
+    margin: 10px;
+}
+
+.EmploysListItem-TopLayer{
+    border: 1px solid black;
+    border-radius: 6px;
+    margin: 10px;
+    padding: 10px;
+    
+}
