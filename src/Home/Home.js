@@ -30,6 +30,7 @@ const Home = () => {
                     <p className='Title'>W E &nbsp; A R E &nbsp; A G I L E W I T</p>
                     <h1 className="TitleHeading">{HomePageMainHeading}</h1>
                     <p className="TitleDescription">{HomePageTagLine}</p>
+                    <p>Sja</p>
                     <Link to="/ContactUs" className='Links'>
                     <h1 className="LetsWorkTogether">{LetsWork}</h1>
                     </Link>
