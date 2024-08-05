@@ -46,6 +46,8 @@
 
 .TitleHeading {
     color: white;
+    width: 400px;
+    font-size: 50px;
   
 }
 
@@ -219,11 +221,11 @@
 
     .TitleHeading {
         color: white;
-        width: 780px;
+        width: 730px;
         flex-wrap: wrap;
         font-family: "Neue Haas Grotesk Display Pro", sans-serif;
         font-size: 75px;
-        text-align: left;
+        
     }
 
     .TitleDescription {
