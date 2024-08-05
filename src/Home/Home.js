@@ -29,7 +29,7 @@ const Home = () => {
                     <img src={AgilewitGrey} className="AgilewitGreyLogo" alt="Agilewit Logo" />
                     <p className='Title'>W E &nbsp; A R E &nbsp; A G I L E W I T</p>
                     <h1 className="TitleHeading">{HomePageMainHeading}</h1>
-                    <p>SKL</p>
+                    
                     <p className="TitleDescription">{HomePageTagLine}</p>
                     <p>Title</p>
                     <Link to="/ContactUs" className='Links'>
