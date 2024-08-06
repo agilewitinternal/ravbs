@@ -25,7 +25,6 @@ const TimeSheet = () => {
     const [arrowStatus, setArrowStatus] = useState(false);
     const [searchEmploys, setSearchEmploys] = useState("");
     const [emplysTimeShett,setEmploysTimeSheet]=useState([])
-    const [newTimeSheet]=useState()
     const [loginStatusMessage,setLoginStatusMessage]=useState("")
     const{EmployeeID,Password,ForgotPassword,Login,NewEmployRegistration,EmployInfo,}=AuthenticationContent
     
@@ -216,6 +215,7 @@ console.log(error)
 <button className=' Login-Button' onClick={PostLogOutTime}>LogOut</button>
                                         </div>
                                         <p>*{loginStatusMessage}</p>
+                                        
                                         </div>
                                         
                                     </div>
