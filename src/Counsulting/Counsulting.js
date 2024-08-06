@@ -44,14 +44,14 @@ const Counsulting = () => {
                 <div className='OraclSecondLayer'>
                     <img src={Oracles} className='ConsultingLogo' alt="OracleLogo" />
                     <div>
-                        <h3 className='SecondLayerTitile'>{HyperionTitle}</h3>
+                        <h3 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{HyperionTitle}</h3>
                         <ol>
                             {HyperionList.map((each) => <li>{each}</li>)}
                         </ol>
-                        <p style={{ textAlign: "center" }}>{OraclefirstBottom}</p>
+                        <p style={{ textAlign: "center", }}>{OraclefirstBottom}</p>
                     </div>
                 </div>
-                <p className='SecondLayerTitile' style={{ textAlign: "center" }}>{OracleSecondBottom}</p>
+                <p className='SecondLayerTitile' style={{ textAlign: "center",color:"#25AAE1" }}>{OracleSecondBottom}</p>
             </div>
         )
 

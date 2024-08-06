@@ -25,9 +25,7 @@ const TimeSheet = () => {
     const [arrowStatus, setArrowStatus] = useState(false);
     const [searchEmploys, setSearchEmploys] = useState("");
     const [emplysTimeShett,setEmploysTimeSheet]=useState([])
-    const [newTimeSheet]=useState({  id:uuidv4(),
-        LogInDate: new Date().toDateString(),
-        Time: new Date().toLocaleTimeString()})
+    const [newTimeSheet]=useState()
     const [loginStatusMessage,setLoginStatusMessage]=useState("")
     const{EmployeeID,Password,ForgotPassword,Login,NewEmployRegistration,EmployInfo,}=AuthenticationContent
     
@@ -82,14 +80,16 @@ const TimeSheet = () => {
     };
 
     const postLogInTime = async () => {
-        
+        setLoginStatusMessage("LogInTime Updated SuccessFully")
     
         const timeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json";
     
         try {
-            const response = await axios.post(timeSheetURL, newTimeSheet);
+            const response = await axios.post(timeSheetURL, {  id:uuidv4(),
+                LogInDate: new Date().toDateString(),
+                Time: new Date().toLocaleTimeString()});
             console.log('Data posted successfully:', response.data);
-            setLoginStatusMessage("LogInTime Updated SuccessFully")
+            setLoginStatusMessage("")
         } catch (error) {
             console.error('Error posting data:', error);
         }
@@ -97,6 +97,7 @@ const TimeSheet = () => {
 
 
     const PostLogOutTime=async()=>{
+        setLoginStatusMessage("LogOut time Updated Successfully")
 const UpdatedEmployeeTimeSheet=emplysTimeShett.map((each)=>{
     if(each.LogInDate===new Date().toDateString()){
         return {...each,LogOutTime:new Date().toLocaleTimeString()}
@@ -110,7 +111,7 @@ const timeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.js
 try{
 const Responce=await axios.put(timeSheetURL,UpdatedEmployeeTimeSheet)
 console.log(Responce)
-setLoginStatusMessage("LogOut time Updated Successfully")
+setLoginStatusMessage('')
 }catch(error){
 console.log(error)
 }
@@ -183,7 +184,7 @@ console.log(error)
                                         <div className='Profile-Info'>
                                     <img className='Admin-green' src={AdminGreen} alt='Admin-Logo' />
                                     <p>{each.FirstName}</p>
-                                    <p>{each.Designation}</p>
+                                    <h3>{each.Designation}</h3>
                                     <p>{each.Email}</p>
                                     </div>
                                     <div>
@@ -214,8 +215,9 @@ console.log(error)
 <button className='Login-Button' onClick={postLogInTime}>LogIn</button>
 <button className=' Login-Button' onClick={PostLogOutTime}>LogOut</button>
                                         </div>
-                                        </div>
                                         <p>*{loginStatusMessage}</p>
+                                        </div>
+                                        
                                     </div>
                                    
                                 )}
