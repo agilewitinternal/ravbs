@@ -82,12 +82,12 @@ const Counsulting = () => {
             <div className='ConsultingTypeTopLayer'>
                 <h1>{BigDataAnalyticsTitle}</h1>
                 <p>{BigDataAnalyticsDescription}</p>
-                <h4 className='SecondLayerTitile'>{BigDataAnalyticsSubTitle}</h4>
+                <h4 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{BigDataAnalyticsSubTitle}</h4>
                 <ol>
                     {BigDataAnalyticsFirstList.map((each) => <li>{each}</li>)}
                 </ol>
                 <img src={BigData} className='ConsultingLogo' alt='BigData' />
-                <h4 className='SecondLayerTitile'>{Benifits}</h4>
+                <h4 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{Benifits}</h4>
                 <ul>
                     {BenifitsList.map((each) => <li>{each}</li>)}
                 </ul>
@@ -110,7 +110,7 @@ const Counsulting = () => {
         switch (currentCunsulting) {
             case "Business Intelligence":
                 return BusinessIntelligence();
-            case "Oracle BI Stack Components":
+            case "Oracle Business Intelligence":
                 return Oracle();
             case "IBM Datastage":
                 return IBMDatastage();

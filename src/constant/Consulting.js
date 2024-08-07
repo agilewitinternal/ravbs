@@ -1,5 +1,5 @@
 export const ConsultingItemsInfo = [
-    "IBM Datastage", "Business Intelligence", "Oracle BI Stack Components", "Big Data Analytics", "DATA SCIENCE"
+    "IBM Datastage", "Business Intelligence", "Oracle Business Intelligence", "Big Data Analytics", "DATA SCIENCE"
 ]
 export const CunsultingPageContent = {
 
@@ -20,7 +20,7 @@ export const CunsultingPageContent = {
         ],
         HyperionTitle: "Hyperion Stack Components",
         HyperionList: [
-            "Interactive Reporting Provides executives, business users and analysts with user-directed query and analysis capabilities. It provides highly interactive ad-hoc reporting. SQR Production Reporting – Provides high-volume, presentation quality formatted report generation. Financial Reporting – Provides formatted financial and management reports that comply with regulations and which features currency translations, GAAP, IFRS and other financial standards. Web Analysis – Provides capability of web-based online analytical processing analysis, presentation and reporting.",
+            "Interactive Reporting Provides executives, business users and analysts with user-directed query and analysis capabilities. It provides highly interactive ad-hoc reporting",
             "SQR Production Reporting – Provides high-volume, presentation quality formatted report generation.",
             "Financial Reporting – Provides formatted financial and management reports that comply with regulations and which features currency translations, GAAP, IFRS and other financial standards.",
             "Web Analysis – Provides capability of web-based online analytical processing analysis, presentation and reporting."
@@ -74,6 +74,7 @@ export const CunsultingPageContent = {
             "Proven expertise in implementing and tuning Hadoop-related frameworks and tools: Mahout, Hive, Pig, Chukwa, Oozie, ZooKeeper, etc.; profound experience in NoSQL and distributed computing solutions",
             "90% of team members are senior or mid-level software engineers; a documented low retention rate",
             "Weekly invoices and timesheets for work done during the previous week",
+            "Weekly invoices and timesheets for work done during the previous week",
             "A key role in helping its customers to create over $500M of enterprise value and raise $120M+ in venture funding",
             "Access to our R&D department that tracks the most innovative technologies to help our customers to deliver software faster, with improved performance, and at a lower cost"
         ],
@@ -83,7 +84,7 @@ export const CunsultingPageContent = {
     },
     DataScienceContent: {
         DataScienceTitle: "Data Science",
-        DataScienceDescription: "AgileWit Solutions Inc provides Information Technology contract consultants specializing in applications development, infrastructure support, Enterprise Resource Planning (ERP), data warehousing, and databases. Our client base is broad, ranging from small businesses to Fortune 500 companies and stretching across numerous verticals. Among these markets are communications, construction, financial/banking, information technology, manufacturing, oil & gas, transportation, biotechnology, government, healthcare/medical institutions, education, insurance, legal, marketing/media, pharmaceutical, retail, technology, and utilities.",
+        DataScienceDescription: "Agilewit Solutions Inc provides an Information Technology contract Consultants specializing in Applications development, Infrastructure support, Enterprise Resource Planning (ERP), Data Warehousing, and Database. Our client-base is broad, ranging from small businesses to Fortune 500 companies and stretching across numerous verticals. Among these markets are Communications, Construction, Financial/Banking, Information Technology, Manufacturing, Oil & Gas, Transportation, Biotechnology, Government, Healthcare/Medical Institutions, Education, Insurance, Legal, Marketing/Media, Pharmaceutical, Retail, Technology and Utilities.",
         DataSciencSubDescription: "Our success is simply the result of hard work in data science models. Data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from data in various forms, both structured and unstructured, similar to data mining."
     }
 
