@@ -21,7 +21,7 @@ const {WelcomeTitle,Introduction,MissionHeading,MissionDescription,PartnersOpini
             <Header />
             <DesktopHeader />
            <div className='SubHomeSecondLayer'>
-                    <ServiceHeaders ServiceHeadersInfo="AboutUs" />
+                    <ServiceHeaders ServiceHeadersInfo="About Us" />
                     <div className='StaffContainer'>
                         <img src={Staff} alt="Staff" />
                         <div className='StaffDescription'>

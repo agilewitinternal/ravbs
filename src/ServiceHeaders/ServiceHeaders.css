@@ -15,7 +15,7 @@
     color: white;
     font-family: 'Neue Haas Grotesk Display Pro', Arial, sans-serif;
    
-  
+    
    margin-left: 20px;
    
 
@@ -40,9 +40,10 @@
     .PropName {
         color: white;
         font-family: 'Neue Haas Grotesk Display Pro', Arial, sans-serif;
-       
        font-size: 80px;
        margin-left: 20px;
+       display: flex;
+       align-self: flex-end;
        
     
     

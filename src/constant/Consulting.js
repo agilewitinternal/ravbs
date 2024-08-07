@@ -14,9 +14,9 @@ export const CunsultingPageContent = {
             'BI Answers – Fully interactive and drillable charts, pivot tables and reports that can be created by the business users by using a logical view of the information instead of using complex database structure. It is a new generation Ad-hoc Reporting and Querying tool.',
             "BI Interactive Dashboards – Aggregate content and applications are presented through the interactive dashboards that are dynamically personalized based on the user’s role and identity",
             "BI Delivers – Supports Business Activity Monitoring and Alerting through multiple channels such as email, dashboards and mobiles.",
+            "Disconnected Analytics – Enables full analytical functionality for the mobile professional who is disconnected from the Corporate Network",
             "BI Publisher – This component is an Enterprise Reporting and Distribution tool where reports designed for MS Word or Adobe Acrobat can be delivered via printer, email, fax, webDAV or published to a portal.",
-            "Briefing Books – This tool enables users to create snapshots for viewing them offline or sharing with others. These snapshots have paging control and are well suited to present information to others.",
-            "Disconnected Analytics – Enables full analytical functionality for the mobile professional who is disconnected from the Corporate Network."
+            "Briefing Books – This tool enables users to create snapshots for viewing them offline or sharing with others. These snapshots have paging control and are well suited to present information to others"
         ],
         HyperionTitle: "Hyperion Stack Components",
         HyperionList: [

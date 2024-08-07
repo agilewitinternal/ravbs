@@ -61,13 +61,13 @@ const Counsulting = () => {
         return (
             <div className='ConsultingTypeTopLayer'>
                 <h3>{IBMDatastageTitle}</h3>
-                < h4 className='SecondLayerTitile'>{IBMDatastageSubTitle}</h4>
+                < h4 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{IBMDatastageSubTitle}</h4>
                 <ol>
                     {IBMDatastageFirstList.map((each) => <li>{each}</li>)}
                 </ol>
                 <img src={IBM} alt="IBM Logo" className='ConsultingLogo' />
 
-                <h4 className='SecondLayerTitile'>{DataStageAdvantages}</h4>
+                <h4 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{DataStageAdvantages}</h4>
                 <p>{DataStageAdvantagesDescription}</p>
                 <ul>
                     {IBMDatastageSecondList.map((each) => <li>{each}</li>)}
