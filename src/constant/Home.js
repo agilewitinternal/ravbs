@@ -18,7 +18,7 @@ export const Achievement = [
     }, {
         Icon: building,
         Count: 55,
-        Title: "INDUSTRY PLACEMENT"
+        Title: "INDUSTRY PLACEMENTS"
     }, {
         Icon: Team,
         Count: 10,
