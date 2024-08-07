@@ -26,6 +26,7 @@ const TimeSheet = () => {
     const [searchEmploys, setSearchEmploys] = useState("");
     const [emplysTimeShett,setEmploysTimeSheet]=useState([])
     const [loginStatusMessage,setLoginStatusMessage]=useState("")
+    const [timeSheetButtonStatus,setTimeSheetButtonStatus]=useState(true)
     const{EmployeeID,Password,ForgotPassword,Login,NewEmployRegistration,EmployInfo,}=AuthenticationContent
     
 
@@ -78,17 +79,20 @@ const TimeSheet = () => {
         setArrowStatus(!arrowStatus);
     };
 
-    const postLogInTime = async () => {
+    const postLogInTime = async (A) => {
         setLoginStatusMessage("LogInTime Updated SuccessFully")
     
         const timeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json";
     
         try {
             const response = await axios.post(timeSheetURL, {  id:uuidv4(),
+                EmaployName:A,
                 LogInDate: new Date().toDateString(),
                 Time: new Date().toLocaleTimeString()});
             console.log('Data posted successfully:', response.data);
+            setTimeSheetButtonStatus(!timeSheetButtonStatus)
             setLoginStatusMessage("")
+            
         } catch (error) {
             console.error('Error posting data:', error);
         }
@@ -111,6 +115,8 @@ try{
 const Responce=await axios.put(timeSheetURL,UpdatedEmployeeTimeSheet)
 console.log(Responce)
 setLoginStatusMessage('')
+setTimeSheetButtonStatus(!timeSheetButtonStatus)
+
 }catch(error){
 console.log(error)
 }
@@ -122,7 +128,7 @@ console.log(error)
     };
 
     const searchResult = employeesList.filter((each) => each.FirstName.toLowerCase().includes(searchEmploys));
-
+const OneWeek=emplysTimeShett.slice(0,6)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -189,6 +195,7 @@ console.log(error)
                                     <div>
                                         <h3>{new Date().toDateString()},{new Date().toLocaleTimeString()}</h3>
                                         <div className='LogIn-Container'>
+                                            
 <button className='Login-Button'>Current Week </button>
 <button className=' Login-Button'>Previous Week</button>
                                         </div>
@@ -204,17 +211,18 @@ console.log(error)
                                                     LogOut Time
                                                 </th>
                                             </tr>
-                                          {emplysTimeShett.map((each)=><tr>
+                                          {OneWeek.map((each)=><tr>
                                             <td>{each.LogInDate}</td>
                                             <td>{each.Time}</td>
                                             <td>{each.LogOutTime}</td>
                                           </tr>)}           
                                         </table>
                                         <div className='LogIn-Container'>
-<button className='Login-Button' onClick={postLogInTime}>LogIn</button>
-<button className=' Login-Button' onClick={PostLogOutTime}>LogOut</button>
+                                            {timeSheetButtonStatus?
+<button className='StartWorking-Button' onClick={()=>postLogInTime(each.FirstName)}>Strat Working Hours</button>:
+<button className=' StopWorking-Button' onClick={PostLogOutTime}>Stop Working Hours</button>}
                                         </div>
-                                        <p>*{loginStatusMessage}</p>
+                                        <p>{loginStatusMessage}</p>
                                         
                                         </div>
                                         

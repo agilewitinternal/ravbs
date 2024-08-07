@@ -175,6 +175,20 @@
     .LogIn-Container{
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+    
+       
+    }
+    .StartWorking-Button{
+width: fit-content;
+margin: 10px;
+display: flex;
+margin-right: auto;
+
+    }
+    .StopWorking-Button{
+        width: fit-content;
+margin: 10px;
+display: flex;
+margin-left: auto;
     }
 }
