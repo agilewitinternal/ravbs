@@ -75,6 +75,7 @@ const ResetPassword = () => {
         <input name="from_name" onChange={UpdateMail} type="email" required placeholder="Enter Your Registerd Gmail" />
         <input name="message" value={randomNumber} type="mail" placeholder="Enter Your Rehisterd Gmail" style={{ display: "none" }} />
         <button className="Reset-Button" onClick={sendEmail}>{Submit}</button>
+        <button>Cancel</button>
         <p className="OTP-SentMsg">*{otpSentMsg}</p>
       </form>
     )
