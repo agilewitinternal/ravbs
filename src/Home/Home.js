@@ -28,7 +28,7 @@ const Home = () => {
                     <p className='Title'>W E &nbsp; A R E &nbsp; A G I L E W I T</p>
                     <h1 className="TitleHeading">{HomePageMainingHeading}</h1>
                     <p className="TitleDescription">{HomePageTagLine}</p>
-                    
+                    <p>Sidd</p>
                     <Link to="/ContactUs" className='Links'>
                     <h1 className="LetsWorkTogether">{LetsWork}</h1>
                     </Link>
