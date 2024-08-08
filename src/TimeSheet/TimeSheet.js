@@ -27,6 +27,8 @@ const TimeSheet = () => {
     const [emplysTimeShett,setEmploysTimeSheet]=useState([])
     const [loginStatusMessage,setLoginStatusMessage]=useState("")
     const [timeSheetButtonStatus,setTimeSheetButtonStatus]=useState(true)
+    const [startingCount,setStartingCount]=useState(0)
+    const [endingCount,setEndingCount]=useState(6)
     const{EmployeeID,Password,ForgotPassword,Login,NewEmployRegistration,EmployInfo,}=AuthenticationContent
     
 
@@ -127,8 +129,18 @@ console.log(error)
         setSearchEmploys(e.target.value.toLowerCase());
     };
 
+    const UpdatePreviousWeek=()=>{
+        setStartingCount(prevCount=>prevCount-7)
+        setEndingCount(prevCount=>prevCount-7)
+    }
+
+    const UpdateNextWeek=()=>{
+        setStartingCount(prevCount=>prevCount+7)
+        setEndingCount(prevCount=>prevCount+7)
+    }
+
     const searchResult = employeesList.filter((each) => each.FirstName.toLowerCase().includes(searchEmploys));
-const OneWeek=emplysTimeShett.slice(0,6)
+const OneWeek=emplysTimeShett.slice(startingCount,endingCount)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -196,10 +208,10 @@ const OneWeek=emplysTimeShett.slice(0,6)
                                         <h3>{new Date().toDateString()},{new Date().toLocaleTimeString()}</h3>
                                         <div className='LogIn-Container'>
                                             
-<button className='Login-Button'>Current Week </button>
-<button className=' Login-Button'>Previous Week</button>
+<button className='Login-Button' onClick={UpdatePreviousWeek}>Previous Week </button>
+<button className=' Login-Button' onClick={UpdateNextWeek}>Next Week</button>
                                         </div>
-                                        <table>
+                                        {OneWeek.length===0?<p>Zero Working Hours Of this Week</p>:<table>
                                             <tr>
                                                 <th>
                                                     Date
@@ -216,7 +228,7 @@ const OneWeek=emplysTimeShett.slice(0,6)
                                             <td>{each.Time}</td>
                                             <td>{each.LogOutTime}</td>
                                           </tr>)}           
-                                        </table>
+                                        </table>}
                                         <div className='LogIn-Container'>
                                             {timeSheetButtonStatus?
 <button className='StartWorking-Button' onClick={()=>postLogInTime(each.FirstName)}>Strat Working Hours</button>:
