@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import emailjs from '@emailjs/browser';
 import Header from "../Header/Header";
 import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
@@ -66,7 +66,6 @@ const ResetPassword = () => {
 
 
 
-
   const OTPProcedure = () => {
     return (
 
@@ -75,7 +74,9 @@ const ResetPassword = () => {
         <input name="from_name" onChange={UpdateMail} type="email" required placeholder="Enter Your Registerd Gmail" />
         <input name="message" value={randomNumber} type="mail" placeholder="Enter Your Rehisterd Gmail" style={{ display: "none" }} />
         <button className="Reset-Button" onClick={sendEmail}>{Submit}</button>
-        <button>Cancel</button>
+        <Link to="/TimeSheet" style={{textDecoration:"none"}}>
+        <button className="Reset-Button">Cancel</button>
+        </Link>
         <p className="OTP-SentMsg">*{otpSentMsg}</p>
       </form>
     )
