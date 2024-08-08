@@ -14,11 +14,12 @@
     width: 300px;
 }
 
-.ClientAssistance{
+.ClientAssistance {
     width: 160px;
     flex-wrap: wrap;
-    
+
 }
+
 .HomeIntroduction {
     display: flex;
     flex-direction: column;
@@ -45,17 +46,9 @@
 
 .TitleHeading {
     color: white;
-    width: 298px;
-    top: 380px;
-    left: 31px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: "Neue Haas Grotesk Display Pro", sans-serif;
-    font-size: 35px;
-    font-weight: 700;
-    line-height: 43.05px;
-    letter-spacing: 0.03em;
-    text-align: left;
+    width: 400px;
+    font-size: 50px;
+  
 }
 
 .TitleDescription {
@@ -116,7 +109,7 @@
 }
 
 .ClientCompanyLogo {
- margin-right: 10px;
+    margin-right: 10px;
     width: 50px;
     filter: grayscale(100%);
 }
@@ -177,8 +170,8 @@
 
 .ShareYourIdeaTitle {
 
- width: 200px;
- flex-wrap: wrap;
+    width: 200px;
+    flex-wrap: wrap;
 }
 
 @media screen and (min-width: 767px) {
@@ -197,15 +190,18 @@
         padding: 40px;
         height: fit-content;
     }
-.ShareYourIdeaTitle{
-    width: 400px;
-}
+
+    .ShareYourIdeaTitle {
+        width: 400px;
+    }
+
     .AgilewitGreyLogo {
         height: 100px;
     }
 
     .Title {
         font-size: 22px;
+
     }
 
     .logo-container {
@@ -224,9 +220,12 @@
     }
 
     .TitleHeading {
-        width: 550px;
-        font-size: 60px;
-        line-height: 67.22px;
+        color: white;
+        width: 730px;
+        flex-wrap: wrap;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 75px;
+        
     }
 
     .TitleDescription {

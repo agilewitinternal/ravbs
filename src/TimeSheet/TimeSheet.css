@@ -99,6 +99,24 @@
 .Input-Value{
     text-align: center;
 }
+.Employs-Personal-Info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: #EBFBFF;
+    padding: 30px;
+}
+.Profile-Info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.LogIn-Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 @media screen and (min-width:767px) {
     .WarningMsg {
         color: red;
@@ -140,5 +158,37 @@
         align-self: center;
         font-weight: bold;
       
+    }
+    .Employs-Personal-Info{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background: #EBFBFF;
+        padding: 30px;
+    }
+    .Profile-Info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .LogIn-Container{
+        display: flex;
+        flex-direction: row;
+    
+       
+    }
+    .StartWorking-Button{
+width: fit-content;
+margin: 10px;
+display: flex;
+margin-right: auto;
+
+    }
+    .StopWorking-Button{
+        width: fit-content;
+margin: 10px;
+display: flex;
+margin-left: auto;
     }
 }

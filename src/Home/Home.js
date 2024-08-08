@@ -10,13 +10,11 @@ import { AboutUsContents } from '../constant/AboutUs';
 import AchievementItem from '../AchievementItem/Achievmentitem';
 import BottomPage from '../BottomPage/BottomPage';
 import Carousels from '../Carousels/Carousels';
-
-
 import './Home.css';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-    const { HomeTitle, HomePageMainHeading, MobileViewCaption, HomePageTagLine, LetsWork, ShareYourIdea, IdeaDescription } = HomePageContent;
+    const { HomeTitle, HomePageMainingHeading, MobileViewCaption, HomePageTagLine, LetsWork, ShareYourIdea, IdeaDescription } = HomePageContent;
     const { PartnersOpinionTitlePartOne, PartnersOpinionTitlePartTwo, PartnersOpinionTitlePartThree } = AboutUsContents;
 
     return (
@@ -28,8 +26,9 @@ const Home = () => {
                 <div className='HomeIntroduction'>
                     <img src={AgilewitGrey} className="AgilewitGreyLogo" alt="Agilewit Logo" />
                     <p className='Title'>W E &nbsp; A R E &nbsp; A G I L E W I T</p>
-                    <h1 className="TitleHeading">{HomePageMainHeading}</h1>
+                    <h1 className="TitleHeading">{HomePageMainingHeading}</h1>
                     <p className="TitleDescription">{HomePageTagLine}</p>
+                    
                     <Link to="/ContactUs" className='Links'>
                     <h1 className="LetsWorkTogether">{LetsWork}</h1>
                     </Link>

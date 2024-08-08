@@ -38,7 +38,7 @@ const BottomPage = () => {
                     <div className='BottomPageServices'>
                         <h3> {Service}</h3>
                         <Link className="Links" to="/Consulting">
-                            <h3>{Consulting}</h3>
+                            <p>{Consulting}</p>
 
 
                         </Link>
@@ -65,9 +65,10 @@ const BottomPage = () => {
                         </Link>
                         <p>{CompanyUSAAddress}</p>
                         <p>{CompanyIndiaAddress}</p>
+                        <p className='InfoMail'>{CompanyMail}</p>
                     </div>
                 </div>
-                <p className='InfoMail'>{CompanyMail}</p>
+             
             </div>
             <hr className='BottomPageLine' />
             <p className='FinalLineContent'>{EndTitle}</p>

@@ -9,6 +9,7 @@ import UpArrow from '../Assets/Up-Arrow.png'
 import DownArrow from '../Assets/Down-Arrow.png'
 import AdminGreen from '../Assets/AdminGreen.png';
 import EmploysListItem from '../EmploysListItem/EmploysListItem'
+import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
 import {AuthenticationContent} from '../constant/TimeSheet'
 import './TimeSheet.css';
@@ -23,13 +24,30 @@ const TimeSheet = () => {
     const [warning, setWarning] = useState("");
     const [arrowStatus, setArrowStatus] = useState(false);
     const [searchEmploys, setSearchEmploys] = useState("");
-    const{EmployeeID,Password,ForgotPassword,Login,NewEmployRegistration,EmployInfo,Employee}=AuthenticationContent
+    const [emplysTimeShett,setEmploysTimeSheet]=useState([])
+    const [loginStatusMessage,setLoginStatusMessage]=useState("")
+    const [timeSheetButtonStatus,setTimeSheetButtonStatus]=useState(true)
+    const{EmployeeID,Password,ForgotPassword,Login,NewEmployRegistration,EmployInfo,}=AuthenticationContent
     
 
 
     useEffect(() => {
         fetchEmployeesDetails();
     }, []); 
+
+    useEffect(()=>{
+        FetchEmploysTimeSheet()
+    })
+
+
+    const FetchEmploysTimeSheet= async()=>{
+        const TimeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json";
+
+        const response = await axios.get(TimeSheetURL);
+        const finalOutput = Object.values(response.data);
+        setEmploysTimeSheet(finalOutput.flat());
+        
+    }
 
     const fetchEmployeesDetails = async () => {
         const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json";
@@ -61,12 +79,56 @@ const TimeSheet = () => {
         setArrowStatus(!arrowStatus);
     };
 
+    const postLogInTime = async (A) => {
+        setLoginStatusMessage("LogInTime Updated SuccessFully")
+    
+        const timeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json";
+    
+        try {
+            const response = await axios.post(timeSheetURL, {  id:uuidv4(),
+                EmaployName:A,
+                LogInDate: new Date().toDateString(),
+                Time: new Date().toLocaleTimeString()});
+            console.log('Data posted successfully:', response.data);
+            setTimeSheetButtonStatus(!timeSheetButtonStatus)
+            setLoginStatusMessage("")
+            
+        } catch (error) {
+            console.error('Error posting data:', error);
+        }
+    };
+
+
+    const PostLogOutTime=async()=>{
+        setLoginStatusMessage("LogOut time Updated Successfully")
+const UpdatedEmployeeTimeSheet=emplysTimeShett.map((each)=>{
+    if(each.LogInDate===new Date().toDateString()){
+        return {...each,LogOutTime:new Date().toLocaleTimeString()}
+    }else{
+        return each
+    }
+
+})
+const timeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json";
+    
+try{
+const Responce=await axios.put(timeSheetURL,UpdatedEmployeeTimeSheet)
+console.log(Responce)
+setLoginStatusMessage('')
+setTimeSheetButtonStatus(!timeSheetButtonStatus)
+
+}catch(error){
+console.log(error)
+}
+    }
+    
+
     const updateSearchEmploys = (e) => {
         setSearchEmploys(e.target.value.toLowerCase());
     };
 
     const searchResult = employeesList.filter((each) => each.FirstName.toLowerCase().includes(searchEmploys));
-
+const OneWeek=emplysTimeShett.slice(0,6)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -123,7 +185,49 @@ const TimeSheet = () => {
                                         <WeekNavigator />
                                     </div>
                                 ) : (
-                                    <p>{Employee}</p>
+                                    <div className='Employs-Personal-Info'>
+                                        <div className='Profile-Info'>
+                                    <img className='Admin-green' src={AdminGreen} alt='Admin-Logo' />
+                                    <p>{each.FirstName}</p>
+                                    <h3>{each.Designation}</h3>
+                                    <p>{each.Email}</p>
+                                    </div>
+                                    <div>
+                                        <h3>{new Date().toDateString()},{new Date().toLocaleTimeString()}</h3>
+                                        <div className='LogIn-Container'>
+                                            
+<button className='Login-Button'>Current Week </button>
+<button className=' Login-Button'>Previous Week</button>
+                                        </div>
+                                        <table>
+                                            <tr>
+                                                <th>
+                                                    Date
+                                                </th>
+                                                <th>
+                                                    LogIn Time
+                                                </th>
+                                                <th>
+                                                    LogOut Time
+                                                </th>
+                                            </tr>
+                                          {OneWeek.map((each)=><tr>
+                                            <td>{each.LogInDate}</td>
+                                            <td>{each.Time}</td>
+                                            <td>{each.LogOutTime}</td>
+                                          </tr>)}           
+                                        </table>
+                                        <div className='LogIn-Container'>
+                                            {timeSheetButtonStatus?
+<button className='StartWorking-Button' onClick={()=>postLogInTime(each.FirstName)}>Strat Working Hours</button>:
+<button className=' StopWorking-Button' onClick={PostLogOutTime}>Stop Working Hours</button>}
+                                        </div>
+                                        <p>{loginStatusMessage}</p>
+                                        
+                                        </div>
+                                        
+                                    </div>
+                                   
                                 )}
                             </div>
                         ))}

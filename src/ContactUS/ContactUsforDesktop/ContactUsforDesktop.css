@@ -11,11 +11,21 @@
 
 .FirstName{
     background: #EBFBFF;
+    color:green;
     border: 1.4px solid #08c4f3;
     padding: 8px;
     margin: 8px;
     width: 202px;
  
+}
+.FirstName::placeholder {
+    color: #08c4f3; 
+}
+.Email::placeholder {
+    color: #08c4f3; 
+}
+.Message::placeholder {
+    color: #08c4f3; 
 }
 
 .Email{
@@ -24,6 +34,7 @@
     padding: 8px;
     margin: 8px;
     width: 440px;
+    color: #08c4f3;
    
 }
 
@@ -34,6 +45,7 @@
     margin: 8px;
     width: 384px;
     height: 100px;
+    color: #08c4f3;
 }
 
 button{
