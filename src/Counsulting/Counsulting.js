@@ -100,7 +100,7 @@ const Counsulting = () => {
             <div className='ConsultingTypeTopLayer'>
                 <h1>{DataScienceTitle}</h1>
                 <p>{DataScienceDescription}</p>
-                <h3 className='InfoMail'>{DataScienceTitle}</h3>
+                <h3 style={{color:"#25AAE1"}}>{DataScienceTitle}</h3>
                 <p>{DataSciencSubDescription}</p>
             </div>
         );

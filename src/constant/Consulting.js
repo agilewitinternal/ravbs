@@ -83,7 +83,7 @@ export const CunsultingPageContent = {
 
     },
     DataScienceContent: {
-        DataScienceTitle: "Data Science",
+        DataScienceTitle: "DATA SCIENCE",
         DataScienceDescription: "Agilewit Solutions Inc provides an Information Technology contract Consultants specializing in Applications development, Infrastructure support, Enterprise Resource Planning (ERP), Data Warehousing, and Database. Our client-base is broad, ranging from small businesses to Fortune 500 companies and stretching across numerous verticals. Among these markets are Communications, Construction, Financial/Banking, Information Technology, Manufacturing, Oil & Gas, Transportation, Biotechnology, Government, Healthcare/Medical Institutions, Education, Insurance, Legal, Marketing/Media, Pharmaceutical, Retail, Technology and Utilities.",
         DataSciencSubDescription: "Our success is simply the result of hard work in data science models. Data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from data in various forms, both structured and unstructured, similar to data mining."
     }
