@@ -78,6 +78,7 @@ const ResetPassword = () => {
         <button className="Reset-Button">Cancel</button>
         </Link>
         <p className="OTP-SentMsg">*{otpSentMsg}</p>
+        <p>Sidd</p>
       </form>
     )
   }
