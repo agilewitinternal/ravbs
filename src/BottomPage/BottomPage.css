@@ -60,6 +60,8 @@
 
 @media screen and (min-width: 767px) {
     .BottomPageTopLayer {
+        display: flex;
+        flex-direction: column;
         background: #322D2D;
         padding: 40px;
         color: white;
@@ -89,6 +91,7 @@
     }
 
     .InfoMail {
-        margin-left: 30px;
+        display: flex;
+        align-self: flex-end;
     }
 }

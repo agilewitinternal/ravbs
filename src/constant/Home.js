@@ -18,7 +18,7 @@ export const Achievement = [
     }, {
         Icon: building,
         Count: 55,
-        Title: "INDUSTRY PLACEMENT"
+        Title: "INDUSTRY PLACEMENTS"
     }, {
         Icon: Team,
         Count: 10,
@@ -32,7 +32,7 @@ export const ClienCompanyArray=[Beaconhill,Alpine,Experis,Info]
 
 export const Partners = [
     {
-        PartnerName: "Raj",
+        PartnerName: "Raj Kumar",
         PartnerIcon: Raj,
         PartnerCompany: "HCL",
         PartnerOpinion: "“ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.”"
@@ -51,8 +51,8 @@ export const HomePageContent = {
     HomePageMainingHeading: 'Innovate with Our Tech Experts.',
     MobileViewCaption: `"Technology empowers us to dream beyond boundaries and make those dreams a reality"`,
     HomePageTagLine: "Elevate Your Business with Our Technology Consulting and Software Development Expertise",
-    LetsWork: "LET WORK TOGOTHER +",
+    LetsWork: "LET WORK TOGETHER +",
     ShareYourIdea: `You Share your idea We get it done`,
-    IdeaDescription: `Agilewit Solutions is incorporated as a Technology Consulting services and Software product development firm. Headquartered in Texas and Offshore development centers in India, we are involved in creating strategy, implementing, deploying, and supporting a wide range of
+    IdeaDescription: `Agilewit Solutions is incorporated as a Technology Consulting services and Software product development firm. Head quartered in Texas and Offshore development centers in India, we are involved in creating strategy, implementing, deploying, and supporting a wide range of
     solutions for clients worldwide.`
 }

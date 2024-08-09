@@ -23,7 +23,7 @@ const MobileAppDevelopmentDesktopView=()=>{
                
                    
                     <div className="SubHomeSecondLayer">
-                        <ServiceHeaders ServiceHeadersInfo="App Development" />
+                        <ServiceHeaders ServiceHeadersInfo="Mobile App Developments" />
                         <div className='StaffContainer'>
                             <img src={Staff} alt="Staff" />
                             <div className='StaffDescription'>

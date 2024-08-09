@@ -44,14 +44,14 @@ const Counsulting = () => {
                 <div className='OraclSecondLayer'>
                     <img src={Oracles} className='ConsultingLogo' alt="OracleLogo" />
                     <div>
-                        <h3 className='SecondLayerTitile'>{HyperionTitle}</h3>
+                        <h3 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{HyperionTitle}</h3>
                         <ol>
                             {HyperionList.map((each) => <li>{each}</li>)}
                         </ol>
-                        <p style={{ textAlign: "center" }}>{OraclefirstBottom}</p>
+                        <p style={{ textAlign: "center", }}>{OraclefirstBottom}</p>
                     </div>
                 </div>
-                <p className='SecondLayerTitile' style={{ textAlign: "center" }}>{OracleSecondBottom}</p>
+                <p className='SecondLayerTitile' style={{ textAlign: "center",color:"#25AAE1" }}>{OracleSecondBottom}</p>
             </div>
         )
 
@@ -61,13 +61,13 @@ const Counsulting = () => {
         return (
             <div className='ConsultingTypeTopLayer'>
                 <h3>{IBMDatastageTitle}</h3>
-                < h4 className='SecondLayerTitile'>{IBMDatastageSubTitle}</h4>
+                < h4 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{IBMDatastageSubTitle}</h4>
                 <ol>
                     {IBMDatastageFirstList.map((each) => <li>{each}</li>)}
                 </ol>
                 <img src={IBM} alt="IBM Logo" className='ConsultingLogo' />
 
-                <h4 className='SecondLayerTitile'>{DataStageAdvantages}</h4>
+                <h4 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{DataStageAdvantages}</h4>
                 <p>{DataStageAdvantagesDescription}</p>
                 <ul>
                     {IBMDatastageSecondList.map((each) => <li>{each}</li>)}
@@ -82,12 +82,12 @@ const Counsulting = () => {
             <div className='ConsultingTypeTopLayer'>
                 <h1>{BigDataAnalyticsTitle}</h1>
                 <p>{BigDataAnalyticsDescription}</p>
-                <h4 className='SecondLayerTitile'>{BigDataAnalyticsSubTitle}</h4>
+                <h4 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{BigDataAnalyticsSubTitle}</h4>
                 <ol>
                     {BigDataAnalyticsFirstList.map((each) => <li>{each}</li>)}
                 </ol>
                 <img src={BigData} className='ConsultingLogo' alt='BigData' />
-                <h4 className='SecondLayerTitile'>{Benifits}</h4>
+                <h4 className='SecondLayerTitile' style={{color:"#25AAE1"}}>{Benifits}</h4>
                 <ul>
                     {BenifitsList.map((each) => <li>{each}</li>)}
                 </ul>
@@ -100,7 +100,7 @@ const Counsulting = () => {
             <div className='ConsultingTypeTopLayer'>
                 <h1>{DataScienceTitle}</h1>
                 <p>{DataScienceDescription}</p>
-                <h3 className='InfoMail'>{DataScienceTitle}</h3>
+                <h3 style={{color:"#25AAE1"}}>{DataScienceTitle}</h3>
                 <p>{DataSciencSubDescription}</p>
             </div>
         );
@@ -110,7 +110,7 @@ const Counsulting = () => {
         switch (currentCunsulting) {
             case "Business Intelligence":
                 return BusinessIntelligence();
-            case "Oracle BI Stack Components":
+            case "Oracle Business Intelligence":
                 return Oracle();
             case "IBM Datastage":
                 return IBMDatastage();
