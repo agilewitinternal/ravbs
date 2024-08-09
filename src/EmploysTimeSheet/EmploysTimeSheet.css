@@ -3,25 +3,23 @@ table,th,tr,td{
     border-collapse: collapse;
     padding: 5px;
     font-size: 13px;
+    text-align: center;
    
 }
-.Table-Row{
+.TimeSheet-Container{
+    padding: 30px;
     display: flex;
-    margin: 10px;
-}
-.Next-weekButton{
-    width: fit-content;
-    height: fit-content;
-}
-
-.Week-Button{
-    display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px
 }
-
-.WeekButton{
+.Buttons-Conatainer{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+width: 400px;
+}
+.Button{
     width: fit-content;
+    margin: 10px;
 }
