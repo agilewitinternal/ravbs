@@ -39,11 +39,11 @@ const TimeSheet = () => {
 
     useEffect(()=>{
         FetchEmploysTimeSheet()
-    })
+    },[])
 
 
     const FetchEmploysTimeSheet= async()=>{
-        const TimeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json";
+        const TimeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com//.json";
 
         const response = await axios.get(TimeSheetURL);
         const finalOutput = Object.values(response.data);
