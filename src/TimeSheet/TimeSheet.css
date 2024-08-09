@@ -38,6 +38,10 @@
     
 }
 
+.Time-Entry{
+    width: 40px;
+}
+
 .AdminLogo {
     height: 200px;
     display: flex;
