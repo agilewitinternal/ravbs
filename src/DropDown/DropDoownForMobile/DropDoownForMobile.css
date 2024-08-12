@@ -1,0 +1,87 @@
+.MobileDropDownProfile {
+    position: fixed;
+    right: 0.5rem;
+    width: 650px;
+    height: 100vh;
+    padding: 60px;
+    text-decoration: none;
+    background: rgba(50, 45, 45, 1);
+   
+    display: flex;
+    font-size: 16px;
+    flex-direction: column;
+    animation: fadeInDown 0.5s ease forwards;
+  }
+
+  .DropDownIcone {
+    display: flex;
+    align-self: flex-end;
+    height: 30px;
+    width: 30px;
+  }
+
+  .Links {
+    text-decoration: none;
+    color: white;
+  }
+
+  .MobileDropDownSecondLayer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: white;
+  }
+
+  .MobileDropDownFirstLayer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding-top: 0px;
+    color: white;
+    
+  }
+
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  li {
+    list-style-type: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    gap: 10px;
+  }
+
+  .MobileLetsWorkTogetherContainer {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .LetWorktogether {
+    color: #00B7F0;
+    text-decoration: none;
+  }
+
+  .LinkRemove {
+    text-decoration: none;
+    color: white;
+    display: flex;
+  }
+
+
+     @media screen and (min-width:767px) {
+     
+      
+      .MobileDropDownProfile{
+        display: none;
+      }
+     
+     }

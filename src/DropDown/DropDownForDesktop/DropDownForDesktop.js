@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
+import CloseIcon from '../CloseIcon.png'
 import {DropDownContent} from '../../constant/DropDownContent'
-import "../../DropDown/DropDown.css"
+import "./DropDownForDesktop.css"
 
 const DropDownForDesktop = () => {
     const{Expolre,Service,Product,AboutUS,CurrentOpening,Consulting,AppDevelopment,Training,Consen,Letsworktogether}=DropDownContent
@@ -8,54 +9,61 @@ const DropDownForDesktop = () => {
 
        
 
-                <div className="DropDownFirstLayer">
-                    <div className="DropDownSecondLayer">
-                        <h1>{Expolre}</h1>
-                        <h1>{Service}</h1>
-                        <h1>{Product}</h1>
-                    </div>
+        <div className="DropDownProfile">
+        <Link to="/" className='DropDownIcone'>
+            <img src={CloseIcon} alt="CloseIcone"  />
 
-                    <div className="DropDownSecondLayer">
-                        <div>
+            </Link>
 
-                            <Link className="LinkRemove" to="/AboutUs">
-                                <p>{AboutUS}</p>
-                            </Link>
+        <div className="DropDownFirstLayer">
+            <div className="DropDownSecondLayer">
+                <h1>{Expolre}</h1>
+                <h1>{Service}</h1>
+                <h1>{Product}</h1>
+            </div>
 
-                            <Link to="/Jobs" className="LinkRemove" >
-                                <p>{CurrentOpening}</p>
-                            </Link>
-                        </div>
-                        <div>
-                            <Link to="/Consulting" className="LinkRemove" >
-                                <p>{Consulting}</p>
-                            </Link>
-                            <Link className="LinkRemove" to="/MobileAppDevelopment" >
-                                <p>{AppDevelopment}</p>
-                            </Link>
-                            <Link to="/Training" className="LinkRemove" >
-                                <p>{Training}</p>
-                            </Link>
+            <div className="DropDownSecondLayer">
+                <div>
 
-                        </div>
-                        <div>
-                            <Link to="/Consen" className="LinkRemove" >
-                                <p>{Consen}</p>
-                            </Link>
-                            <Link to="/TimeSheet" className='Links'>TIMESHEET
+                    <Link className="LinkRemove" to="/AboutUs">
+                        <p>{AboutUS}</p>
+                    </Link>
 
-                        </Link>
-                        </div>
+                    <Link to="/Jobs" className="LinkRemove" >
+                        <p>{CurrentOpening}</p>
+                    </Link>
+                </div>
+                <div>
+                    <Link to="/Consulting" className="LinkRemove" >
+                        <p>{Consulting}</p>
+                    </Link>
+                    <Link className="LinkRemove" to="/MobileAppDevelopment" >
+                        <p>{AppDevelopment}</p>
+                    </Link>
+                    <Link to="/Training" className="LinkRemove" >
+                        <p>{Training}</p>
+                    </Link>
 
-                    </div>
-                    <div className='LetsWorkTogetherContainer'>
-                        <Link to="/ContactUs" className="LinkRemove">
-                            <p className="LetWorktogethers" >{Letsworktogether}</p>
-                        </Link>
-                    </div>
+                </div>
+                <div>
+                    <Link to="/Consen" className="LinkRemove" >
+                        <p>{Consen}</p>
+                    </Link>
+                    <Link to="/TimeSheet" className='Links'>TIMESHEET
+
+                </Link>
                 </div>
 
-          
+            </div>
+            <div className='LetsWorkTogetherContainer'>
+                <Link to="/ContactUs" className="LinkRemove">
+                    <p className="LetWorktogethers" >{Letsworktogether}</p>
+                </Link>
+            </div>
+        </div>
+
+    </div>
+
     )
 }
 
