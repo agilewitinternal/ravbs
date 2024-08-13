@@ -22,7 +22,9 @@ summary{
   display: flex;
   align-self: flex-end;
   height: 30px;
-  width: 30px;
+  width: 10px;
+  position: fixed;
+  margin-right: 20px;
   cursor: pointer;
 }
 

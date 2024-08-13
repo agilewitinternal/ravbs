@@ -69,18 +69,18 @@ const Apply = () => {
                 <ServiceHeaders ServiceHeadersInfo="Application" />
                 <div className='ApplicationTopLayer'>
                     <form className="Form Applys" onSubmit={UploadDetails}>
-                        <h3>{FillApplication}</h3>
-                        <div >
-                            <input type="text" value={applicantFirstName} placeholder="First Name" pattern="[A-Za-z]+" name="name" className="FirstName" onChange={(e) => { setApplicantFirstName(e.target.value) }} />
+                        <h3 className='FillAplication'>{FillApplication}</h3>
+                        
+                            <input type="text" value={applicantFirstName} placeholder="First Name" pattern="[A-Za-z]+" name="name" className="ApplyFirstName" onChange={(e) => { setApplicantFirstName(e.target.value) }} />
 
-                            <input type="text" value={applicantLastName} placeholder="Last Name" pattern="[A-Za-z]+" name="name" className="FirstName" onChange={(e) => { setApplicantLastName(e.target.value) }} />
-                        </div>
-                        <div>
+                            <input type="text" value={applicantLastName} placeholder="Last Name" pattern="[A-Za-z]+" name="name" className="ApplyFirstName" onChange={(e) => { setApplicantLastName(e.target.value) }} />
+                       
+                    
             <input
                 type="text"
                 value={applicantContact}
                 placeholder="Contact Details"
-                className="Email"
+                className="ApplyFirstName"
                 name="number"
                 inputMode="numeric"
                 pattern="{10}"
@@ -90,9 +90,9 @@ const Apply = () => {
             <span className="error-message" style={{ display: !/^\{10}$/.test(applicantContact) && applicantContact.length === 10 ? 'block' : 'none' }}>
             {ContactWarning}
             </span>
-        </div>
+    
 
-                        <input type="text" value={applicantMail} placeholder="E-mail" pattern=".*@.*" className="Email" name="from_name" onChange={(e) => { setApplicantMail(e.target.value) }} />
+                        <input type="text" value={applicantMail} placeholder="E-mail" pattern=".*@.*" className="ApplyFirstName" name="from_name" onChange={(e) => { setApplicantMail(e.target.value) }} />
                         <select className="Email" onChange={(e)=>setExperiance(e.target.value)}>
                             <option selected>{Experiance}</option>
                             <option value=" Fresher">{Fresher}</option>
@@ -109,15 +109,16 @@ const Apply = () => {
                             <option value="2 Month">{TwoMonth}</option>
                             <option value="3 Month">{ThreeMonth}</option>
                         </select>
-                      <p className='Upload'>{UploadResume}</p>
+                      
                         <input type='file' className='file-input' onChange={UpdateResume} />
                         
                         <button style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === "") ? 0.2 : 1 }} type="submit">Send Application</button>
-                        <p className="SuccessMessage">{SuccessMessage}</p>
+                       
                         <Link to="/Jobs">
                         <button className='BacktoJobs'>{BackToJobs}</button>
                         </Link>
                     </form>
+                    <p className="SuccessMessage">{SuccessMessage}</p>
                 </div>
                 <BottomPage />
             </div>
