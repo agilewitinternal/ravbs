@@ -1,87 +1,81 @@
 .MobileDropDownProfile {
-    position: fixed;
-    right: 0.5rem;
-    width: 650px;
-    height: 100vh;
-    padding: 60px;
-    text-decoration: none;
-    background: rgba(50, 45, 45, 1);
-   
-    display: flex;
-    font-size: 16px;
-    flex-direction: column;
-    animation: fadeInDown 0.5s ease forwards;
-  }
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  background: rgba(50, 45, 45, 1);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeInDown 0.5s ease forwards;
+  z-index: 9999; /* Ensure the dropdown is above other content */
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+summary{
+  font-size: 39px;
+}
 
-  .DropDownIcone {
-    display: flex;
-    align-self: flex-end;
-    height: 30px;
-    width: 30px;
-  }
+.DropDownIcon {
+  display: flex;
+  align-self: flex-end;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
 
-  .Links {
-    text-decoration: none;
-    color: white;
-  }
+.MobileDropDownFirstLayer {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-top: 20px;
+  color: white;
+}
 
-  .MobileDropDownSecondLayer {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    color: white;
-  }
+.MobileDropDownSecondLayer {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: white;
+  margin-bottom: auto; /* Push the Let's Work Together button to the bottom */
+}
 
-  .MobileDropDownFirstLayer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    padding-top: 0px;
-    color: white;
-    
-  }
+.MobileLetsWorkTogetherContainer {
+  display: flex;
+  align-items: flex-end;
+  margin-top: auto; /* Ensure the container stays at the bottom */
+}
 
-  @keyframes fadeInDown {
-    from {
+.LetWorktogether {
+  color: #00B7F0;
+  text-decoration: none;
+}
+
+.LinkRemove {
+  text-decoration: none;
+  color: white;
+  display: flex;
+}
+
+@keyframes fadeInDown {
+  from {
       opacity: 0;
       transform: translateY(-20px);
-    }
-
-    to {
+  }
+  to {
       opacity: 1;
       transform: translateY(0);
-    }
   }
+}
 
-  li {
-    list-style-type: none;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    gap: 10px;
+@media screen and (min-width: 767px) {
+  .MobileDropDownProfile {
+      display: none;
   }
-
-  .MobileLetsWorkTogetherContainer {
-    display: flex;
-    align-items: flex-end;
-  }
-
-  .LetWorktogether {
-    color: #00B7F0;
-    text-decoration: none;
-  }
-
-  .LinkRemove {
-    text-decoration: none;
-    color: white;
-    display: flex;
-  }
+}
 
 
-     @media screen and (min-width:767px) {
-     
-      
-      .MobileDropDownProfile{
-        display: none;
-      }
-     
-     }
+

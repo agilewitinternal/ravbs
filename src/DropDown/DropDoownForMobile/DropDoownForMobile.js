@@ -1,38 +1,66 @@
-import { Link } from 'react-router-dom'
-import {DropDownContent} from '../../constant/DropDownContent'
-import CloseIcon from '../CloseIcon.png'
-import "./DropDoownForMobile.css"
 
-const DropDoownForMobile = () => {
+
+
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { DropDownContent } from '../../constant/DropDownContent';
+import CloseIcon from '../CloseIcon.png';
+import './DropDoownForMobile.css';
+
+const DropDownForMobile = () => {
     const{Expolre,Service,Product,AboutUS,CurrentOpening,Consulting,AppDevelopment,Training,Consen,Letsworktogether}=DropDownContent
+    
     return (
-
-       
         <div className="MobileDropDownProfile">
-        <Link to="/" className='DropDownIcone'>
-            <img src={CloseIcon} alt="CloseIcone"  />
-
+            <Link to="/" className="DropDownIcon">
+                <img src={CloseIcon} alt="Close Icon" />
             </Link>
 
-        <div className="MobileDropDownFirstLayer">
-            <div className="MobileDropDownSecondLayer">
-                <h1>{Expolre}</h1>
-                <h1>{Service}</h1>
-                <h1>{Product}</h1>
-            </div>
+            <div className="MobileDropDownFirstLayer">
+                <div className="MobileDropDownSecondLayer">
+                    <details>
+                    <summary>{Expolre}</summary>
+                    <Link className="LinkRemove" to="/AboutUs">
+                        <p>{AboutUS}</p>
+                    </Link>
 
-           
-            <div className='MobileLetsWorkTogetherContainer'>
-                <Link to="/ContactUs" className="LinkRemove">
-                    <p className="LetWorktogethers" >{Letsworktogether}</p>
+                    <Link to="/Jobs" className="LinkRemove" >
+                        <p>{CurrentOpening}</p>
+                    </Link>
+                    </details>
+                    <details>
+                        <summary>{Service}</summary>
+                        <Link to="/Consulting" className="LinkRemove" >
+                        <p>{Consulting}</p>
+                    </Link>
+                    <Link className="LinkRemove" to="/MobileAppDevelopment" >
+                        <p>{AppDevelopment}</p>
+                    </Link>
+                    <Link to="/Training" className="LinkRemove" >
+                        <p>{Training}</p>
+                    </Link>
+                    </details>
+                    
+                  <details>
+                    <summary>{Product}</summary>
+                    <Link to="/Consen" className="LinkRemove" >
+                        <p>{Consen}</p>
+                    </Link>
+                    <Link to="/TimeSheet" className='Links'>TIMESHEET
+
                 </Link>
+                  </details>
+                </div>
+
+                <div className="MobileLetsWorkTogetherContainer">
+                    <Link to="/ContactUs" className="LinkRemove">
+                        <p className="LetWorktogether">{Letsworktogether}</p>
+                    </Link>
+                </div>
             </div>
         </div>
+    );
+};
 
-    </div>
-
-          
-    )
-}
-
-export default DropDoownForMobile
+export default DropDownForMobile;
