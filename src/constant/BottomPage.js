@@ -29,7 +29,7 @@ export const BottomPageContent = {
     Service: "SERVICES",
     Consulting: "CONSULTING",
     Product: "PRODUCT",
-    Consent: "CONSENT",
+    Consent: "CONSEN",
     Contact: "CONTACT",
     CompanyUSAAddress: `USA:
                         405 State Hwy 121 Bypass Suite A250,

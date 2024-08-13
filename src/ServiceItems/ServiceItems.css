@@ -10,9 +10,15 @@
 }
 
 .ServiceIcon {
-    height: 80px;
+    height: 60px;
+    text-align: centey;
+    padding: 10px;
+    border-radius: 50%;
     display: flex;
     align-self : flex-start;
+    background: #DAE9FF;
+    
+
     
 }
 
