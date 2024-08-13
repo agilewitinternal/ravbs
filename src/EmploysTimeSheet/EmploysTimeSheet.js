@@ -7,10 +7,35 @@ import "./EmploysTimeSheet.css"
 
 const EmploysTimeSheet = () => {
     const [employsTimeSheet, setEmploysTimeShet] = useState([])
+    const [firstNumber,setFirstNumber]=useState(0)
+    const [secondNumber,setSecondNumber]=useState(6)
     useEffect(() => {
         fetchEmployeesDetails();
     }, []);
 
+    const UpdateFirstNumber=()=>{
+        setFirstNumber(prevState=>prevState+7)
+        setSecondNumber(prevState=>prevState+7)
+    }
+
+   
+    const UpdateSecondNumber=()=>{
+        
+    setFirstNumber(prevState=>{
+        if(prevState===0){
+            return 0;
+        }else{
+            return prevState-7
+        }
+    })
+        setSecondNumber(prevState=>{
+            if(prevState===6){
+                return 6;
+            }else{
+                return prevState-7
+            }
+        })
+    }
 
     const fetchEmployeesDetails = async () => {
 
@@ -18,6 +43,7 @@ const EmploysTimeSheet = () => {
 
         const Result = await axios.get(TimeSheetURL)
         const FinelResulst = Object.values(Result.data).flat()
+        const Updateted=FinelResulst.slice(firstNumber,secondNumber)
         setEmploysTimeShet(FinelResulst)
 
 
@@ -39,29 +65,37 @@ const getTotalHours = (name) => {
 
     return (
         <div className='EmployTimeSheet-Container'>
-        <table>
-    
-            <tr>
-                <th>Employee</th>
-                {dates.map(date => (
-                    <th key={date}>{new Date(date).toLocaleDateString()}</th>
-                ))}
-                <th>Total</th>
-            </tr>
-       
-       
-            {employeeNames.map(name => (
-                <tr key={name} style={{height:"20px"}}>
-                    <td>{name}</td>
-                    {dates.map(date => (
-                        <td key={date}>{getWorkingHours(name, date)}</td>
+        <div className="table-responsive"> {/* Added wrapper for scrollable table */}
+            <table>
+                <thead>
+                    <tr>
+                        <th>Employee</th>
+                        {dates.map(date => (
+                            <th key={date}>{new Date(date).toLocaleDateString()}</th>
+                        ))}
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {employeeNames.map(name => (
+                        <tr key={name} style={{ height: "20px" }}>
+                            <td>{name}</td>
+                            {dates.map(date => (
+                                <td key={date}>{getWorkingHours(name, date)}</td>
+                            ))}
+                            <td>{getTotalHours(name)}</td>
+                        </tr>
                     ))}
-                    <td>{getTotalHours(name)}</td>
-                </tr>
-            ))}
+                </tbody>
+            </table>
+        </div>
+        <div className="Buttons-Conatainer">
+            <button className="Button" onClick={UpdateSecondNumber}>PreviousWeek</button>
+            <button className="Button" onClick={ UpdateFirstNumber}>NextWeek</button>
+        </div>
        
-    </table>
     </div>
+    
           );
 };
 
