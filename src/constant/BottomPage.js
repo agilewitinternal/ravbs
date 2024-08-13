@@ -14,7 +14,7 @@ export const SocialMediaIconsArray=[
     },
 {
     SocialMediaIcon:LinkedInIcon,
-    SocialMediLink:"https://www.instagram.com/agile_wits/"
+    SocialMediLink:"https://www.linkedin.com/company/agilewits-solutions/?viewAsMember=true"
 }
     
 
