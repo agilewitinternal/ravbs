@@ -9,6 +9,7 @@ import UpArrow from '../Assets/Up-Arrow.png'
 import DownArrow from '../Assets/Down-Arrow.png'
 import AdminGreen from '../Assets/AdminGreen.png';
 import EmploysListItem from '../EmploysListItem/EmploysListItem'
+import SuccessTimeSheet from '../SuccessTimeSheet/SuccessTimeSheet'
 import axios from 'axios';
 import moment from 'moment';
 import { AuthenticationContent } from '../constant/TimeSheet'
@@ -19,6 +20,7 @@ const TimeSheet = () => {
     const [adminStatus, setAdminStatus] = useState(true);
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
+    const [employsTimeSheet, setEmploysTimeShet] = useState([])
     const [employeesList, setEmployeesList] = useState([]);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [warning, setWarning] = useState("");
@@ -30,6 +32,9 @@ const TimeSheet = () => {
     const [currentDate, setCurrentDate] = useState(moment());
     const startOfWeek = currentDate.clone().startOf('isoWeek');
     const endOfWeek = currentDate.clone().endOf('isoWeek');
+    const [timeSheetStatus,setTimeSheetStatus]=useState(true)
+
+    const SyccessfulTimeSheet=employsTimeSheet.filter((each)=>each.EmployName===userName)
 
     const days = [];
     for (let i = 0; i < 7; i++) {
@@ -43,6 +48,20 @@ const TimeSheet = () => {
     const handleNextWeek = () => {
         setCurrentDate(currentDate.clone().add(1, 'week'));
     };
+ useEffect(()=>{
+    fetchEmployeesTimeSheetDetails()
+ },[])
+    const fetchEmployeesTimeSheetDetails = async () => {
+
+        const TimeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json"
+
+        const Result = await axios.get(TimeSheetURL)
+        const FinelResulst = Object.values(Result.data).flat()
+        
+        setEmploysTimeShet(FinelResulst)
+
+
+    }
 
     useEffect(() => {
         fetchEmployeesDetails();
@@ -55,6 +74,7 @@ const TimeSheet = () => {
     };
 
     const handleSubmit = async () => {
+        setTimeSheetMessag("Your Time Sheet Update Successfully")
         const entries = days.map(day => {
             const date = day.format('YYYY-MM-DD');
             const WorkingEmployName = filteredEmployees.map((each) => each.FirstName)
@@ -68,7 +88,8 @@ const TimeSheet = () => {
         const TimeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json"
         const Responce = await axios.post(TimeSheetURL, Ready)
         console.log(Responce)
-        setTimeSheetMessag("Your Time Sheet Update Successfully")
+        setTimeSheetStatus(!timeSheetStatus)
+        
     };
 
 
@@ -172,6 +193,7 @@ const TimeSheet = () => {
                                             <h3>{each.Designation}</h3>
                                             <p>{each.Email}</p>
                                         </div>
+                                        {timeSheetStatus?
                                         <div>
                                             <h3>{new Date().toDateString()},{new Date().toLocaleTimeString()}</h3>
 
@@ -218,7 +240,7 @@ const TimeSheet = () => {
                                                 <button className='SubmitButton' onClick={handleSubmit}>Submit</button>
                                                 <p>{timesheetMessage}</p>
                                             </div>
-                                        </div>
+                                        </div>:<SuccessTimeSheet Success={SyccessfulTimeSheet}/>}
                                     </div>
                                 )}
                             </div>

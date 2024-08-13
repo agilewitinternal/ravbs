@@ -43,7 +43,7 @@ const EmploysTimeSheet = () => {
 
         const Result = await axios.get(TimeSheetURL)
         const FinelResulst = Object.values(Result.data).flat()
-        const Updateted=FinelResulst.slice(firstNumber,secondNumber)
+        
         setEmploysTimeShet(FinelResulst)
 
 
