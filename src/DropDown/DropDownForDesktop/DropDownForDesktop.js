@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom'
+import CloseIcon from '../CloseIcon.png'
+import DeskTopHeader from '../../DeskTopHeader/DeskTopHeader'
 import {DropDownContent} from '../../constant/DropDownContent'
-import "../../DropDown/DropDown.css"
+import "./DropDownForDesktop.css"
 
 const DropDownForDesktop = () => {
     const{Expolre,Service,Product,AboutUS,CurrentOpening,Consulting,AppDevelopment,Training,Consen,Letsworktogether}=DropDownContent
     return (
 
-       
+        <div className='HomeTopLayer'>
+
+
+            <div className="DropDownProfile">
+                <Link to="/" className='DropDownIcone'>
+                    <img src={CloseIcon} alt="CloseIcone"  />
+
+                    </Link>
 
                 <div className="DropDownFirstLayer">
                     <div className="DropDownSecondLayer">
@@ -14,7 +23,7 @@ const DropDownForDesktop = () => {
                         <h1>{Service}</h1>
                         <h1>{Product}</h1>
                     </div>
-<p>Thala</p>
+
                     <div className="DropDownSecondLayer">
                         <div>
 
@@ -42,9 +51,6 @@ const DropDownForDesktop = () => {
                             <Link to="/Consen" className="LinkRemove" >
                                 <p>{Consen}</p>
                             </Link>
-                            <Link to="/TimeSheet" className='Links'>TIMESHEET
-
-                        </Link>
                         </div>
 
                     </div>
@@ -55,7 +61,9 @@ const DropDownForDesktop = () => {
                     </div>
                 </div>
 
-          
+            </div>
+
+        </div>
     )
 }
 

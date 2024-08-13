@@ -1,7 +1,7 @@
 /* General Styles */
 .HomeTopLayer {
     color: black;
-    padding: 10px;
+   
 }
 
 /* Intro Description for Mobile */
@@ -48,7 +48,7 @@
 
 .TitleHeading {
 
-    font-size: 32px;
+    font-size: 35px;
     width: 100%;
 }
 
@@ -93,20 +93,31 @@ text-align: center;
     margin: 10px auto;
 }
 
-/* Logos for Mobile */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%); /* Adjust based on logo container's total width */
+    }
+}
+
+
 .logo-container {
     display: flex;
     justify-content: center;
     overflow: hidden;
     height: 100px;
+    animation: scroll 20s linear infinite; /* Move this here to ensure it's applied */
 }
 
 .ClientCompanyLogo {
-    width: 40px;
+    width: 90px;
     margin-right: 8px;
+    filter: grayscale(100%);
 }
 
-/* Services Section for Mobile */
+
 .Services {
     display: block;
     text-align: center;
@@ -181,6 +192,15 @@ text-align: center;
     .Title {
         font-size: 22px;
     }
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(-100%); /* Adjust this value based on the width of your logos */
+        }
+    }
+    
 
     .logo-container {
         display: flex;
@@ -190,6 +210,7 @@ text-align: center;
         width: fit-content;
         height: 120px;
     }
+
 
     .ClientCompanyLogo {
         height: 90px;
@@ -266,6 +287,7 @@ text-align: center;
     .Services {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         overflow-x: auto;
     }
 

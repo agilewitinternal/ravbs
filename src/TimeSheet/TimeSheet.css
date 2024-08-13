@@ -21,6 +21,27 @@
     text-align: center;
 }
 
+.Topping{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.SubmitButton{
+    margin: 10px;
+}
+
+.Week-Button{
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+.WeekButton{
+    width: fit-content;
+    margin: 10px;
+}
+
 
 .WarningMsg {
     color: red;
@@ -73,6 +94,7 @@
 
 .Dash-Board{
     display: flex;
+    flex-direction: column;
 
 }
 
@@ -85,14 +107,22 @@
 .Arrow{
     height: 30px;
 }
+.Registration-Button{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
 .DashBoard-FirstLayer{
     background-color: lightgreen;
-    font-size: 24px;
+    font-size: 17px;
     padding: 20px;
     font-family: "Neue Haas Grotesk Display Pro", sans-serif;
     text-align: center;
     height: 400px;
     overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .EmploysInfoTag{
     font-size: 17px;
@@ -102,6 +132,7 @@
 }
 .Input-Value{
     text-align: center;
+    margin: 10px;
 }
 .Employs-Personal-Info{
     display: flex;
@@ -181,6 +212,11 @@
         flex-direction: row;
     
        
+    }
+    .Dash-Board{
+        display: flex;
+        flex-direction: row;
+    
     }
     .StartWorking-Button{
 width: fit-content;

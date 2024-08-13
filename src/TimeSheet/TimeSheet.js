@@ -130,7 +130,7 @@ const TimeSheet = () => {
                             </div>
                             <button className='Login-Button' onClick={verifyCredentials}>{Login}</button>
                             <Link to="/ResetPassword">
-                                <p>{ForgotPassword}</p>
+                                <p style={{textAlign:"center"}}>{ForgotPassword}</p>
                             </Link>
 
                             <p className='WarningMsg'>{warning}</p>
@@ -147,7 +147,7 @@ const TimeSheet = () => {
                                             <h1>{each.FirstName}</h1>
                                             <h1>{each.Type}</h1>
                                             <button className='Login-Button'>
-                                                <Link to="/Registration" className='Login-Button' >{NewEmployRegistration}</Link>
+                                                <Link to="/Registration" className='Registration-Button'>{NewEmployRegistration}</Link>
                                             </button>
                                             <div className='EmploysInfoContainer'>
                                                 <p className='EmploysInfoTag'>{EmployInfo}</p>
@@ -215,7 +215,7 @@ const TimeSheet = () => {
                                                     </table>
 
                                                 </div>
-                                                <button onClick={handleSubmit}>Submit</button>
+                                                <button className='SubmitButton' onClick={handleSubmit}>Submit</button>
                                                 <p>{timesheetMessage}</p>
                                             </div>
                                         </div>
