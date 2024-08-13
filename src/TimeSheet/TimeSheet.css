@@ -31,15 +31,19 @@
     background: #EBFBFF;
     display: flex;
     flex-direction: row;
-   
+   justify-content: space-between;
     align-items: center;
     padding: 20px;
     border: solid 1px black;
     
 }
 
+.Time-Entry{
+    width: 40px;
+}
+
 .AdminLogo {
-    height: 200px;
+    height: 150px;
     display: flex;
 }
 

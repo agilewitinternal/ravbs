@@ -1,0 +1,25 @@
+table,th,tr,td{
+    border: solid 1px black;
+    border-collapse: collapse;
+    padding: 5px;
+    font-size: 13px;
+    text-align: center;
+   
+}
+.EmployTimeSheet-Container{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.Buttons-Conatainer{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+width: 400px;
+}
+.Button{
+    width: fit-content;
+    margin: 10px;
+}

@@ -43,9 +43,12 @@ const Home = () => {
                             <img key={index} className="ClientCompanyLogo" src={each} alt="Client Company" />
                         ))}
                     </div>
-                    <h3 className='ClientAssistance'>{HomeTitle}</h3>
+                   
                     <div className='Services'>
+                        <div>
+                    <h3 className='ClientAssistance'>{HomeTitle}</h3>
                         <img className='AgilewitLogoBlue' src={AgilewitLogoBlue} alt="Agilewit Logo" />
+                        </div>
                         <div className='ServicesList'>
                             {ServiceDetails.map((each, index) => <ServiceItems key={index} ServiceInfo={each} />)}
                         </div>
