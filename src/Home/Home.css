@@ -113,8 +113,8 @@ text-align: center;
 }
 
 .ClientCompanyLogo {
-    width: 90px;
-    margin-right: 8px;
+    width: 50px;
+    margin-right: 5px;
     filter: grayscale(100%);
 }
 
