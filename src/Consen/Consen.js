@@ -13,7 +13,7 @@ const Consen = () => {
             <Header />
             <DeskTopHeader />
             <div className='ConsenTopLayer'>
-                <ServiceHeaders ServiceHeadersInfo="Consen" />
+                <ServiceHeaders ServiceHeadersInfo="CONSEN" />
                 <div className='ConsenSecondLayer'>
                     <img src={ConsenLogo} alt="ConsenLogo" />
                     <div className='ConsenContent'>

@@ -1,6 +1,7 @@
 .MobileGooglemap {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background: #EBFBFF;
     padding: 20px;
 
@@ -21,7 +22,7 @@
     border: 1.4px solid #08c4f3;
     padding: 8px;
     margin: 8px;
-    width: 360px;
+    width: 330px;
     height: 50px;
 }
 
@@ -30,7 +31,7 @@
     border: 1.4px solid #08c4f3;
     padding: 8px;
     margin: 8px;
- width: 360px;
+ width: 330px;
     height: 50px;
 }
 
@@ -39,7 +40,7 @@
     border: 1.4px solid #08c4f3;
     padding: 8px;
     margin: 8px;
-    width: 360px;
+    width: 330px;
     height: 100px;
 }
 
@@ -63,7 +64,7 @@ button {
 }
 
 .MapFrame {
-    width: 380px;
+    width: 340px;
 }
 
 .MobileFirstName::placeholder {
