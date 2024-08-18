@@ -1,4 +1,3 @@
-/* General Styles */
 .HomeTopLayer {
     color: black;
     
@@ -30,7 +29,7 @@
     flex-direction: column;
     padding: 20px;
     background: #25AAE1;
-    
+
     color: white;
 
 }
@@ -50,7 +49,7 @@
 .TitleHeading {
 
     font-size: 35px;
-    
+
 }
 
 .TitleDescription {
@@ -62,14 +61,13 @@
 .LetsWorkTogether {
     background-color: white;
     color: #25AAE1;
-text-align: center;
+    text-align: center;
     font-size: 16px;
     padding: 8px;
     margin: 0 auto;
     width: 90%;
 }
 
-/* HomePage Description for Mobile */
 .HomePageDescription {
     padding: 20px;
     background: #EBFBFF;
@@ -98,8 +96,9 @@ text-align: center;
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(-100%); /* Adjust based on logo container's total width */
+        transform: translateX(-100%);
     }
 }
 
@@ -109,12 +108,16 @@ text-align: center;
     justify-content: center;
     overflow: hidden;
     height: 100px;
-    animation: scroll 20s linear infinite; /* Move this here to ensure it's applied */
+    padding-left: 40px;
+    box-sizing: border-box;
+    animation: scroll 20s linear infinite;
 }
 
 .ClientCompanyLogo {
-    width: 50px;
+    white-space: nowrap;
+    width: 70px;
     margin-right: 5px;
+    margin: 20px;
     filter: grayscale(100%);
 }
 
@@ -134,7 +137,6 @@ text-align: center;
     display: none;
 }
 
-/* Achievements Section */
 .Achievements {
     padding: 30px;
     background: #25AAE1;
@@ -193,22 +195,34 @@ text-align: center;
     .Title {
         font-size: 22px;
     }
+
     @keyframes scroll {
-        0% {
-            transform: translateX(0);
+        /* 0% {
+            transform: translateX(50%);
         }
         100% {
-            transform: translateX(-100%); /* Adjust this value based on the width of your logos */
+            transform: translateX(-50%);
+     } /* Adjust this value based on the width of your logos */
+
+
+        from {
+            left: 0px;
+        }
+
+        to {
+            left: 200px;
         }
     }
-    
+
 
     .logo-container {
         display: flex;
         flex-direction: row;
+        align-items: center;
         animation: scroll 20s linear infinite;
         position: relative;
         width: fit-content;
+        padding: 80px;
         height: 120px;
     }
 
@@ -216,6 +230,7 @@ text-align: center;
     .ClientCompanyLogo {
         height: 90px;
         width: 100px;
+        margin: 20px;
         filter: grayscale(100%);
     }
 
@@ -319,7 +334,7 @@ text-align: center;
     .PartnerTitle {
         text-decoration: none;
         color: #25AAE1;
-    
+
         font-size: 30px;
     }
 

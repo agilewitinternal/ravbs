@@ -38,10 +38,14 @@ const Home = () => {
                         <h3 className='ShareYourIdeaTitle'>{ShareYourIdea}</h3>
                         <p className='IdeaDescription'>{IdeaDescription}</p>
                     </div>
+                    <div>
                     <div className="logo-container">
+                     
                         {ClienCompanyArray.map((each, index) => (
                             <img key={index} className="ClientCompanyLogo" src={each} alt="Client Company" />
                         ))}
+                       
+                    </div>
                     </div>
                    
                     <div className='Services'>
