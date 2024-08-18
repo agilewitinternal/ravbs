@@ -135,7 +135,7 @@ const Jobs = () => {
             <Header />
             <DeskTopHeader />
             <div className='ConsenTopLayer'>
-                <ServiceHeaders ServiceHeadersInfo="FIND JOBS " />
+                <ServiceHeaders ServiceHeadersInfo="Find Jobs" />
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
 

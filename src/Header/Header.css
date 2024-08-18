@@ -1,13 +1,13 @@
 .AgilewitLogo {
-    height: 60px;
+    height: 40px;
+    margin-left: 10px;
 }
 
 .HeaderFirstLayer {
     display: flex;
     justify-content: space-between;
-    align-self: center;
-    
-    padding: 12px;
+    align-items: center;
+    padding: 18px;
     
 }
 

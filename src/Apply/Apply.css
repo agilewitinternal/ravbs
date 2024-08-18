@@ -1,5 +1,11 @@
+
 .ApplicationTopLayer {
     background: #EBFBFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+   
     
 
 }
@@ -15,11 +21,13 @@ body {
 }
 
 
-
+.FillAplication{
+    margin-top: 30px;
+}
 .file-input {
    margin: 10px;
    padding: 10px;
-    height: 40px;
+    height: fit-content;
   text-align: center;
   background-color: lightblue;
   border: 1px solid black;
@@ -28,11 +36,73 @@ body {
     
 }
 
+.ApplyFirstName{
+    background: #EBFBFF;
+    border: 1.4px solid #08c4f3;
+    padding: 8px;
+    margin: 8px;
+    width: 360px;
+    height: 10px;
+}
+
+.ApplyFirstName::placeholder {
+    color: #08c4f3; 
+}
+.MobileEmail::placeholder {
+    color: #08c4f3; 
+}
+.MobileMessage::placeholder {
+    color: #08c4f3; 
+}
+
 .Upload{
     font-size: 10px;
 }
 
 .BacktoJobs{
     width: fit-content;
-    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+
+@media screen and (min-width:767px){
+    .ApplicationTopLayer {
+        background: #EBFBFF;
+       
+       
+    
+    }
+    .FillAplication{
+        margin-top: 0px;
+        
+    }
+
+
+    
+    
+    .FillAplication{
+        margin-top: 20px;
+    }
+    .file-input {
+       margin: 10px;
+       padding: 10px;
+        height: 20px;
+      text-align: center;
+      background-color: lightblue;
+      border: 1px solid black;
+      border-radius: 7px;
+      color: black;
+        
+    }
+    
+    .Upload{
+        font-size: 10px;
+    }
+    
+    .BacktoJobs{
+        width: fit-content;
+        margin-bottom: 0px;
+    }
+    
+     
 }

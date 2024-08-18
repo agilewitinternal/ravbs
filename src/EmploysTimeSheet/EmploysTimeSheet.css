@@ -1,0 +1,47 @@
+table, th, tr, td {
+    border: solid 1px black;
+    border-collapse: collapse;
+    padding: 2px;
+    font-size: 10px;
+    text-align: center;
+}
+
+.EmployTimeSheet-Container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto; /* Makes the table horizontally scrollable */
+}
+
+.Buttons-Conatainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Adjusted to 100% */
+    max-width: 400px; /* Max width for the container */
+    margin-top: 20px; /* Add some margin for separation */
+}
+
+.Button {
+    width: fit-content;
+    margin: 10px;
+}
+
+@media screen and (min-width: 767px) {
+    table, th, tr, td {
+        font-size: 13px;
+    }
+    .EmployTimeSheet-Container {
+        padding: 30px;
+    }
+    .Buttons-Conatainer {
+        width: 400px; /* Maintains fixed width on larger screens */
+    }
+}
