@@ -16,6 +16,13 @@
     font-weight: bold;
 }
 
+.JobsType-Container{
+    display: flex;
+    flex-direction: row;
+   
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
 .JobsArray{
     display: flex;
@@ -78,11 +85,11 @@
     background: #D2F4F4;
     padding: 6px;
     color: #A6A6A6;
-    width: 150px;
+    width: 120px;
     border-radius: 8px;
-    margin: 10px;
+    margin: 14px;
     font-family: Neue Haas Grotesk Display Pro;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 17.68px;
     letter-spacing: 0.03em;
     text-align: center;
@@ -94,11 +101,11 @@
     background: #D2F4F4;
     padding: 6px;
     color: black;
-    width: 150px;
+    width: 120px;
     border-radius: 8px;
-    margin: 10px;
+    margin: 14px;
     font-family: Neue Haas Grotesk Display Pro;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 17.68px;
     letter-spacing: 0.03em;
     text-align: center;
@@ -220,7 +227,7 @@
         width: 230px;
         border-radius: 8px;
         margin: 10px;
-        font-family: Neue Haas Grotesk Display Pro;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
         font-size: 14px;
         line-height: 17.68px;
         letter-spacing: 0.03em;
@@ -297,4 +304,37 @@
         font-family: 'Neue Haas Grotesk Display Pro';
         animation: slideIn 0.5s ease-out;
     }
+
+    .JobTypeButton {
+        background: #D2F4F4;
+        padding: 6px;
+        color: #A6A6A6;
+        width: fit-content;
+        border-radius: 8px;
+        margin: 10px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 16px;
+        line-height: 17.68px;
+        letter-spacing: 0.03em;
+        text-align: center;
+    
+    
+    }
+    
+    .JobTypeButtons {
+        background: #D2F4F4;
+        padding: 6px;
+        color: black;
+        width: fit-content;
+        border-radius: 8px;
+        margin: 10px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 16px;
+        line-height: 17.68px;
+        letter-spacing: 0.03em;
+        text-align: center;
+    
+    
+    }
+    
 }
