@@ -13,7 +13,7 @@ import JobItems from '../JobItems/JobItems'
 import "./Jobs.css"
 const Jobs = () => {
     const [advanceFilterStatus, setAdvanceFilterStatus] = useState(false)
-    const [jobType, setJobType] = useState("Software Engineer")
+    const [jobType, setJobType] = useState("manufacturing & production")
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
