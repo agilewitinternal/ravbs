@@ -18,7 +18,7 @@ const JobItems = (props) => {
             <div className="JobItemFirst-Container">
                
             <h3>{JobTitle}</h3>
-            <p>{descriptionParts[0]}</p>
+            <p style={{textAlign:"left"}}>{descriptionParts[0]}</p>
             
             {viewStatus?     <GoChevronUp onClick={UpdateViewStaus} className="ArrowIcon"/>:<GoChevronDown onClick={UpdateViewStaus} className="ArrowIcon" />}
           </div>
