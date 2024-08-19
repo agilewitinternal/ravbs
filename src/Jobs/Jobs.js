@@ -5,6 +5,9 @@ import ServiceHeaders from '../ServiceHeaders/ServiceHeaders'
 import { JobContent } from '../constant/JobsFeature'
 import BottomPage from '../BottomPage/BottomPage'
 import Agilewitswhite from '../Assets/AgilewitPNG.svg'
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, doc, getDocs } from "firebase/firestore";
 import axios from 'axios'
 import JobItems from '../JobItems/JobItems'
 import "./Jobs.css"
@@ -16,14 +19,80 @@ const Jobs = () => {
     const [jobArray, setJobArray] = useState([])
     const [jobMode, setJobMode] = useState("OnSite")
     const [packageFilter, setPackageFilter] = useState("<=")
+    const [listofRoles, setListofRoles] = useState([])
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
+
+
+
+    useEffect(() => {
+       
+        // TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyBatfo5hniRm2ma8wHd8DLwS5Zr7RGVdH0",
+    authDomain: "agilewit-dev.firebaseapp.com",
+    projectId: "agilewit-dev",
+    storageBucket: "agilewit-dev.appspot.com",
+    messagingSenderId: "569729659401",
+    appId: "1:569729659401:web:e6f869b41e07b113edfed8",
+    measurementId: "G-37VG9ZG7F3"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+const fetchEmployeeRoles = async () => {
+    try {
+        const snapshot = await getDocs(collection(db, "JobPostings"));
+        let roles = [];
+        snapshot.docs.forEach((doc) => {
+            const data = doc.data();
+            console.log("Jobs", data);
+            if (data.CurrentOpenings) {
+                roles = roles.concat(data); 
+            }
+        });
+        setListofRoles(roles[0].CurrentOpenings);
+        console.log("Jobs", roles[0].CurrentOpenings); 
+    } catch (error) {
+        console.error("Error fetching employee roles:", error);
+    }
+};
+
+fetchEmployeeRoles();
+}, []);
+
+
+useEffect(() => {
+if (listofRoles.length > 0) {
+    console.log("roles====", listofRoles);
+} else {
+    console.log("roles==== is empty or undefined");
+}
+}, [listofRoles]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     const FetchData = async () => {
 
         const URL = "https://agilewitjobs-default-rtdb.firebaseio.com/.json"
         const Responce = await axios.get(URL)
         const arrays = Object.values(Responce.data);
 
-        console.log(arrays.flat())
+      
         setJobArray(arrays.flat())
 
     }
@@ -138,7 +207,6 @@ const Jobs = () => {
                 <ServiceHeaders ServiceHeadersInfo="Find Jobs" />
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
-
                         <input type='search' placeholder='Job Tittle or KeyBoard' className='Input' onChange={UpdateSearchResult} />
 
                         <button className='SearchButtons'>{`${CountryJobs.length} jobs`}</button>
@@ -179,3 +247,4 @@ const Jobs = () => {
 }
 
 export default Jobs
+
