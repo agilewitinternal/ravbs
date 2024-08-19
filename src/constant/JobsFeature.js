@@ -2,7 +2,7 @@ export const JobContent={
     SearchJobs:"SearchJobs",
     AdvanceSearch:"Advance Search",
    PopulerSearch: "POPULAR SEARCHS",
-   JobsTypes:["manufacturing & production","Software Engineer","engineering","jobs in education"],
+   JobsTypes:["manufacturing & production","Software Engineer","engineering","information technology"],
    JobsCategory:"JOB CATEGORY",
    JobsCategoryArray:["manufacturing & production","Software Engineer","information technology"],
    volunteeropportunities:"Volunteer Opportunities",

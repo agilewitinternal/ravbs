@@ -17,7 +17,7 @@ const Jobs = () => {
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [jobMode, setJobMode] = useState("Remote")
+    const [jobMode, setJobMode] = useState("OnSite")
     const [packageFilter, setPackageFilter] = useState("<=")
     const [listofRoles, setListofRoles] = useState([])
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
