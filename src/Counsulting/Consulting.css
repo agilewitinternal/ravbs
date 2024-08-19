@@ -33,7 +33,7 @@
 
     .ConsultingLogo {
         display: flex;
-        justify-self: center;
+        align-self: center;
         width: 300px;
     }
 
@@ -87,7 +87,7 @@
         }
         .ConsultingLogo {
             display: flex;
-            justify-self: center;
+    align-self: center;
             width: fit-content;
         }
     
