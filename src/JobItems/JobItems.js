@@ -6,7 +6,7 @@ import "./JobItems.css";
 const JobItems = (props) => {
     const[viewStatus,setViewStatus]=useState(false)
     const { JobItemInfo } = props;
-    const { JobTitle, JobLocation, Experiance, DateOfPosted,  JobType, Description, Package } = JobItemInfo;
+    const { JobTitle, JobLocation, Experiance, DateOfPosted, isOpen, JobType, Description, Package } = JobItemInfo;
     const descriptionParts = Description.split('.', 2);
 
     const UpdateViewStaus=()=>{
@@ -31,11 +31,14 @@ const JobItems = (props) => {
                 
                 <h4>{JobType}</h4>
                
+               {isOpen?<h4>Opening Status:<span style={{color:"green"}}>Open</span></h4>:<h4>Opening Status:<span style={{color:"red"}}>Close</span></h4>}
                 
                <p className="Description">{Description.split('.', 4)}</p>
-                <Link to="/Apply">
+               
+               {isOpen&&<Link to="/Apply">
                 <button className="ApplyButton">Apply</button>
-                </Link>
+                </Link>}
+                
             </div>}
 
         </div>
