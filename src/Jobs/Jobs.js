@@ -200,7 +200,7 @@ if (listofRoles.length > 0) {
                         </div>
                     </div>
 
-                    <h3>{`${CountryJobs.length} JOBS FOUND FOR YOU`}</h3>
+                    <h3 className='Jobs-Lenght'>{`${CountryJobs.length} JOBS FOUND FOR YOU`}</h3>
                     {advanceFilterStatus && AdvanceSerach()}
 <div className='JobsType-Container'>
                     {JobsTypes.map((each) => <button className={each === jobType ? "JobTypeButtons" : "JobTypeButton"} onClick={() => { UpdateJobType(each) }}>{each}</button>)}
