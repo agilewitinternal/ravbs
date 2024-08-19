@@ -17,7 +17,7 @@ const Jobs = () => {
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [jobMode, setJobMode] = useState("OnSite")
+    const [jobMode, setJobMode] = useState("Remote")
     const [packageFilter, setPackageFilter] = useState("<=")
     const [listofRoles, setListofRoles] = useState([])
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
@@ -26,11 +26,6 @@ const Jobs = () => {
 
     useEffect(() => {
        
-        // TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBatfo5hniRm2ma8wHd8DLwS5Zr7RGVdH0",
     authDomain: "agilewit-dev.firebaseapp.com",
@@ -68,6 +63,7 @@ fetchEmployeeRoles();
 useEffect(() => {
 if (listofRoles.length > 0) {
     console.log("roles====", listofRoles);
+    setJobArray(listofRoles)
 } else {
     console.log("roles==== is empty or undefined");
 }
@@ -93,7 +89,7 @@ if (listofRoles.length > 0) {
         const arrays = Object.values(Responce.data);
 
       
-        setJobArray(arrays.flat())
+        
 
     }
 
@@ -146,17 +142,6 @@ if (listofRoles.length > 0) {
             <div className='JobSecondLayer'>
 
                 <div>
-                    <h3>Date Of Posted</h3>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' />
-                        <p>TwoDays Back</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' />
-                        <p>FiveDays Back</p>
-                    </div>
-                </div>
-                <div>
                     <h3>Job Type</h3>
                     <div className='inline-block-container'>
                         <input type='checkBox' className='Checkbox' checked={jobMode === "Remote"} onChange={UpdateJobMode} />
@@ -197,6 +182,7 @@ if (listofRoles.length > 0) {
         setJobType(A)
     }
 
+    
 
     const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode && ((packageFilter === ">=" && parseFloat(each.Package) >= 10) || (packageFilter === "<=" && parseFloat(each.Package) <= 10))) : jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
     return (
@@ -208,9 +194,10 @@ if (listofRoles.length > 0) {
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
                         <input type='search' placeholder='Job Tittle or KeyBoard' className='Input' onChange={UpdateSearchResult} />
-
-                        <button className='SearchButtons'>{`${CountryJobs.length} jobs`}</button>
-                        <button className='AdvanceSearch' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
+<div className='Filter-Buttons'>                       
+     <button className='SearchButtons FilterButton-Items'>{`${CountryJobs.length} jobs`}</button>
+                        <button className='AdvanceSearch FilterButton-Items' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
+                        </div>
                     </div>
 
                     <h3>{`${CountryJobs.length} JOBS FOUND FOR YOU`}</h3>

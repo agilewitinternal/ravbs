@@ -36,7 +36,7 @@
 .JobSecondLayer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     background: #25AAE1;
     padding: 15px;
     margin: 20px;
@@ -60,7 +60,7 @@
     background-color: white;
     width: 165px;
     color: black;
-    border: 2px solid black;
+    border: 1px solid black;
     font-weight: bold;
 
 }
@@ -157,7 +157,20 @@
     align-self: center;
    }
 
+.Filter-Buttons{
+   
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  
+}
 
+.FilterButton-Items{
+    width: fit-content;
+    margin: 10px;
+}
 
 
 @media screen and (min-width:767px) {
@@ -193,15 +206,12 @@
         background-color: white;
         width: 200px;
         color: black;
-        border: 2px solid black;
+        border: 1px solid black;
         font-weight: bold;
     
     }
     
-    .JobSecondLayer {
-        background: #25AAE1;
-        padding: 40px;
-    }
+ 
     
     .JobTypeButton {
         background: #D2F4F4;
@@ -278,7 +288,7 @@
     .JobSecondLayer {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         background: #25AAE1;
         padding: 30px;
         margin: 10px;
