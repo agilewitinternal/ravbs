@@ -6,7 +6,7 @@ import "./JobItems.css";
 const JobItems = (props) => {
     const[viewStatus,setViewStatus]=useState(false)
     const { JobItemInfo } = props;
-    const { JobTitle, JobLocation, Experiance, DateOfPosted, isOpen, JobType, Description, Package } = JobItemInfo;
+    const { JobTitle, JobLocation, Experiance, DateOfPosted, isOpen, JobType, Description} = JobItemInfo;
     const descriptionParts = Description.split('.', 2);
 
     const UpdateViewStaus=()=>{
@@ -23,9 +23,8 @@ const JobItems = (props) => {
             {viewStatus?     <GoChevronUp onClick={UpdateViewStaus} className="ArrowIcon"/>:<GoChevronDown onClick={UpdateViewStaus} className="ArrowIcon" />}
           </div>
             {viewStatus&& <div className="JobItemSecondLayer">
-                
-                <h4>{`Experiance: ${Experiance}`}</h4>
-                <h4>{`Package: ${Package}`}</h4>
+                {Experiance===undefined?<h4>Experiance: 0-1 Year</h4>:<h4>{`Experiance: ${Experiance}`}</h4>}
+               
                 <h4>{`Location:${JobLocation}`}</h4>
                 <h4>{`Posted On: ${DateOfPosted}`}</h4>
                 
