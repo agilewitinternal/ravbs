@@ -8,7 +8,6 @@ import Agilewitswhite from '../Assets/AgilewitPNG.svg'
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, doc, getDocs } from "firebase/firestore";
-import axios from 'axios'
 import JobItems from '../JobItems/JobItems'
 import "./Jobs.css"
 const Jobs = () => {
@@ -41,16 +40,18 @@ const db = getFirestore(app);
 const fetchEmployeeRoles = async () => {
     try {
         const snapshot = await getDocs(collection(db, "JobPostings"));
+        
         let roles = [];
         snapshot.docs.forEach((doc) => {
             const data = doc.data();
-            console.log("Jobs", data);
+            
             if (data.CurrentOpenings) {
                 roles = roles.concat(data); 
             }
         });
+       
         setListofRoles(roles[0].CurrentOpenings);
-        console.log("Jobs", roles[0].CurrentOpenings); 
+        
     } catch (error) {
         console.error("Error fetching employee roles:", error);
     }
@@ -62,37 +63,13 @@ fetchEmployeeRoles();
 
 useEffect(() => {
 if (listofRoles.length > 0) {
-    console.log("roles====", listofRoles);
     setJobArray(listofRoles)
 } else {
     console.log("roles==== is empty or undefined");
 }
 }, [listofRoles]);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    const FetchData = async () => {
-
-        const URL = "https://agilewitjobs-default-rtdb.firebaseio.com/.json"
-        const Responce = await axios.get(URL)
-        const arrays = Object.values(Responce.data);
-
-      
-        
-
-    }
-
+  
 
 
     const UpdateLessThanTen = (event) => {
@@ -130,7 +107,6 @@ if (listofRoles.length > 0) {
 
 
     useEffect(() => {
-        FetchData()
         const location = Intl.DateTimeFormat().resolvedOptions().timeZone;
         setCountry(location?.split("/")[1])
 
