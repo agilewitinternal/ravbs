@@ -16,8 +16,7 @@ const Jobs = () => {
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [jobMode, setJobMode] = useState("OnSite")
-    const [packageFilter, setPackageFilter] = useState("<=")
+    const [jobMode, setJobMode] = useState([])
     const [listofRoles, setListofRoles] = useState([])
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
 
@@ -72,36 +71,23 @@ if (listofRoles.length > 0) {
   
 
 
-    const UpdateLessThanTen = (event) => {
-        if (event.target.checked) {
-            setPackageFilter("<=")
-        }
+
+
+const UpdateJobMode = (event) => {
+    if (event.target.checked) {
+      setJobMode((prev) => [...prev, "Remote"]);
+    } else {
+      setJobMode((prev) => prev.filter((mode) => mode !== "Remote"));
     }
+  };
 
-    const UpdateMorethanTen = (event) => {
-        if (event.target.value) {
-            setPackageFilter(">=")
-        }
+  const UpdatetoOnset = (event) => {
+    if (event.target.checked) {
+      setJobMode((prev) => [...prev, "OnSite"]);
+    } else {
+      setJobMode((prev) => prev.filter((mode) => mode !== "OnSite"));
     }
-
-
-    const UpdateJobMode = (event) => {
-
-        if (event.target.checked) {
-            setJobMode("Remote");
-        } else {
-            setJobMode('');
-        }
-    }
-
-    const UpdatetoOnset = (event) => {
-
-        if (event.target.checked) {
-            setJobMode("OnSite");
-        } else {
-            setJobMode('');
-        }
-    }
+  };
 
 
 
@@ -120,22 +106,22 @@ if (listofRoles.length > 0) {
                 <div>
                     <h3>Job Type</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' checked={jobMode === "Remote"} onChange={UpdateJobMode} />
+                        <input type='checkBox' className='Checkbox'  onChange={UpdateJobMode} />
                         <p>Remote</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' checked={jobMode === "OnSite"} onChange={UpdatetoOnset} />
+                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
                         <p>Onsite</p>
                     </div>
                 </div>
                 <div>
                     <h3>Package</h3>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' checked={packageFilter === "<="} onChange={UpdateLessThanTen} />
+                        <input type='checkBox' className='Checkbox'  />
                         <p>Less than 10 LPA</p>
                     </div>
                     <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' checked={packageFilter === ">="} onChange={UpdateMorethanTen} />
+                        <input type='checkBox' className='Checkbox'  />
                         <p>More than 10 LPA</p>
                     </div>
                 </div>
@@ -158,9 +144,8 @@ if (listofRoles.length > 0) {
         setJobType(A)
     }
 
-    
-
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode && ((packageFilter === ">=" && parseFloat(each.Package) >= 10) || (packageFilter === "<=" && parseFloat(each.Package) <= 10))) : jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchResult)&&each.JobType.includes(jobMode)): jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
+    const Mine=jobArray.filter((each)=>jobMode.some((mode)=>mode===each.JobType))
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -175,14 +160,15 @@ if (listofRoles.length > 0) {
                         <button className='AdvanceSearch FilterButton-Items' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
                         </div>
                     </div>
-
+<p>{jobMode}</p>
                     <h3 className='Jobs-Lenght'>{`${CountryJobs.length} JOBS FOUND FOR YOU`}</h3>
                     {advanceFilterStatus && AdvanceSerach()}
 <div className='JobsType-Container'>
                     {JobsTypes.map((each) => <button className={each === jobType ? "JobTypeButtons" : "JobTypeButton"} onClick={() => { UpdateJobType(each) }}>{each}</button>)}
                     </div>
                     <div className='JobsArray'>
-                        {CountryJobs.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
+                     
+                        {Mine.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
                     </div>
 
 
