@@ -16,7 +16,7 @@ const Jobs = () => {
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [jobMode, setJobMode] = useState([])
+    const [jobMode, setJobMode] = useState(["Remote"])
     const [listofRoles, setListofRoles] = useState([])
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
 
@@ -102,6 +102,30 @@ const UpdateJobMode = (event) => {
     const AdvanceSerach = () => {
         return (
             <div className='JobSecondLayer'>
+                    <div>
+                    <h3>Programming language</h3>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox'  onChange={UpdateJobMode} />
+                        <p>JavaScript</p>
+                    </div>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                        <p>Java</p>
+                    </div>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                        <p>SQL</p>
+                    </div>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                        <p>HTML</p>
+                    </div>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                        <p>Python</p>
+                    </div>
+                    
+                </div>
 
                 <div>
                     <h3>Job Type</h3>
@@ -115,14 +139,22 @@ const UpdateJobMode = (event) => {
                     </div>
                 </div>
                 <div>
-                    <h3>Package</h3>
+                    <h3>Education Level</h3>
                     <div className='inline-block-container'>
                         <input type='checkBox' className='Checkbox'  />
-                        <p>Less than 10 LPA</p>
+                        <p>Bachelor's degree</p>
                     </div>
                     <div className='inline-block-container'>
                         <input type='checkBox' className='Checkbox'  />
-                        <p>More than 10 LPA</p>
+                        <p>Master's degree</p>
+                    </div>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox'  />
+                        <p>Diploma</p>
+                    </div>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox'  />
+                        <p>12th Pass</p>
                     </div>
                 </div>
 
@@ -144,8 +176,9 @@ const UpdateJobMode = (event) => {
         setJobType(A)
     }
 
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchResult)&&each.JobType.includes(jobMode)): jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
-    const Mine=jobArray.filter((each)=>jobMode.some((mode)=>mode===each.JobType))
+
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchResult)&& jobMode.some((mode) => each.JobType.includes(mode))): jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
+  
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -160,7 +193,7 @@ const UpdateJobMode = (event) => {
                         <button className='AdvanceSearch FilterButton-Items' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
                         </div>
                     </div>
-<p>{jobMode}</p>
+
                     <h3 className='Jobs-Lenght'>{`${CountryJobs.length} JOBS FOUND FOR YOU`}</h3>
                     {advanceFilterStatus && AdvanceSerach()}
 <div className='JobsType-Container'>
@@ -168,7 +201,7 @@ const UpdateJobMode = (event) => {
                     </div>
                     <div className='JobsArray'>
                      
-                        {Mine.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
+                        {CountryJobs.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
                     </div>
 
 
