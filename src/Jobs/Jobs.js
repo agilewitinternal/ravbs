@@ -23,6 +23,7 @@ const Jobs = () => {
     const [filterThreeStatus,setFilterThreeStatus]=useState(false)
     const [searchButton,setSearchButton]=useState("")
     const [timeFilter,setTimeFilter]=useState(365)
+    const[education,setEducation]=useState(["Tenth"])
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
 
 
@@ -97,6 +98,32 @@ const UpdateLastOneWeek=(e)=>{
         }
 
 
+        const ToDegree=(event)=>{
+            if(event.target.checked){
+                setEducation((prev)=>[...prev,"Degree"])
+            }else{
+                setEducation((prev)=>prev.filter((each)=>each !== "Degree"))
+            }
+
+        }
+
+        const ToInter=(event)=>{
+            if(event.target.checked){
+                setEducation((prev)=>[...prev,"Inter"])
+            }else{
+                setEducation((prev)=>prev.filter((each)=>each !== "Inter"))
+            }
+
+        }
+
+        const ToDiploma=(event)=>{
+            if(event.target.checked){
+setEducation((prev)=>[...prev,"Diploma"])
+            }else{
+                setEducation((prev)=>prev.filter((each)=>each!=="Diploma"))
+            }
+        }
+
 
 const UpdateJobMode = (event) => {
     if (event.target.checked) {
@@ -169,7 +196,7 @@ const UpdateJobMode = (event) => {
     
                
                 <div className='inline-block-container'>
-                    <input type='checkBox' className='Checkbox'  />
+                    <input type='checkBox' className='Checkbox' onChange={ToDegree}  />
                     <p>Bachelor's degree</p>
                 </div>
                 <div className='inline-block-container'>
@@ -224,6 +251,7 @@ const UpdateJobMode = (event) => {
                         </div>
      
                         <button className='AdvanceSearch FilterButton-Items' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
+                        <p>{education}</p>
                         
                     </div>
                     {advanceFilterStatus && AdvanceSerach()}
