@@ -18,6 +18,10 @@ const Jobs = () => {
     const [jobArray, setJobArray] = useState([])
     const [jobMode, setJobMode] = useState(["Remote"])
     const [listofRoles, setListofRoles] = useState([])
+    const [filterOneStatus,SetFilterOneStatus]=useState(false)
+    const[filterTwoStatus,setFilterTwoStatus]=useState(false)
+    const [filterThreeStatus,setFilterThreeStatus]=useState(false)
+    const [searchButton,setSearchButton]=useState("")
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
 
 
@@ -102,61 +106,73 @@ const UpdateJobMode = (event) => {
     const AdvanceSerach = () => {
         return (
             <div className='JobSecondLayer'>
-                    <div>
-                    <h3>Programming language</h3>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox'  onChange={UpdateJobMode} />
-                        <p>JavaScript</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                        <p>Java</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                        <p>SQL</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                        <p>HTML</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                        <p>Python</p>
-                    </div>
-                    
+                {filterThreeStatus===false&& <button className='Filter-Button' onClick={()=>setFilterThreeStatus(!filterThreeStatus)}>Job Type</button>}
+            {filterThreeStatus&&
+                 <div className='FiltersContainer'>
+                
+    <button className='Filter-Button' onClick={()=>setFilterThreeStatus(!filterThreeStatus)}>Job Type</button>
+                 <div className='inline-block-container'>
+                     <input type='checkBox' className='Checkbox'  onChange={UpdateJobMode} />
+                     <p>JavaScript</p>
+                 </div>
+                 <div className='inline-block-container'>
+                     <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                     <p>Java</p>
+                 </div>
+                 <div className='inline-block-container'>
+                     <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                     <p>SQL</p>
+                 </div>
+                 <div className='inline-block-container'>
+                     <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                     <p>HTML</p>
+                 </div>
+                 <div className='inline-block-container'>
+                     <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                     <p>Python</p>
+                 </div>
+                 
+             </div>}
+               
+              {filterOneStatus===false&& <button className='Filter-Button' onClick={()=>SetFilterOneStatus(!filterOneStatus)}>Job Type</button>} 
+{filterOneStatus&&  <div className='FiltersContainer'>
+                  
+    <button className='Filter-Button' onClick={()=>SetFilterOneStatus(!filterOneStatus)}>Job Type</button>
+                  <div className='inline-block-container'>
+                      <input type='checkBox' className='Checkbox'  onChange={UpdateJobMode} />
+                      <p>Remote</p>
+                  </div>
+                  <div className='inline-block-container'>
+                      <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                      <p>Onsite</p>
+                  </div>
+              </div>}
+              {filterTwoStatus===false&& <button className='Filter-Button' onClick={()=>setFilterTwoStatus(!filterTwoStatus)}>Education Level</button>} 
+              {filterTwoStatus&&
+              
+                <div className='FiltersContainer'>
+                    <button className='Filter-Button' onClick={()=>setFilterTwoStatus(!filterTwoStatus)}>Education Level</button>
+    
+               
+                <div className='inline-block-container'>
+                    <input type='checkBox' className='Checkbox'  />
+                    <p>Bachelor's degree</p>
                 </div>
-
-                <div>
-                    <h3>Job Type</h3>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox'  onChange={UpdateJobMode} />
-                        <p>Remote</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                        <p>Onsite</p>
-                    </div>
+                <div className='inline-block-container'>
+                    <input type='checkBox' className='Checkbox'  />
+                    <p>Master's degree</p>
                 </div>
-                <div>
-                    <h3>Education Level</h3>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox'  />
-                        <p>Bachelor's degree</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox'  />
-                        <p>Master's degree</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox'  />
-                        <p>Diploma</p>
-                    </div>
-                    <div className='inline-block-container'>
-                        <input type='checkBox' className='Checkbox'  />
-                        <p>12th Pass</p>
-                    </div>
+                <div className='inline-block-container'>
+                    <input type='checkBox' className='Checkbox'  />
+                    <p>Diploma</p>
                 </div>
+                <div className='inline-block-container'>
+                    <input type='checkBox' className='Checkbox'  />
+                    <p>12th Pass</p>
+                </div>
+            </div>
+              }
+              
 
 
 
@@ -172,12 +188,13 @@ const UpdateJobMode = (event) => {
         setSearchResult(e.target.value.toLowerCase())
     }
 
-    const UpdateJobType = (A) => {
-        setJobType(A)
+    const UpdateFinelSearchResult=()=>{
+        setSearchButton(searchResult)
     }
 
 
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchResult)&& jobMode.some((mode) => each.JobType.includes(mode))): jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
+
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchButton)&& jobMode.some((mode) => each.JobType.includes(mode))): jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
   
     return (
         <div className='HomeTopLayer'>
@@ -187,18 +204,15 @@ const UpdateJobMode = (event) => {
                 <ServiceHeaders ServiceHeadersInfo="Find Jobs" />
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
-                        <input type='search' placeholder='Job Tittle or KeyBoard' className='Input' onChange={UpdateSearchResult} />
-<div className='Filter-Buttons'>                       
-     <button className='SearchButtons FilterButton-Items'>{`${CountryJobs.length} jobs`}</button>
-                        <button className='AdvanceSearch FilterButton-Items' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
+                        <div className='FirstSearch-layer'>
+                        <input type='search' className='SearchBar' placeholder='Job Tittle or KeyWord' onChange={UpdateSearchResult} />
+                        <button className='Filter-Button' onClick={UpdateFinelSearchResult}>Search</button>
                         </div>
+     
+                        <button className='AdvanceSearch FilterButton-Items' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
+                        
                     </div>
-
-                    <h3 className='Jobs-Lenght'>{`${CountryJobs.length} JOBS FOUND FOR YOU`}</h3>
                     {advanceFilterStatus && AdvanceSerach()}
-<div className='JobsType-Container'>
-                    {JobsTypes.map((each) => <button className={each === jobType ? "JobTypeButtons" : "JobTypeButton"} onClick={() => { UpdateJobType(each) }}>{each}</button>)}
-                    </div>
                     <div className='JobsArray'>
                      
                         {CountryJobs.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
@@ -207,14 +221,6 @@ const UpdateJobMode = (event) => {
 
                 </div>
 
-                <div className='JobsThirdLayer'>
-                    <h3>{JobsCategory}</h3>
-                    <div className='JobsCategory-Container'>
-                        {JobsCategoryArray.map((each) => <p className='JobsCategory-Item' onClick={() => { UpdateJobType(each) }}>{each}</p>)}
-                    </div>
-
-
-                </div>
                 <div className='JobsFourthLayer'>
                     <img src={Agilewitswhite} alt="CompanyLogo" className='AgilewitJobsLogo' />
                     <div className='Volunteen-Info'>
