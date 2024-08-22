@@ -169,7 +169,7 @@ const UpdateJobMode = (event) => {
     }
 
     const UpdateSearchResult = (e) => {
-        setSearchResult(e.target.value)
+        setSearchResult(e.target.value.toLowerCase())
     }
 
     const UpdateJobType = (A) => {
