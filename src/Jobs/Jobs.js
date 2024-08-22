@@ -22,6 +22,7 @@ const Jobs = () => {
     const[filterTwoStatus,setFilterTwoStatus]=useState(false)
     const [filterThreeStatus,setFilterThreeStatus]=useState(false)
     const [searchButton,setSearchButton]=useState("")
+    const [timeFilter,setTimeFilter]=useState(365)
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
 
 
@@ -73,7 +74,27 @@ if (listofRoles.length > 0) {
 }, [listofRoles]);
 
   
-
+const UpdateLastOneDay=(e)=>{
+if(e.target.checked){
+    setTimeFilter(1)
+}else{
+    setTimeFilter(365)
+}
+}
+const UpdateLastOneWeek=(e)=>{
+    if(e.target.checked){
+        setTimeFilter(7)
+    }else{
+        setTimeFilter(365)
+    }
+    }
+    const UpdateLastOneMonth=(e)=>{
+        if(e.target.checked){
+            setTimeFilter(31)
+        }else{
+            setTimeFilter(365)
+        }
+        }
 
 
 
@@ -110,28 +131,21 @@ const UpdateJobMode = (event) => {
             {filterThreeStatus&&
                  <div className='FiltersContainer'>
                 
-    <button className='Filter-Button' onClick={()=>setFilterThreeStatus(!filterThreeStatus)}>Job Type</button>
+    <button className='Filter-Button' onClick={()=>setFilterThreeStatus(!filterThreeStatus)}>Date Posted</button>
                  <div className='inline-block-container'>
-                     <input type='checkBox' className='Checkbox'  onChange={UpdateJobMode} />
-                     <p>JavaScript</p>
+                     <input type='checkBox' className='Checkbox'  onChange={UpdateLastOneDay} />
+                     <p>Last 24 Hours</p>
                  </div>
                  <div className='inline-block-container'>
-                     <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                     <p>Java</p>
+                     <input type='checkBox' className='Checkbox' onChange={UpdateLastOneWeek} />
+                     <p>Last 15 Days</p>
                  </div>
                  <div className='inline-block-container'>
-                     <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                     <p>SQL</p>
+                     <input type='checkBox' className='Checkbox' onChange={UpdateLastOneMonth} />
+                     <p>Last 30 Days</p>
                  </div>
-                 <div className='inline-block-container'>
-                     <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                     <p>HTML</p>
-                 </div>
-                 <div className='inline-block-container'>
-                     <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                     <p>Python</p>
-                 </div>
-                 
+                
+                
              </div>}
                
               {filterOneStatus===false&& <button className='Filter-Button' onClick={()=>SetFilterOneStatus(!filterOneStatus)}>Job Type</button>} 
@@ -194,8 +208,8 @@ const UpdateJobMode = (event) => {
 
 
 
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchButton)&& jobMode.some((mode) => each.JobType.includes(mode))): jobArray.filter((each) => each.Location === "USA" && each.JobTitle.includes(searchResult) && each.JobCategory === jobType && each.JobType === jobMode)
-  
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchButton)&& jobMode.some((mode) => each.JobType.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter): jobArray.filter((each) => each.Location === "USA" && each.JobTitle.toLowerCase().includes(searchButton)&& jobMode.some((mode) => each.JobType.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
+  console.log(CountryJobs)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -236,4 +250,8 @@ const UpdateJobMode = (event) => {
 }
 
 export default Jobs
+
+
+
+
 

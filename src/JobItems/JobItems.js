@@ -30,7 +30,7 @@ const JobItems = (props) => {
                 
                 <h4>{JobType}</h4>
                
-               {isOpen?<h4>Job Status:<span style={{color:"green"}}>Open</span></h4>:<h4>Job Status:<span style={{color:"red"}}>Close</span></h4>}
+               {isOpen?<h4>Job Status:<span style={{color:"green"}}>Open</span></h4>:<h4>Job Status:<span style={{color:"red"}}>Closed</span></h4>}
                 
                <p className="Description">{Description.split('.', 4)}</p>
                
