@@ -251,7 +251,6 @@ const UpdateJobMode = (event) => {
                         </div>
      
                         <button className='AdvanceSearch FilterButton-Items' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
-                        <p>{education}</p>
                         
                     </div>
                     {advanceFilterStatus && AdvanceSerach()}
