@@ -12,18 +12,17 @@ import JobItems from '../JobItems/JobItems'
 import "./Jobs.css"
 const Jobs = () => {
     const [advanceFilterStatus, setAdvanceFilterStatus] = useState(false)
-    const [jobType, setJobType] = useState("manufacturing & production")
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [jobMode, setJobMode] = useState(["Remote"])
+    const [jobMode, setJobMode] = useState(["OnSite"])
     const [listofRoles, setListofRoles] = useState([])
     const [filterOneStatus,SetFilterOneStatus]=useState(false)
     const[filterTwoStatus,setFilterTwoStatus]=useState(false)
     const [filterThreeStatus,setFilterThreeStatus]=useState(false)
     const [searchButton,setSearchButton]=useState("")
     const [timeFilter,setTimeFilter]=useState(365)
-    const[education,setEducation]=useState(["Tenth"])
+    const[education,setEducation]=useState(["Degree"])
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
 
 
@@ -163,7 +162,7 @@ const UpdateJobMode = (event) => {
     const AdvanceSerach = () => {
         return (
             <div className='JobSecondLayer'>
-                {filterThreeStatus===false&& <button className='Filter-Button' onClick={()=>setFilterThreeStatus(!filterThreeStatus)}>Job Type</button>}
+                {filterThreeStatus===false&& <button className='Filter-Button' onClick={()=>setFilterThreeStatus(!filterThreeStatus)}>Date Posted</button>}
             {filterThreeStatus&&
                  <div className='FiltersContainer'>
                 
@@ -244,7 +243,7 @@ const UpdateJobMode = (event) => {
 
 
 
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchButton)&& jobMode.some((mode) => each.JobType.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter): jobArray.filter((each) => each.Location === "USA" && each.JobTitle.toLowerCase().includes(searchButton)&& jobMode.some((mode) => each.JobType.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && each.JobTitle.toLowerCase().includes(searchButton)&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.Location === "USA" && each.JobTitle.toLowerCase().includes(searchButton)&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
   console.log(CountryJobs)
     return (
         <div className='HomeTopLayer'>
