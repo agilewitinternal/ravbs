@@ -124,6 +124,15 @@ setEducation((prev)=>[...prev,"Diploma"])
             }
         }
 
+       const ToMaster=(event)=>{
+        if(event.target.checked){
+            setEducation((prev)=>[...prev,"Masters"])
+        }else{
+        setEducation((prev)=>prev.filter((each)=>each!=="Masters"))
+        }
+
+       } 
+
 
 const UpdateJobMode = (event) => {
     if (event.target.checked) {
@@ -200,15 +209,15 @@ const UpdateJobMode = (event) => {
                     <p>Bachelor's degree</p>
                 </div>
                 <div className='inline-block-container'>
-                    <input type='checkBox' className='Checkbox'  />
+                    <input type='checkBox' className='Checkbox' onChange={ToMaster}  />
                     <p>Master's degree</p>
                 </div>
                 <div className='inline-block-container'>
-                    <input type='checkBox' className='Checkbox'  />
+                    <input type='checkBox' className='Checkbox' onChange={ToDiploma}  />
                     <p>Diploma</p>
                 </div>
                 <div className='inline-block-container'>
-                    <input type='checkBox' className='Checkbox'  />
+                    <input type='checkBox' className='Checkbox' onChange={ToInter}  />
                     <p>12th Pass</p>
                 </div>
             </div>
@@ -254,6 +263,7 @@ const UpdateJobMode = (event) => {
                         
                     </div>
                     {advanceFilterStatus && AdvanceSerach()}
+                   
                     <div className='JobsArray'>
                      
                         {CountryJobs.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
