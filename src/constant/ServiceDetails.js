@@ -10,7 +10,7 @@ export const ServiceDetails = [
     },
     {
         ServiceLogo: AppDevelopment,
-        ServiceTitle: "App Development",
+        ServiceTitle: "MobileAppDevelopment",
         ServiceDesription: "Agilewit Solutions is incorporated as a Technology Consulting services and Software product development firm. Head quartered in Texas and Offshore ..."
     },
     {

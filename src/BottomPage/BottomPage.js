@@ -71,7 +71,7 @@ const BottomPage = () => {
              
             </div>
             <hr className='BottomPageLine' />
-            <p className='FinalLineContent'>{EndTitle}</p>
+            <p className='FinalLineContent'>{EndTitle} {new Date().getFullYear()}</p>
         </div>
     )
 }

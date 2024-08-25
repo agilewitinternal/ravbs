@@ -9,11 +9,9 @@
     font-family: Neue Haas Grotesk Display Pro;
     font-size: 20px;
     font-style: italic;
-
-
     text-align: center;
     width: 285px;
-    margin-left: 60px;
+    margin-left: 53px;
     height: 102px;
 
 
@@ -93,33 +91,43 @@
 }
 
 @keyframes scroll {
-    0% {
-        transform: translateX(0);
+    /* 0% {
+        transform: translateX(50%);
+    }
+    100% {
+        transform: translateX(-50%);
+ } /* Adjust this value based on the width of your logos */
+
+
+    from {
+        left: 0px;
     }
 
-    100% {
-        transform: translateX(-100%);
+    to {
+        left: 200px;
     }
 }
 
 
 .logo-container {
     display: flex;
-    justify-content: center;
-    overflow: hidden;
-    height: 100px;
-    padding-left: 40px;
-    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
     animation: scroll 20s linear infinite;
+    position: relative;
+    
+ width: 300px;
+    height: 120px;
 }
 
+
 .ClientCompanyLogo {
-    white-space: nowrap;
-    width: 70px;
-    margin-right: 5px;
-    margin: 20px;
+   width: 50px;
+   height: 50px;
+    margin: 10px;
     filter: grayscale(100%);
 }
+
 
 
 .Services {

@@ -3,11 +3,48 @@
     padding: 40px;
 }
 
+.Filter-Button{
+    width: fit-content;
+    font-weight:100;
+    background: #25AAE1;
+    font-family: 'Neue Haas Grotesk Display Pro';
+    height: fit-content;
+    color: white;
+}
+
+
+.FiltersContainer{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    font-size: smaller;
+  
+    
+}
+.FirstSearch-layer{
+    display: flex;
+    height: fit-content;
+   border: 1px solid black;
+    border-radius: 6px;
+  
+}
+
+.SearchBar{
+    text-align: center;
+    border: none;
+    margin: 2px;
+}
+
 .JobSearchContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+}
+
+.Jobs-Lenght{
+    text-align: center;
 }
 
 .SearchButtons {
@@ -16,9 +53,19 @@
     font-weight: bold;
 }
 
+.JobsType-Container{
+    display: flex;
+    flex-direction: row;
+   
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
 
 .JobsArray{
     display: flex;
+    flex-direction: row;
+  
     flex-wrap: wrap;
 }
 
@@ -36,8 +83,8 @@
 .JobSecondLayer {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background: #25AAE1;
+    justify-content: space-around;
+
     padding: 15px;
     margin: 20px;
     color: white;
@@ -60,7 +107,7 @@
     background-color: white;
     width: 165px;
     color: black;
-    border: 2px solid black;
+    border: 1px solid black;
     font-weight: bold;
 
 }
@@ -78,11 +125,11 @@
     background: #D2F4F4;
     padding: 6px;
     color: #A6A6A6;
-    width: 150px;
+    width: 120px;
     border-radius: 8px;
-    margin: 10px;
+    margin: 14px;
     font-family: Neue Haas Grotesk Display Pro;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 17.68px;
     letter-spacing: 0.03em;
     text-align: center;
@@ -94,11 +141,11 @@
     background: #D2F4F4;
     padding: 6px;
     color: black;
-    width: 150px;
+    width: 120px;
     border-radius: 8px;
-    margin: 10px;
+    margin: 14px;
     font-family: Neue Haas Grotesk Display Pro;
-    font-size: 16px;
+    font-size: 12px;
     line-height: 17.68px;
     letter-spacing: 0.03em;
     text-align: center;
@@ -157,7 +204,20 @@
     align-self: center;
    }
 
+.Filter-Buttons{
+   
+    width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  
+}
 
+.FilterButton-Items{
+    width: fit-content;
+    margin: 10px;
+}
 
 
 @media screen and (min-width:767px) {
@@ -169,9 +229,7 @@
     .JobSearchContainer {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        flex-wrap:nowrap;
-    }
+        }
     
     .SearchButtons {
         background: #25AAE1;
@@ -193,15 +251,12 @@
         background-color: white;
         width: 200px;
         color: black;
-        border: 2px solid black;
+        border: 1px solid black;
         font-weight: bold;
     
     }
     
-    .JobSecondLayer {
-        background: #25AAE1;
-        padding: 40px;
-    }
+ 
     
     .JobTypeButton {
         background: #D2F4F4;
@@ -210,7 +265,7 @@
         width: 230px;
         border-radius: 8px;
         margin: 10px;
-        font-family: Neue Haas Grotesk Display Pro;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
         font-size: 14px;
         line-height: 17.68px;
         letter-spacing: 0.03em;
@@ -278,8 +333,8 @@
     .JobSecondLayer {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        background: #25AAE1;
+        justify-content: space-around;
+        
         padding: 30px;
         margin: 10px;
         color: white;
@@ -287,4 +342,55 @@
         font-family: 'Neue Haas Grotesk Display Pro';
         animation: slideIn 0.5s ease-out;
     }
+
+    .JobTypeButton {
+        background: #D2F4F4;
+        padding: 6px;
+        color: #A6A6A6;
+        width: fit-content;
+        border-radius: 8px;
+        margin: 10px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 16px;
+        line-height: 17.68px;
+        letter-spacing: 0.03em;
+        text-align: center;
+    
+    
+    }
+    
+    .JobTypeButtons {
+        background: #D2F4F4;
+        padding: 6px;
+        color: black;
+        width: fit-content;
+        border-radius: 8px;
+        margin: 10px;
+        font-family: "Neue Haas Grotesk Display Pro", sans-serif;
+        font-size: 16px;
+        line-height: 17.68px;
+        letter-spacing: 0.03em;
+        text-align: center;
+    
+    
+    }
+
+
+    .FiltersContainer{
+        display: flex;
+        flex-direction: column;
+        color: black;
+        
+        
+    }
+
+    .Filter-Button{
+        width: 100px;
+        font-weight:600;
+        background: #25AAE1;
+        font-family: 'Neue Haas Grotesk Display Pro';
+        height: fit-content;
+        color: white;
+    }
+    
 }

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import "./ServiceItems.css"
 const ServiceItems=(props)=>{
     const {ServiceInfo}=props
@@ -5,10 +6,15 @@ const ServiceItems=(props)=>{
     return(
         <div className="ServiceItemTop">
 <img className="ServiceIcon" src={ServiceLogo} alt="Service Logo"/>
-<h3>{ServiceTitle}</h3>
+<h3>{ServiceTitle==="MobileAppDevelopment"?"App Development":ServiceTitle}</h3>
 <p>{ServiceDesription}</p>
+<Link className="Links" to={`/${ServiceTitle}`}>
+                          
 
+
+                       
 <h2 className="SeeMore">See More</h2>
+</Link>
         </div>
     )
 }

@@ -16,7 +16,6 @@ const Apply = () => {
     const [applicantContact, setApplicantContact] = useState("")
     const [applicantMail, setApplicantMail] = useState("")
     const [resume, setResume] = useState("")
-    const[experiance,setExperiance]=useState("")
     const[noticePeriod,setNoticePeriod]=useState("")
     const [SuccessMessage, SetSuccessMessage] = useState("")
 
@@ -39,25 +38,29 @@ const Apply = () => {
 
     const UploadDetails = async (event) => {
         event.preventDefault();
-        const URL = "https://agilewitapplicantdetails-default-rtdb.firebaseio.com/.json";
 
-     
-
-        try {
-            const response = await axios.post(URL, {applicantFirstName,applicantLastName,applicantContact,applicantMail,resume,experiance,noticePeriod});
-            console.log(response)
+        if(applicantFirstName === "" && applicantLastName === "" && applicantContact === "" && applicantMail === ""&&resume===""){
+            SetSuccessMessage("Enter Require Fields");
+        }
+        else{
             SetSuccessMessage("Application Sent successfully");
+        const URL = "https://agilewitapplicantdetails-default-rtdb.firebaseio.com/.json";
+        try {
+            const response = await axios.post(URL, {applicantFirstName,applicantLastName,applicantContact,applicantMail,resume,noticePeriod});
+            console.log(response)
+            
             setApplicantFirstName("");
             setApplicantLastName("");
             setApplicantContact("");
             setApplicantMail("");
             setResume("");
-            alert("Your Application Sent Successfullly")
-            navigate("/Jobs");
+            navigate("/Jobs")
+            
         } catch (error) {
             console.error('Error uploading details:', error);
 
         }
+    }
     };
 
 
@@ -71,14 +74,15 @@ const Apply = () => {
                     <form className="Form Applys" onSubmit={UploadDetails}>
                         <h3 className='FillAplication'>{FillApplication}</h3>
                         
-                            <input type="text" value={applicantFirstName} placeholder="First Name" pattern="[A-Za-z]+" name="name" className="ApplyFirstName" onChange={(e) => { setApplicantFirstName(e.target.value) }} />
+                            <input type="text" value={applicantFirstName} placeholder="First Name" pattern="[A-Za-z]+" required name="name" className="ApplyFirstName" onChange={(e) => { setApplicantFirstName(e.target.value) }} />
 
-                            <input type="text" value={applicantLastName} placeholder="Last Name" pattern="[A-Za-z]+" name="name" className="ApplyFirstName" onChange={(e) => { setApplicantLastName(e.target.value) }} />
+                            <input type="text" value={applicantLastName} placeholder="Last Name" pattern="[A-Za-z]+" required name="name" className="ApplyFirstName" onChange={(e) => { setApplicantLastName(e.target.value) }} />
                        
                     
             <input
                 type="text"
                 value={applicantContact}
+                required
                 placeholder="Contact Details"
                 className="ApplyFirstName"
                 name="number"
@@ -92,15 +96,8 @@ const Apply = () => {
             </span>
     
 
-                        <input type="text" value={applicantMail} placeholder="E-mail" pattern=".*@.*" className="ApplyFirstName" name="from_name" onChange={(e) => { setApplicantMail(e.target.value) }} />
-                        <select className="Email" onChange={(e)=>setExperiance(e.target.value)}>
-                            <option selected>{Experiance}</option>
-                            <option value=" Fresher">{Fresher}</option>
-                            <option value=" 0-2 Years">{TwoYears}</option>
-                            <option value="2-4Years">{FourYears}</option>
-                            <option value="4-6Years">{SixYears}</option>
-                            <option value="6-8Years">{EightYears}</option>
-                        </select>
+                        <input type="text" value={applicantMail} required placeholder="E-mail" pattern=".*@.*" className="ApplyFirstName" name="from_name" onChange={(e) => { setApplicantMail(e.target.value) }} />
+            
 
                         <select className="Email" onChange={(e)=>{setNoticePeriod(e.target.value)}}>
                             <option>{NoticePeriod}</option>
@@ -110,15 +107,15 @@ const Apply = () => {
                             <option value="3 Month">{ThreeMonth}</option>
                         </select>
                       
-                        <input type='file' className='file-input' onChange={UpdateResume} />
+                        <input type='file' className='file-input' required  accept=".doc,.docx,.pdf" onChange={UpdateResume} />
                         
-                        <button style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === "") ? 0.2 : 1 }} type="submit">Send Application</button>
+                        <button style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === ""||resume==="") ? 0.2 : 1 }} type="submit">Send Application</button>
                        
                         <Link to="/Jobs">
                         <button className='BacktoJobs'>{BackToJobs}</button>
                         </Link>
                     </form>
-                    <p className="SuccessMessage">{SuccessMessage}</p>
+                    <p>{SuccessMessage}</p>
                 </div>
                 <BottomPage />
             </div>

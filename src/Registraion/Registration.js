@@ -1,4 +1,6 @@
-import { useState } from "react";
+
+
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header/Header";
 import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
@@ -7,6 +9,9 @@ import BottomPage from '../BottomPage/BottomPage';
 import RegisterNows from '../Assets/RegisterNow.png'
 import axios from "axios";
 import { v4 as uuidv4 } from 'uuid';
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, doc, getDocs } from "firebase/firestore";
 import {RegistrationContent} from '../constant/TimeSheet'
 import './Registration.css';
 
@@ -23,8 +28,59 @@ const Registration = () => {
     })
     const [verificationPassword, setVerificationPassword] = useState("")
     const [passwordWarningMessage, setPasswordWarningMessage] = useState("")
+    const [roles,setRoles]=useState([])
     const navigate = useNavigate();
-    const {RegisterNow,FirstName,LastName,SelectYourDesignation,DesignationList,DateofJoining,Email,Password,ReEnterPassword,Register}=RegistrationContent
+    const [listofRoles, setListofRoles] = useState([])
+  const {RegisterNow,FirstName,LastName,SelectYourDesignation,DesignationList,DateofJoining,Email,Password,ReEnterPassword,Register}=RegistrationContent
+
+    useEffect(() => {
+       
+                // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBatfo5hniRm2ma8wHd8DLwS5Zr7RGVdH0",
+            authDomain: "agilewit-dev.firebaseapp.com",
+            projectId: "agilewit-dev",
+            storageBucket: "agilewit-dev.appspot.com",
+            messagingSenderId: "569729659401",
+            appId: "1:569729659401:web:e6f869b41e07b113edfed8",
+            measurementId: "G-37VG9ZG7F3"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        
+        const fetchEmployeeRoles = async () => {
+            try {
+                const snapshot = await getDocs(collection(db, "EmployeeRoles"));
+                let roles = [];
+                snapshot.docs.forEach((doc) => {
+                    const data = doc.data();
+                    console.log("Document data:", data);
+                    if (data.ListofRoles) {
+                        roles = roles.concat(data.ListofRoles); // Concatenate arrays
+                    }
+                });
+                setListofRoles(roles);
+                console.log("Roles set to:", roles); // Log immediately after setting state
+            } catch (error) {
+                console.error("Error fetching employee roles:", error);
+            }
+        };
+
+        fetchEmployeeRoles();
+    }, []);
+
+
+    useEffect(() => {
+        if (listofRoles.length > 0) {
+            console.log("roles====", listofRoles);
+        } else {
+            console.log("roles==== is empty or undefined");
+        }
+    }, [listofRoles]);
 
     const UpdateFirstName = (e) => {
         setNewUser({
@@ -32,6 +88,10 @@ const Registration = () => {
             FirstName: e.target.value
         });
     };
+
+    useEffect(()=>{
+
+    },[])
 
     const UpdateLastName = (e) => {
         setNewUser({
@@ -132,7 +192,7 @@ const Registration = () => {
                         <div className="Designation-Container">
                         <label>{SelectYourDesignation}</label>
                         <select className="Designation" onChange={UpdateDesignation}>
-                           {DesignationList.map((each)=><option value={each}>{each}</option>)}
+                           {listofRoles.map((each)=><option value={each}>{each}</option>)}
                         </select>
     
                         </div>

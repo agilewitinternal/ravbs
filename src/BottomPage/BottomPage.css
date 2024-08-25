@@ -51,7 +51,7 @@
 
 .InfoMail {
     color: #25AAE1;
-    margin-left: 10px;
+    
 }
 
 .BottomPageLine {
@@ -90,8 +90,5 @@
         flex-wrap: nowrap;
     }
 
-    .InfoMail {
-        display: flex;
-        align-self: flex-end;
-    }
+  
 }
