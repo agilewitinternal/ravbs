@@ -29,7 +29,8 @@ const Updatecurrentopenings = () => {
         const finalOutput = Object.values(response.data);
         setEmployeesList(finalOutput.flat());
     };
-
+const Random=Math.ceil(Math.random()*1000)
+console.log(Random)
     const updateUserName = (e) => {
         setUserName(e.target.value);
     };
