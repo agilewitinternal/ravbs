@@ -1,17 +1,11 @@
 import { useState, useEffect } from 'react';
-import EmploysTimeSheet from '../EmploysTimeSheet/EmploysTimeSheet';
 import Header from "../Header/Header";
 import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
 import AdminPageLogo from '../Assets/AdminePageLogo.png';
-import UpArrow from '../Assets/Up-Arrow.png'
-import DownArrow from '../Assets/Down-Arrow.png'
 import AdminGreen from '../Assets/AdminGreen.png';
-import EmploysListItem from '../EmploysListItem/EmploysListItem'
-import SuccessTimeSheet from '../SuccessTimeSheet/SuccessTimeSheet'
 import axios from 'axios';
-import moment from 'moment';
 import { AuthenticationContent } from '../constant/TimeSheet'
 import './Updatecurrentopenings.css';
 import { Link } from 'react-router-dom';
@@ -20,79 +14,15 @@ const Updatecurrentopenings = () => {
     const [adminStatus, setAdminStatus] = useState(true);
     const [userName, setUserName] = useState("");
     const [password, setPassword] = useState("");
-    const [employsTimeSheet, setEmploysTimeShet] = useState([])
     const [employeesList, setEmployeesList] = useState([]);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [warning, setWarning] = useState("");
-    const [arrowStatus, setArrowStatus] = useState(false);
-    const [searchEmploys, setSearchEmploys] = useState("");
-    const [timingHours, setTimingHours] = useState({});
-    const [timesheetMessage,setTimeSheetMessag]=useState("")
-    const { EmployeeID, Password, ForgotPassword, Login, NewEmployRegistration, EmployInfo, } = AuthenticationContent
-    const [currentDate, setCurrentDate] = useState(moment());
-    const startOfWeek = currentDate.clone().startOf('isoWeek');
-    const endOfWeek = currentDate.clone().endOf('isoWeek');
-    const [timeSheetStatus,setTimeSheetStatus]=useState(true)
 
-    const SyccessfulTimeSheet=employsTimeSheet.filter((each)=>each.EmployName===userName)
-    const UpdatedSyccessfulTimeSheet=SyccessfulTimeSheet.slice(0,5)
-
-    const days = [];
-    for (let i = 0; i < 7; i++) {
-        days.push(startOfWeek.clone().add(i, 'days'));
-    }
-
-    const handlePreviousWeek = () => {
-        setCurrentDate(currentDate.clone().subtract(1, 'week'));
-    };
-
-    const handleNextWeek = () => {
-        setCurrentDate(currentDate.clone().add(1, 'week'));
-    };
- useEffect(()=>{
-    fetchEmployeesTimeSheetDetails()
- },[])
-    const fetchEmployeesTimeSheetDetails = async () => {
-
-        const TimeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json"
-
-        const Result = await axios.get(TimeSheetURL)
-        const FinelResulst = Object.values(Result.data).flat()
-        
-        setEmploysTimeShet(FinelResulst)
-
-
-    }
+    const { EmployeeID, Password, ForgotPassword, Login } = AuthenticationContent
 
     useEffect(() => {
         fetchEmployeesDetails();
     }, []);
-    const UpdateTimingHours = (date, value) => {
-        setTimingHours(prevState => ({
-            ...prevState,
-            [date]: value
-        }));
-    };
-
-    const handleSubmit = async () => {
-        setTimeSheetMessag("Your Time Sheet Update Successfully")
-        const entries = days.map(day => {
-            const date = day.format('YYYY-MM-DD');
-            const WorkingEmployName = filteredEmployees.map((each) => each.FirstName)
-
-            return { EmployName: WorkingEmployName.join(', '), date, WorkingHours: timingHours[date] || '' };
-        });
-
-        const Ready = entries.filter((each) => each.WorkingHours)
-
-        console.log(Ready)
-        const TimeSheetURL = "https://agilewitstimesheet-default-rtdb.firebaseio.com/.json"
-        const Responce = await axios.post(TimeSheetURL, Ready)
-        console.log(Responce)
-        setTimeSheetStatus(!timeSheetStatus)
-        
-    };
-
 
     const fetchEmployeesDetails = async () => {
         const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json";
@@ -120,16 +50,6 @@ const Updatecurrentopenings = () => {
         }
     };
 
-    const updateArrowStatus = () => {
-        setArrowStatus(!arrowStatus);
-    };
-    const updateSearchEmploys = (e) => {
-        setSearchEmploys(e.target.value.toLowerCase());
-
-    };
-
-
-    const searchResult = employeesList.filter((each) => each.FirstName.toLowerCase().includes(searchEmploys));
 
     return (
         <div className='HomeTopLayer'>
@@ -152,7 +72,7 @@ const Updatecurrentopenings = () => {
                             </div>
                             <button className='Login-Button' onClick={verifyCredentials}>{Login}</button>
                             <Link to="/ResetPassword">
-                                <p style={{textAlign:"center"}}>{ForgotPassword}</p>
+                                <p style={{ textAlign: "center" }}>{ForgotPassword}</p>
                             </Link>
 
                             <p className='WarningMsg'>{warning}</p>
@@ -165,26 +85,12 @@ const Updatecurrentopenings = () => {
                                 {each.Type === "Admin" && (
                                     <div className='Dash-Board'>
                                         <div className='DashBoard-FirstLayer'>
-                                            <img className='Admin-green' src={AdminGreen} alt='Admin-Logo' />
-                                            <h1>{each.FirstName}</h1>
-                                            <h1>{each.Type}</h1>
-                                            <button className='Login-Button'>
-                                                <Link to="/Registration" className='Registration-Button'>{NewEmployRegistration}</Link>
-                                            </button>
-                                            <div className='EmploysInfoContainer'>
-                                                <p className='EmploysInfoTag'>{EmployInfo}</p>
-                                                {arrowStatus ? <img className='Arrow' onClick={updateArrowStatus} src={UpArrow} alt='UpArrow' /> : <img className='Arrow' onClick={updateArrowStatus} src={DownArrow} alt='DownArrow' />}
-                                            </div>
-                                            {arrowStatus && (
-                                                <div>
-                                                    <input type='search' className='SearchBar' onChange={updateSearchEmploys} placeholder='Search By EmployName' />
-                                                    {searchResult.map((each) => (
-                                                        <EmploysListItem key={each.FirstName + each.LastName} EmployInfo={each} />
-                                                    ))}
-                                                </div>
-                                            )}
-                                        </div>
                                         
+                                            <h1>Job Posting's</h1>
+
+
+                                        </div>
+
                                     </div>
                                 )}
                             </div>
