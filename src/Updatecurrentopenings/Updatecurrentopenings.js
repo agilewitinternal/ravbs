@@ -4,7 +4,6 @@ import DesktopHeader from '../DeskTopHeader/DeskTopHeader';
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders';
 import BottomPage from '../BottomPage/BottomPage';
 import AdminPageLogo from '../Assets/AdminePageLogo.png';
-import AdminGreen from '../Assets/AdminGreen.png';
 import axios from 'axios';
 import { AuthenticationContent } from '../constant/TimeSheet'
 import './Updatecurrentopenings.css';
