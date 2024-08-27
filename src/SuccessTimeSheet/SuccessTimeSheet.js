@@ -2,7 +2,6 @@ import "./SuccessTimeSheet.css"
 
 const SuccessTimeSheet = (props) => {
     const {Success}=props
-  
     const employeeNames = [...new Set(Success.map(emp => emp.EmployName))];
 
 
@@ -19,7 +18,7 @@ const getTotalHours = (name) => {
 
     return (
         <div className='EmployTimeSheet-Container'>
-        <div className="table-responsive"> {/* Added wrapper for scrollable table */}
+        <div className="table-responsive"> 
             <table>
                 <thead>
                     <tr>

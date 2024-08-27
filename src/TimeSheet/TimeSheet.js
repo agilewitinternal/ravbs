@@ -35,6 +35,7 @@ const TimeSheet = () => {
     const [timeSheetStatus,setTimeSheetStatus]=useState(true)
 
     const SyccessfulTimeSheet=employsTimeSheet.filter((each)=>each.EmployName===userName)
+    const UpdatedSyccessfulTimeSheet=SyccessfulTimeSheet.slice(0,5)
 
     const days = [];
     for (let i = 0; i < 7; i++) {
@@ -240,7 +241,7 @@ const TimeSheet = () => {
                                                 <button className='SubmitButton' onClick={handleSubmit}>Submit</button>
                                                 <p>{timesheetMessage}</p>
                                             </div>
-                                        </div>:<SuccessTimeSheet Success={SyccessfulTimeSheet}/>}
+                                        </div>:<SuccessTimeSheet Success={UpdatedSyccessfulTimeSheet}/>}
                                     </div>
                                 )}
                             </div>

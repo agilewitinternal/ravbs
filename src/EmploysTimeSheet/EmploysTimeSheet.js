@@ -8,7 +8,7 @@ import "./EmploysTimeSheet.css"
 const EmploysTimeSheet = () => {
     const [employsTimeSheet, setEmploysTimeShet] = useState([])
     const [firstNumber,setFirstNumber]=useState(0)
-    const [secondNumber,setSecondNumber]=useState(6)
+    const [secondNumber,setSecondNumber]=useState(7)
     useEffect(() => {
         fetchEmployeesDetails();
     }, []);
@@ -43,8 +43,9 @@ const EmploysTimeSheet = () => {
 
         const Result = await axios.get(TimeSheetURL)
         const FinelResulst = Object.values(Result.data).flat()
+        const UpdatedFinel=FinelResulst.slice(firstNumber,secondNumber)
         
-        setEmploysTimeShet(FinelResulst)
+        setEmploysTimeShet(UpdatedFinel)
 
 
     }
@@ -65,7 +66,7 @@ const getTotalHours = (name) => {
 
     return (
         <div className='EmployTimeSheet-Container'>
-        <div className="table-responsive"> {/* Added wrapper for scrollable table */}
+        <div className="table-responsive"> 
             <table>
                 <thead>
                     <tr>
@@ -90,6 +91,7 @@ const getTotalHours = (name) => {
             </table>
         </div>
         <div className="Buttons-Conatainer">
+    
             <button className="Button" onClick={UpdateSecondNumber}>PreviousWeek</button>
             <button className="Button" onClick={ UpdateFirstNumber}>NextWeek</button>
         </div>
