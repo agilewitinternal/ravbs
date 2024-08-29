@@ -130,22 +130,22 @@ const Updatecurrentopenings = () => {
                 measurementId: "G-37VG9ZG7F3",
             };
     
-            // Initialize Firebase
+           
             const app = initializeApp(firebaseConfig);
             const db = getFirestore(app);
     
-            // Document reference
+          
             const docRef = doc(db, "JobPostings", "OpenJobs");
     
-            // Fetch existing data
+           
             const docSnap = await getDoc(docRef);
     
             if (docSnap.exists()) {
-                // Document exists, update it with new data
+               
                 await setDoc(docRef, {
                   
-                        ...docSnap.data().jobPostings,  // Existing job postings
-                        [new Date().toISOString()]: newJobPost,  // Add new job post with a unique key
+                        ...docSnap.data().jobPostings,  
+                        [new Date().toISOString()]: newJobPost,  
                  
                 }, { merge: true });
     
@@ -153,10 +153,10 @@ const Updatecurrentopenings = () => {
                 setJobPostMessage("Job posted successfully!");
                 Navigate('/Jobs')
             } else {
-                // Document does not exist, create it with the new data
+
                 await setDoc(docRef, {
                     jobPostings: {
-                        [new Date().toISOString()]: newJobPost  // Initialize with new job post
+                        [new Date().toISOString()]: newJobPost
                     }
                 });
     
