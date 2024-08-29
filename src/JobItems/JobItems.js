@@ -6,7 +6,7 @@ import "./JobItems.css";
 const JobItems = (props) => {
     const[viewStatus,setViewStatus]=useState(false)
     const { JobItemInfo } = props;
-    const { JobTitle, JobLocation, Experiance, DateOfPosted, isOpen, JobType, Description} = JobItemInfo;
+    const { JobTitle, JobLocation, Experiance, DateOfPosted, isOpen, JobType, Description,JobCity} = JobItemInfo;
     const descriptionParts = Description.split('.', 2);
 
     const UpdateViewStaus=()=>{
@@ -24,7 +24,7 @@ const JobItems = (props) => {
           </div>
             {viewStatus&& <div className="JobItemSecondLayer">
                 {Experiance===undefined?<h4>Experiance: 0-1 Year</h4>:<h4>{`Experiance: ${Experiance}`}</h4>}
-               
+               <h4>{JobCity}</h4>
                 <h4>{`Location:${JobLocation}`}</h4>
                 <h4>{`Posted On: ${DateOfPosted}`}</h4>
                 

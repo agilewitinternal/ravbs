@@ -16,7 +16,6 @@ const Jobs = () => {
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
     const [jobMode, setJobMode] = useState(["Remote"])
-    const [listofRoles, setListofRoles] = useState([])
     const [filterOneStatus,SetFilterOneStatus]=useState(false)
     const[filterTwoStatus,setFilterTwoStatus]=useState(false)
     const [filterThreeStatus,setFilterThreeStatus]=useState(false)

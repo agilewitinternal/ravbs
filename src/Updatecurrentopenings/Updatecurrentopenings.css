@@ -8,6 +8,15 @@
     align-items: center;
 }
 
+.PostingIcon{
+    height: 400px;
+}
+.DashBoard-TopLayer{
+    display: flex;
+flex-direction: column;
+align-items: center;
+}
+
 .JobPosting-Form{
     text-align: justify;
     border-radius: 6px;
