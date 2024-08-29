@@ -59,7 +59,7 @@ const BottomPage = () => {
                         TimeSheet
                         </Link>
                         <Link to="/Updatecurrentopenings" className='Links'>
-                        <p>UpdatOpenings</p>
+                        <p>PostOpenings</p>
                         </Link>
                         
                         

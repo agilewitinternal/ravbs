@@ -1,4 +1,4 @@
-export const Jobs = [
+export const JobsInfo = [
     {
         JobTitle: "PHP Developer",
         JobLocation: "Hyderabad, India",

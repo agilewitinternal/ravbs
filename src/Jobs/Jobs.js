@@ -7,7 +7,7 @@ import BottomPage from '../BottomPage/BottomPage'
 import Agilewitswhite from '../Assets/AgilewitPNG.svg'
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, doc, getDocs } from "firebase/firestore";
+import { collection, doc, getDoc } from "firebase/firestore";
 import JobItems from '../JobItems/JobItems'
 import "./Jobs.css"
 const Jobs = () => {
@@ -15,7 +15,7 @@ const Jobs = () => {
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [jobMode, setJobMode] = useState(["OnSite"])
+    const [jobMode, setJobMode] = useState(["Remote"])
     const [listofRoles, setListofRoles] = useState([])
     const [filterOneStatus,SetFilterOneStatus]=useState(false)
     const[filterTwoStatus,setFilterTwoStatus]=useState(false)
@@ -28,50 +28,40 @@ const Jobs = () => {
 
 
     useEffect(() => {
-       
-const firebaseConfig = {
-    apiKey: "AIzaSyBatfo5hniRm2ma8wHd8DLwS5Zr7RGVdH0",
-    authDomain: "agilewit-dev.firebaseapp.com",
-    projectId: "agilewit-dev",
-    storageBucket: "agilewit-dev.appspot.com",
-    messagingSenderId: "569729659401",
-    appId: "1:569729659401:web:e6f869b41e07b113edfed8",
-    measurementId: "G-37VG9ZG7F3"
-};
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-const fetchEmployeeRoles = async () => {
-    try {
-        const snapshot = await getDocs(collection(db, "OpenJobs"));
-        
-        let roles = [];
-        snapshot.docs.forEach((doc) => {
-            const data = doc.data();
-            
-            if (data.CurrentOpenings) {
-                roles = roles.concat(data); 
+        const firebaseConfig = {
+          apiKey: "AIzaSyBatfo5hniRm2ma8wHd8DLwS5Zr7RGVdH0",
+          authDomain: "agilewit-dev.firebaseapp.com",
+          projectId: "agilewit-dev",
+          storageBucket: "agilewit-dev.appspot.com",
+          messagingSenderId: "569729659401",
+          appId: "1:569729659401:web:e6f869b41e07b113edfed8",
+          measurementId: "G-37VG9ZG7F3"
+        };
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+    
+        const fetchEmployeeRoles = async () => {
+          try {
+            const docRef = doc(db, "JobPostings", "OpenJobs");
+            const docSnap = await getDoc(docRef);
+ 
+            if (docSnap.exists()) {
+              const data = docSnap.data();
+              setJobArray(Object.values(data)); 
+            } else {
+              console.log("No such document!");
             }
-        });
-       
-        setListofRoles(roles[0].CurrentOpenings);
-        
-    } catch (error) {
-        console.error("Error fetching employee roles:", error);
-    }
-};
-
-fetchEmployeeRoles();
-}, []);
+          } catch (error) {
+            console.error("Error fetching employee roles:", error);
+          }
+        };
+    
+        fetchEmployeeRoles();
+      }, []); 
+    
 
 
-useEffect(() => {
-if (listofRoles.length > 0) {
-    setJobArray(listofRoles)
-} else {
-    console.log("roles==== is empty or undefined");
-}
-}, [listofRoles]);
+
 
   
 const UpdateLastOneDay=(e)=>{
@@ -241,10 +231,10 @@ const UpdateJobMode = (event) => {
         setSearchButton(searchResult)
     }
 
-
-
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.Location === "INDIA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.Location === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
-  console.log(CountryJobs)
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.JobLocation === "INDIA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.Location === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&&    (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
+ 
+     
+console.log(jobArray)
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -285,8 +275,3 @@ const UpdateJobMode = (event) => {
 }
 
 export default Jobs
-
-
-
-
-
