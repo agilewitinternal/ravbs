@@ -6,6 +6,7 @@ import BottomPage from '../BottomPage/BottomPage';
 import AdminPageLogo from '../Assets/AdminePageLogo.png';
 import axios from 'axios';
 import { AuthenticationContent } from '../constant/TimeSheet'
+import JobPosting from '../Assets/JobPosting.png'
 import './Updatecurrentopenings.css';
 import { Link } from 'react-router-dom';
 
@@ -16,6 +17,7 @@ const Updatecurrentopenings = () => {
     const [employeesList, setEmployeesList] = useState([]);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [warning, setWarning] = useState("");
+    const [jobPostMessag, setJobPostMessag] = useState("")
 
     const { EmployeeID, Password, ForgotPassword, Login } = AuthenticationContent
 
@@ -29,8 +31,6 @@ const Updatecurrentopenings = () => {
         const finalOutput = Object.values(response.data);
         setEmployeesList(finalOutput.flat());
     };
-const Random=Math.ceil(Math.random()*1000)
-console.log(Random)
     const updateUserName = (e) => {
         setUserName(e.target.value);
     };
@@ -84,9 +84,73 @@ console.log(Random)
                             <div key={each.FirstName + each.LastName}>
                                 {each.Type === "Admin" && (
                                     <div className='Dash-Board'>
-                                        <div className='DashBoard-FirstLayer'>
-                                        
-                                            <h1>Job Posting's</h1>
+                                        <div className='CurrentOpening-TopLayer'>
+                                        <img className='JobPostingLogo' src={JobPosting} alt="JobPostingLogo" />
+                                            <form className="JobPosting-Form">
+                                                <h3 style={{ textAlign: "center" }}>Post A New  Job</h3>
+
+                                                <label htmlFor="firstName" className='Center'>Job Title</label>
+                                                <input
+                                                    className='Center'
+                                                    type="text"
+                                                    id="firstName"
+                                                    name="firstName"
+                                                    placeholder='Enter Job Title'
+                                                    required
+
+                                                />
+
+                                                <label htmlFor="firstName" className='Center'>Job Description</label>
+                                            <textarea required placeholder='Enter Job Desription' className='Center'>
+
+                                            </textarea>
+
+
+                                                <label htmlFor="lastName" className='Center'>City</label>
+                                                <input
+                                                    className='Center'
+                                                    type="text"
+                                                    id="lastName"
+                                                    name="lastName"
+                                                    placeholder='Enter Job City'
+                                                    required
+
+
+                                                />
+
+
+                                                <label className='Center'> Country Location</label>
+
+                                                <select>
+                                                    <option className='Center'>USA</option>
+                                                    <option selected className='Center'>INDIA</option>
+                                                </select>
+
+                                                <label className='Center'> Job Type</label>
+
+                                                <select>
+                                                    <option className='Center'>Remote </option>
+                                                    <option selected className='Center'>OnSite</option>
+                                                </select>
+
+
+                                                <label htmlFor="dateOfJoining" className='Center' >DateofPosting</label>
+                                                <input
+                                                    className='Center'
+                                                    type="date"
+                                                    id="dateOfJoining"
+                                                    name="dateOfJoining"
+                                                    required
+
+
+                                                />
+
+
+
+
+                                                <button type="submit" className="Login-Button">Post A Job</button>
+                                                <p className="WarningMsg">{jobPostMessag}</p>
+                                            </form>
 
 
                                         </div>
@@ -96,10 +160,6 @@ console.log(Random)
                             </div>
                         ))}
                     </div>
-
-
-
-
                 )}
                 <BottomPage />
             </div>
