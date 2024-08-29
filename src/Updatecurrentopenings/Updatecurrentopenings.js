@@ -6,6 +6,9 @@ import BottomPage from '../BottomPage/BottomPage';
 import AdminPageLogo from '../Assets/AdminePageLogo.png';
 import axios from 'axios';
 import { AuthenticationContent } from '../constant/TimeSheet'
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { collection, doc, addDoc } from "firebase/firestore";
 import JobPosting from '../Assets/JobPosting.png'
 import './Updatecurrentopenings.css';
 import { Link } from 'react-router-dom';
@@ -17,7 +20,16 @@ const Updatecurrentopenings = () => {
     const [employeesList, setEmployeesList] = useState([]);
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [warning, setWarning] = useState("");
-    const [jobPostMessag, setJobPostMessag] = useState("")
+    const [jobPostMessag, setJobPostMessage] = useState("")
+    const [newJobPost, setNewJobPost] = useState({
+        JobTitle: "",
+        JobLocation: "",
+        Experiance: "",
+        DateOfPosted: "",
+        Location: "",
+        JobType: "",
+        Description: "",
+    })
 
     const { EmployeeID, Password, ForgotPassword, Login } = AuthenticationContent
 
@@ -49,6 +61,81 @@ const Updatecurrentopenings = () => {
             setWarning("Wrong Username or Password");
         }
     };
+
+    const UpdateJobTitle = (e) => {
+        setNewJobPost({
+            ...newJobPost,
+            JobTitle: e.target.value
+        })
+    }
+
+    const UpdateJobDescription=(e)=>{
+        setNewJobPost({
+            ...newJobPost,
+            Description:e.target.value
+        })
+    }
+const UpdateExperiance=(e)=>{
+    setNewJobPost({
+        ...newJobPost,
+        Experiance:`${e.target.value} Years`
+    })
+}
+
+const UpdateCity=(e)=>{
+    setNewJobPost({
+        ...newJobPost,
+        JobLocation:e.target.value
+    })
+}
+
+const UpdateJobType=(e)=>{
+setNewJobPost({
+    ...newJobPost,
+    JobType:e.target.value
+})
+}
+
+const UpdateCountry=(e)=>{
+setNewJobPost({
+    ...newJobPost,
+    Location:e.target.value
+})
+}
+
+const UpdateDateOfPosted=(e)=>{
+    setNewJobPost({
+        ...newJobPost,
+        DateOfPosted:e.target.value
+    })
+}
+
+
+
+  const PostNewPosting = async (e) => {
+    e.preventDefault();
+    const firebaseConfig = {
+        apiKey: "AIzaSyBatfo5hniRm2ma8wHd8DLwS5Zr7RGVdH0",
+        authDomain: "agilewit-dev.firebaseapp.com",
+        projectId: "agilewit-dev",
+        storageBucket: "agilewit-dev.appspot.com",
+        messagingSenderId: "569729659401",
+        appId: "1:569729659401:web:e6f869b41e07b113edfed8",
+        measurementId: "G-37VG9ZG7F3",
+      };
+      
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+    try {
+      const docRef = await addDoc(collection(db, "JobPostings"), newJobPost);
+      console.log("Document written with ID: ", docRef.id);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+  };
+
+
+
 
 
     return (
@@ -85,10 +172,9 @@ const Updatecurrentopenings = () => {
                                 {each.Type === "Admin" && (
                                     <div className='Dash-Board'>
                                         <div className='CurrentOpening-TopLayer'>
-                                        <img className='JobPostingLogo' src={JobPosting} alt="JobPostingLogo" />
-                                            <form className="JobPosting-Form">
+                                            <img className='JobPostingLogo' src={JobPosting} alt="JobPostingLogo" />
+                                            <form className="JobPosting-Form" onSubmit={PostNewPosting}>
                                                 <h3 style={{ textAlign: "center" }}>Post A New  Job</h3>
-
                                                 <label htmlFor="firstName" className='Center'>Job Title</label>
                                                 <input
                                                     className='Center'
@@ -96,16 +182,22 @@ const Updatecurrentopenings = () => {
                                                     id="firstName"
                                                     name="firstName"
                                                     placeholder='Enter Job Title'
-                                                    required
-
-                                                />
-
+                                                    onChange={UpdateJobTitle}
+                                                    required />
                                                 <label htmlFor="firstName" className='Center'>Job Description</label>
-                                            <textarea required placeholder='Enter Job Desription' className='Center'>
+                                                <textarea required placeholder='Enter Job Desription' className='Center' onChange={UpdateJobDescription}>
 
-                                            </textarea>
+                                                </textarea>
 
-
+                                                <label htmlFor="lastName" className='Center'>Experiance</label>
+                                                <input
+                                                    className='Center'
+                                                    type="number"
+                                                    id="lastName"
+                                                    name="lastName"
+                                                    placeholder='Enter Required Experiance'
+                                                    onChange={UpdateExperiance}
+                                                    required />
                                                 <label htmlFor="lastName" className='Center'>City</label>
                                                 <input
                                                     className='Center'
@@ -113,41 +205,32 @@ const Updatecurrentopenings = () => {
                                                     id="lastName"
                                                     name="lastName"
                                                     placeholder='Enter Job City'
-                                                    required
-
-
-                                                />
-
-
+                                                    onChange={UpdateCity}
+                                                    required />
                                                 <label className='Center'> Country Location</label>
-
-                                                <select>
-                                                    <option className='Center'>USA</option>
-                                                    <option selected className='Center'>INDIA</option>
+                                                <select onChange={UpdateCountry}>
+                                                    <option className='Center'>Choose Location</option>
+                                                    <option value="INDIA" className='Center'>INDIA</option>
+                                                    <option value="USA" className='Center'>USA</option>
+                                                   
                                                 </select>
 
                                                 <label className='Center'> Job Type</label>
 
-                                                <select>
-                                                    <option className='Center'>Remote </option>
-                                                    <option selected className='Center'>OnSite</option>
+                                                <select onChange={UpdateJobType}>
+                                                    <option className='Center'>Choose JobType</option>
+                                                    <option value="Remote" className='Center'>Remote </option>
+                                                    <option value="OnSite" className='Center'>OnSite</option>
                                                 </select>
-
-
                                                 <label htmlFor="dateOfJoining" className='Center' >DateofPosting</label>
                                                 <input
                                                     className='Center'
                                                     type="date"
                                                     id="dateOfJoining"
                                                     name="dateOfJoining"
+                                                    onChange={UpdateDateOfPosted}
                                                     required
-
-
                                                 />
-
-
-
-
                                                 <button type="submit" className="Login-Button">Post A Job</button>
                                                 <p className="WarningMsg">{jobPostMessag}</p>
                                             </form>

@@ -43,7 +43,7 @@ const db = getFirestore(app);
 
 const fetchEmployeeRoles = async () => {
     try {
-        const snapshot = await getDocs(collection(db, "JobPostings"));
+        const snapshot = await getDocs(collection(db, "OpenJobs"));
         
         let roles = [];
         snapshot.docs.forEach((doc) => {
