@@ -9,7 +9,9 @@
 }
 
 .PostingIcon{
-    height: 400px;
+    height: 100px;
+    margin-top: 80px;
+    margin-bottom: 80px;
 }
 .DashBoard-TopLayer{
     display: flex;
@@ -31,7 +33,7 @@ align-items: center;
 }
 
 .JobPostingLogo{
-    height: 70px;
+    height: 5000px;
 }
 
 @media screen  and (min-width:767px){
@@ -52,5 +54,9 @@ align-items: center;
     }
     .JobPostingLogo{
         height: 180px;
+    }
+    .PostingIcon{
+        height: 500px;
+       
     }
 }
