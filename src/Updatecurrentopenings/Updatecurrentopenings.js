@@ -23,7 +23,7 @@ const Updatecurrentopenings = () => {
     const [filteredEmployees, setFilteredEmployees] = useState([]);
     const [warning, setWarning] = useState("");
     const [jobPostMessag, setJobPostMessage] = useState("");
-    const [postingStatus,setPostingStatus]=useState(false)
+    const [postingStatus,setPostingStatus]=useState(true)
     const [newJobPost, setNewJobPost] = useState({
         JobTitle: "",
         JobLocation: "",
