@@ -42,7 +42,7 @@ const Registration = () => {
             storageBucket: "agilewit-prod.appspot.com",
             messagingSenderId: "533592934207",
             appId: "1:533592934207:web:ebe1f7b8eec1decd2c358a",
-            measurementId: "G-X2X6Z0W78C"
+            measurementId: "G-X2X6Z0W78C"
           };
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);

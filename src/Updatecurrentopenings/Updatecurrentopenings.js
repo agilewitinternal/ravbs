@@ -121,13 +121,13 @@ const Updatecurrentopenings = () => {
         setPostingStatus(false)
         try {
             const firebaseConfig = {
-                apiKey: "AIzaSyBatfo5hniRm2ma8wHd8DLwS5Zr7RGVdH0",
-                authDomain: "agilewit-dev.firebaseapp.com",
-                projectId: "agilewit-dev",
-                storageBucket: "agilewit-dev.appspot.com",
-                messagingSenderId: "569729659401",
-                appId: "1:569729659401:web:e6f869b41e07b113edfed8",
-                measurementId: "G-37VG9ZG7F3",
+                apiKey: "AIzaSyA0NgdczMcmEuuSiUnNKeArdiT__5In-_c",
+                authDomain: "agilewit-prod.firebaseapp.com",
+                projectId: "agilewit-prod",
+                storageBucket: "agilewit-prod.appspot.com",
+                messagingSenderId: "533592934207",
+                appId: "1:533592934207:web:ebe1f7b8eec1decd2c358a",
+                measurementId: "G-X2X6Z0W78C"
             };
     
            
