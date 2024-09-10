@@ -15,10 +15,10 @@ const Jobs = () => {
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [jobMode, setJobMode] = useState(["Remote"])
-    const [filterOneStatus,SetFilterOneStatus]=useState(false)
-    const[filterTwoStatus,setFilterTwoStatus]=useState(false)
-    const [filterThreeStatus,setFilterThreeStatus]=useState(false)
+    const [jobMode, setJobMode] = useState(["Remote","OnSite"])
+    const [filterOneStatus,SetFilterOneStatus]=useState(true)
+    const[filterTwoStatus,setFilterTwoStatus]=useState(true)
+    const [filterThreeStatus,setFilterThreeStatus]=useState(true)
     const [searchButton,setSearchButton]=useState("")
     const [timeFilter,setTimeFilter]=useState(365)
     const[education,setEducation]=useState(["Degree"])
@@ -230,7 +230,7 @@ const UpdateJobMode = (event) => {
         setSearchButton(searchResult)
     }
 
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.JobLocation === "INDIA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
  
      
 console.log(jobArray)
