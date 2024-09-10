@@ -15,128 +15,129 @@ const Jobs = () => {
     const [searchResult, setSearchResult] = useState("")
     const [country, setCountry] = useState("")
     const [jobArray, setJobArray] = useState([])
-    const [jobMode, setJobMode] = useState(["Remote","OnSite"])
-    const [filterOneStatus,SetFilterOneStatus]=useState(true)
-    const[filterTwoStatus,setFilterTwoStatus]=useState(true)
-    const [filterThreeStatus,setFilterThreeStatus]=useState(true)
-    const [searchButton,setSearchButton]=useState("")
-    const [timeFilter,setTimeFilter]=useState(365)
-    const[education,setEducation]=useState(["Degree"])
+    const [jobMode, setJobMode] = useState(["Remote", "OnSite"])
+    const [filterOneStatus, SetFilterOneStatus] = useState(true)
+    const [filterTwoStatus, setFilterTwoStatus] = useState(true)
+    const [filterThreeStatus, setFilterThreeStatus] = useState(true)
+    const [searchButton, setSearchButton] = useState("")
+    const [timeFilter, setTimeFilter] = useState(365)
+    const [education, setEducation] = useState(["Degree"])
     const { AdvanceSearch, JobsTypes, JobsCategory, JobsCategoryArray, volunteeropportunities, volunteeropportunitiesDescription, ViewJobs } = JobContent
 
 
 
     useEffect(() => {
         const firebaseConfig = {
-          apiKey: "AIzaSyBatfo5hniRm2ma8wHd8DLwS5Zr7RGVdH0",
-          authDomain: "agilewit-dev.firebaseapp.com",
-          projectId: "agilewit-dev",
-          storageBucket: "agilewit-dev.appspot.com",
-          messagingSenderId: "569729659401",
-          appId: "1:569729659401:web:e6f869b41e07b113edfed8",
-          measurementId: "G-37VG9ZG7F3"
+            apiKey: "AIzaSyA0NgdczMcmEuuSiUnNKeArdiT__5In-_c",
+            authDomain: "agilewit-prod.firebaseapp.com",
+            projectId: "agilewit-prod",
+            storageBucket: "agilewit-prod.appspot.com",
+            messagingSenderId: "533592934207",
+            appId: "1:533592934207:web:ebe1f7b8eec1decd2c358a",
+            measurementId: "G-X2X6Z0W78C"
         };
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-    
+
         const fetchEmployeeRoles = async () => {
-          try {
-            const docRef = doc(db, "JobPostings", "OpenJobs");
-            const docSnap = await getDoc(docRef);
- 
-            if (docSnap.exists()) {
-              const data = docSnap.data();
-              setJobArray(Object.values(data)); 
-            } else {
-              console.log("No such document!");
+            try {
+                const docRef = doc(db, "JobPostings", "OpenJobs");
+                const docSnap = await getDoc(docRef);
+
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    setJobArray(Object.values(data));
+                } else {
+                    console.log("No such document!");
+                }
+            } catch (error) {
+                console.error("Error fetching employee roles:", error);
             }
-          } catch (error) {
-            console.error("Error fetching employee roles:", error);
-          }
         };
-    
+
         fetchEmployeeRoles();
-      }, []); 
-    
+    }, []);
 
 
 
 
-  
-const UpdateLastOneDay=(e)=>{
-if(e.target.checked){
-    setTimeFilter(1)
-}else{
-    setTimeFilter(365)
-}
-}
-const UpdateLastOneWeek=(e)=>{
-    if(e.target.checked){
-        setTimeFilter(7)
-    }else{
-        setTimeFilter(365)
-    }
-    }
-    const UpdateLastOneMonth=(e)=>{
-        if(e.target.checked){
-            setTimeFilter(31)
-        }else{
+
+
+    const UpdateLastOneDay = (e) => {
+        if (e.target.checked) {
+            setTimeFilter(1)
+        } else {
             setTimeFilter(365)
         }
-        }
-
-
-        const ToDegree=(event)=>{
-            if(event.target.checked){
-                setEducation((prev)=>[...prev,"Degree"])
-            }else{
-                setEducation((prev)=>prev.filter((each)=>each !== "Degree"))
-            }
-
-        }
-
-        const ToInter=(event)=>{
-            if(event.target.checked){
-                setEducation((prev)=>[...prev,"Inter"])
-            }else{
-                setEducation((prev)=>prev.filter((each)=>each !== "Inter"))
-            }
-
-        }
-
-        const ToDiploma=(event)=>{
-            if(event.target.checked){
-setEducation((prev)=>[...prev,"Diploma"])
-            }else{
-                setEducation((prev)=>prev.filter((each)=>each!=="Diploma"))
-            }
-        }
-
-       const ToMaster=(event)=>{
-        if(event.target.checked){
-            setEducation((prev)=>[...prev,"Masters"])
-        }else{
-        setEducation((prev)=>prev.filter((each)=>each!=="Masters"))
-        }
-
-       } 
-
-
-const UpdateJobMode = (event) => {
-    if (event.target.checked) {
-      setJobMode((prev) => [...prev, "Remote"]);
-    } else {
-      setJobMode((prev) => prev.filter((mode) => mode !== "Remote"));
     }
-  };
-
-  const UpdatetoOnset = (event) => {
-    if (event.target.checked) {
-      setJobMode((prev) => [...prev, "OnSite"]);
-    } else {
-      setJobMode((prev) => prev.filter((mode) => mode !== "OnSite"));
+    const UpdateLastOneWeek = (e) => {
+        if (e.target.checked) {
+            setTimeFilter(7)
+        } else {
+            setTimeFilter(365)
+        }
     }
-  };
+    const UpdateLastOneMonth = (e) => {
+        if (e.target.checked) {
+            setTimeFilter(31)
+        } else {
+            setTimeFilter(365)
+        }
+    }
+
+
+    const ToDegree = (event) => {
+        if (event.target.checked) {
+            setEducation((prev) => [...prev, "Degree"])
+        } else {
+            setEducation((prev) => prev.filter((each) => each !== "Degree"))
+        }
+
+    }
+
+    const ToInter = (event) => {
+        if (event.target.checked) {
+            setEducation((prev) => [...prev, "Inter"])
+        } else {
+            setEducation((prev) => prev.filter((each) => each !== "Inter"))
+        }
+
+    }
+
+    const ToDiploma = (event) => {
+        if (event.target.checked) {
+            setEducation((prev) => [...prev, "Diploma"])
+        } else {
+            setEducation((prev) => prev.filter((each) => each !== "Diploma"))
+        }
+    }
+
+    const ToMaster = (event) => {
+        if (event.target.checked) {
+            setEducation((prev) => [...prev, "Masters"])
+        } else {
+            setEducation((prev) => prev.filter((each) => each !== "Masters"))
+        }
+
+    }
+
+
+    const UpdateJobMode = (event) => {
+        if (event.target.checked) {
+            setJobMode((prev) => [...prev, "Remote"]);
+        } else {
+            setJobMode((prev) => prev.filter((mode) => mode !== "Remote"));
+        }
+    };
+
+    const UpdatetoOnset = (event) => {
+        if (event.target.checked) {
+            setJobMode((prev) => [...prev, "OnSite"]);
+        } else {
+            setJobMode((prev) => prev.filter((mode) => mode !== "OnSite"));
+        }
+    };
 
 
 
@@ -151,66 +152,66 @@ const UpdateJobMode = (event) => {
     const AdvanceSerach = () => {
         return (
             <div className='JobSecondLayer'>
-                {filterThreeStatus===false&& <button className='Filter-Button' onClick={()=>setFilterThreeStatus(!filterThreeStatus)}>Date Posted</button>}
-            {filterThreeStatus&&
-                 <div className='FiltersContainer'>
-                
-    <button className='Filter-Button' onClick={()=>setFilterThreeStatus(!filterThreeStatus)}>Date Posted</button>
-                 <div className='inline-block-container'>
-                     <input type='checkBox' className='Checkbox'  onChange={UpdateLastOneDay} />
-                     <p>Last 24 Hours</p>
-                 </div>
-                 <div className='inline-block-container'>
-                     <input type='checkBox' className='Checkbox' onChange={UpdateLastOneWeek} />
-                     <p>Last 15 Days</p>
-                 </div>
-                 <div className='inline-block-container'>
-                     <input type='checkBox' className='Checkbox' onChange={UpdateLastOneMonth} />
-                     <p>Last 30 Days</p>
-                 </div>
-                
-                
-             </div>}
-               
-              {filterOneStatus===false&& <button className='Filter-Button' onClick={()=>SetFilterOneStatus(!filterOneStatus)}>Job Type</button>} 
-{filterOneStatus&&  <div className='FiltersContainer'>
-                  
-    <button className='Filter-Button' onClick={()=>SetFilterOneStatus(!filterOneStatus)}>Job Type</button>
-                  <div className='inline-block-container'>
-                      <input type='checkBox' className='Checkbox'  onChange={UpdateJobMode} />
-                      <p>Remote</p>
-                  </div>
-                  <div className='inline-block-container'>
-                      <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
-                      <p>Onsite</p>
-                  </div>
-              </div>}
-              {filterTwoStatus===false&& <button className='Filter-Button' onClick={()=>setFilterTwoStatus(!filterTwoStatus)}>Education Level</button>} 
-              {filterTwoStatus&&
-              
-                <div className='FiltersContainer'>
-                    <button className='Filter-Button' onClick={()=>setFilterTwoStatus(!filterTwoStatus)}>Education Level</button>
-    
-               
-                <div className='inline-block-container'>
-                    <input type='checkBox' className='Checkbox' onChange={ToDegree}  />
-                    <p>Bachelor's degree</p>
-                </div>
-                <div className='inline-block-container'>
-                    <input type='checkBox' className='Checkbox' onChange={ToMaster}  />
-                    <p>Master's degree</p>
-                </div>
-                <div className='inline-block-container'>
-                    <input type='checkBox' className='Checkbox' onChange={ToDiploma}  />
-                    <p>Diploma</p>
-                </div>
-                <div className='inline-block-container'>
-                    <input type='checkBox' className='Checkbox' onChange={ToInter}  />
-                    <p>12th Pass</p>
-                </div>
-            </div>
-              }
-              
+                {filterThreeStatus === false && <button className='Filter-Button' onClick={() => setFilterThreeStatus(!filterThreeStatus)}>Date Posted</button>}
+                {filterThreeStatus &&
+                    <div className='FiltersContainer'>
+
+                        <button className='Filter-Button' onClick={() => setFilterThreeStatus(!filterThreeStatus)}>Date Posted</button>
+                        <div className='inline-block-container'>
+                            <input type='checkBox' className='Checkbox' onChange={UpdateLastOneDay} />
+                            <p>Last 24 Hours</p>
+                        </div>
+                        <div className='inline-block-container'>
+                            <input type='checkBox' className='Checkbox' onChange={UpdateLastOneWeek} />
+                            <p>Last 15 Days</p>
+                        </div>
+                        <div className='inline-block-container'>
+                            <input type='checkBox' className='Checkbox' onChange={UpdateLastOneMonth} />
+                            <p>Last 30 Days</p>
+                        </div>
+
+
+                    </div>}
+
+                {filterOneStatus === false && <button className='Filter-Button' onClick={() => SetFilterOneStatus(!filterOneStatus)}>Job Type</button>}
+                {filterOneStatus && <div className='FiltersContainer'>
+
+                    <button className='Filter-Button' onClick={() => SetFilterOneStatus(!filterOneStatus)}>Job Type</button>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox' onChange={UpdateJobMode} />
+                        <p>Remote</p>
+                    </div>
+                    <div className='inline-block-container'>
+                        <input type='checkBox' className='Checkbox' onChange={UpdatetoOnset} />
+                        <p>Onsite</p>
+                    </div>
+                </div>}
+                {filterTwoStatus === false && <button className='Filter-Button' onClick={() => setFilterTwoStatus(!filterTwoStatus)}>Education Level</button>}
+                {filterTwoStatus &&
+
+                    <div className='FiltersContainer'>
+                        <button className='Filter-Button' onClick={() => setFilterTwoStatus(!filterTwoStatus)}>Education Level</button>
+
+
+                        <div className='inline-block-container'>
+                            <input type='checkBox' className='Checkbox' onChange={ToDegree} />
+                            <p>Bachelor's degree</p>
+                        </div>
+                        <div className='inline-block-container'>
+                            <input type='checkBox' className='Checkbox' onChange={ToMaster} />
+                            <p>Master's degree</p>
+                        </div>
+                        <div className='inline-block-container'>
+                            <input type='checkBox' className='Checkbox' onChange={ToDiploma} />
+                            <p>Diploma</p>
+                        </div>
+                        <div className='inline-block-container'>
+                            <input type='checkBox' className='Checkbox' onChange={ToInter} />
+                            <p>12th Pass</p>
+                        </div>
+                    </div>
+                }
+
 
 
 
@@ -218,7 +219,7 @@ const UpdateJobMode = (event) => {
         )
     }
 
-    
+
 
     const UpdateAdvanceStatus = () => {
         setAdvanceFilterStatus(!advanceFilterStatus)
@@ -228,14 +229,14 @@ const UpdateJobMode = (event) => {
         setSearchResult(e.target.value.toLowerCase())
     }
 
-    const UpdateFinelSearchResult=()=>{
+    const UpdateFinelSearchResult = () => {
         setSearchButton(searchResult)
     }
 
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.JobLocation === "INDIA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
- 
-     
-console.log(jobArray)
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.JobLocation === "INDIA" && (each.JobTitle.toLowerCase().includes(searchButton) || each.Description.toLowerCase().includes(searchButton)) && jobMode.some((mode) => each.JobType.includes(mode)) && education.some((mode) => each.Education.includes(mode)) && (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter) : jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton) || each.Description.toLowerCase().includes(searchButton)) && jobMode.some((mode) => each.JobType.includes(mode)) && education.some((mode) => each.Education.includes(mode)) && (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
+
+
+
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -245,17 +246,17 @@ console.log(jobArray)
                 <div className='JobTopLayer'>
                     <div className='JobSearchContainer'>
                         <div className='FirstSearch-layer'>
-                        <input type='search' className='SearchBar' placeholder='Job Tittle or KeyWord' onChange={UpdateSearchResult} />
-                        <button className='Filter-Button' onClick={UpdateFinelSearchResult}>Search</button>
+                            <input type='search' className='SearchBar' placeholder='Job Tittle or KeyWord' onChange={UpdateSearchResult} />
+                            <button className='Filter-Button' onClick={UpdateFinelSearchResult}>Search</button>
                         </div>
-     
+
                         <button className='AdvanceSearch FilterButton-Items' onClick={UpdateAdvanceStatus}>{AdvanceSearch}</button>
-                        
+
                     </div>
                     {advanceFilterStatus && AdvanceSerach()}
-                   
+
                     <div className='JobsArray'>
-                     
+
                         {CountryJobs.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
                     </div>
 
