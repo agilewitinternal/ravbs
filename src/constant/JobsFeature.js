@@ -6,6 +6,6 @@ export const JobContent={
    JobsCategory:"JOB CATEGORY",
    JobsCategoryArray:["manufacturing & production","Software Engineer","information technology"],
    volunteeropportunities:"Volunteer Opportunities",
-   volunteeropportunitiesDescription:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+   volunteeropportunitiesDescription:"Make a Difference Today! Join us in making a meaningful impact in our community. Whether you want to contribute a few hours a week or make a long-term commitment, we have a variety of opportunities that match your skills, interests, and availability",
    ViewJobs:"View Jobs"
 }
