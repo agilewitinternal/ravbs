@@ -218,6 +218,8 @@ const UpdateJobMode = (event) => {
         )
     }
 
+    
+
     const UpdateAdvanceStatus = () => {
         setAdvanceFilterStatus(!advanceFilterStatus)
     }
