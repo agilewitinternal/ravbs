@@ -13,6 +13,11 @@ const JobItems = (props) => {
         setViewStatus(!viewStatus)
     }
 
+    const formatDate = (date) => {
+        const d = new Date(date);
+        return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`; 
+      };
+
     return (
         <div className="JobItemTopLayer">
             <div className="JobItemFirst-Container">
@@ -26,13 +31,13 @@ const JobItems = (props) => {
                 {Experiance===undefined?<h4>Experiance: 0-1 Year</h4>:<h4>{`Experiance: ${Experiance}`}</h4>}
                <h4>{JobCity}</h4>
                 <h4>{`Location:${JobLocation}`}</h4>
-                <h4>{`Posted On: ${DateOfPosted}`}</h4>
+                <h4>{`Posted On: ${formatDate(DateOfPosted)}`}</h4>
                 
                 <h4>{JobType}</h4>
                
                {isOpen?<h4>Job Status:<span style={{color:"green"}}>Open</span></h4>:<h4>Job Status:<span style={{color:"red"}}>Closed</span></h4>}
                 
-               <p className="Description">{Description.split('.', 4)}</p>
+               <p className="Description">{Description}</p>
                
                {isOpen&&<Link to="/Apply">
                 <button className="ApplyButton">Apply</button>
