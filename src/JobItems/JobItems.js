@@ -6,16 +6,15 @@ import "./JobItems.css";
 const JobItems = (props) => {
     const[viewStatus,setViewStatus]=useState(false)
     const { JobItemInfo } = props;
-    const { JobTitle, JobLocation, Experiance, DateOfPosted, isOpen, JobType, Description,JobCity} = JobItemInfo;
-    const descriptionParts = Description.split('.', 2);
-
+    const { JobTitle, JobLocation, Experiance, NumberOfPositions, DateOfPosted, isOpen, JobType, Description,JobCity} = JobItemInfo;
+console.log("=====",props)
     const UpdateViewStaus=()=>{
         setViewStatus(!viewStatus)
     }
 
     const formatDate = (date) => {
         const d = new Date(date);
-        return `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`; 
+        return `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()}`; 
       };
 
     return (
@@ -23,12 +22,11 @@ const JobItems = (props) => {
             <div className="JobItemFirst-Container">
                
             <h3>{JobTitle}</h3>
-            <p>{descriptionParts[0]}</p>
             
-            {viewStatus?     <GoChevronUp onClick={UpdateViewStaus} className="ArrowIcon"/>:<GoChevronDown onClick={UpdateViewStaus} className="ArrowIcon" />}
+            {viewStatus? <GoChevronUp onClick={UpdateViewStaus} className="ArrowIcon"/>:<GoChevronDown onClick={UpdateViewStaus} className="ArrowIcon" />}
           </div>
-            {viewStatus&& <div className="JobItemSecondLayer">
-                {Experiance===undefined?<h4>Experiance: 0-1 Year</h4>:<h4>{`Experiance: ${Experiance}`}</h4>}
+            {viewStatus && <div className="JobItemSecondLayer">
+                {<h4>{`Number of Positions: ${NumberOfPositions===undefined ? "1" : NumberOfPositions?.toString()}`}</h4>}
                <h4>{JobCity}</h4>
                 <h4>{`Location:${JobLocation}`}</h4>
                 <h4>{`Posted On: ${formatDate(DateOfPosted)}`}</h4>
@@ -37,7 +35,7 @@ const JobItems = (props) => {
                
                {isOpen?<h4>Job Status:<span style={{color:"green"}}>Open</span></h4>:<h4>Job Status:<span style={{color:"red"}}>Closed</span></h4>}
                 
-               <p className="Description">{Description}</p>
+               <p className="Description" dangerouslySetInnerHTML={{ __html: Description }}></p>
                
                {isOpen&&<Link to="/Apply">
                 <button className="ApplyButton">Apply</button>
