@@ -12,29 +12,29 @@ import { v4 as uuidv4 } from 'uuid';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, doc, getDocs } from "firebase/firestore";
-import {RegistrationContent} from '../constant/TimeSheet'
+import { RegistrationContent } from '../constant/TimeSheet'
 import './Registration.css';
 
 const Registration = () => {
     const [newUser, setNewUser] = useState({
-        Id:uuidv4(),
+        Id: uuidv4(),
         FirstName: '',
         LastName: '',
-        Designation:'',
+        Designation: '',
         DateOfJoining: '',
-        Email:"",
+        Email: "",
         Password: '',
         Type: "Employ"
     })
     const [verificationPassword, setVerificationPassword] = useState("")
     const [passwordWarningMessage, setPasswordWarningMessage] = useState("")
-    const [roles,setRoles]=useState([])
+    const [roles, setRoles] = useState([])
     const navigate = useNavigate();
     const [listofRoles, setListofRoles] = useState([])
-  const {RegisterNow,FirstName,LastName,SelectYourDesignation,DesignationList,DateofJoining,Email,Password,ReEnterPassword,Register}=RegistrationContent
+    const { RegisterNow, FirstName, LastName, SelectYourDesignation, DesignationList, DateofJoining, Email, Password, ReEnterPassword, Register } = RegistrationContent
 
     useEffect(() => {
-       
+
         const firebaseConfig = {
             apiKey: "AIzaSyA0NgdczMcmEuuSiUnNKeArdiT__5In-_c",
             authDomain: "agilewit-prod.firebaseapp.com",
@@ -42,11 +42,11 @@ const Registration = () => {
             storageBucket: "agilewit-prod.appspot.com",
             messagingSenderId: "533592934207",
             appId: "1:533592934207:web:ebe1f7b8eec1decd2c358a",
-            measurementId: "G-X2X6Z0W78C"
-          };
+            measurementId: "G-X2X6Z0W78C"
+        };
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
-        
+
         const fetchEmployeeRoles = async () => {
             try {
                 const snapshot = await getDocs(collection(db, "EmployeeRoles"));
@@ -59,7 +59,7 @@ const Registration = () => {
                     }
                 });
                 setListofRoles(roles);
-                console.log("Roles set to:", roles); 
+                console.log("Roles set to:", roles);
             } catch (error) {
                 console.error("Error fetching employee roles:", error);
             }
@@ -84,9 +84,9 @@ const Registration = () => {
         });
     };
 
-    useEffect(()=>{
+    useEffect(() => {
 
-    },[])
+    }, [])
 
     const UpdateLastName = (e) => {
         setNewUser({
@@ -95,7 +95,7 @@ const Registration = () => {
         })
     }
 
-    const UpdateDesignation=(e)=>{
+    const UpdateDesignation = (e) => {
         setNewUser({
             ...newUser,
             Designation: e.target.value
@@ -111,7 +111,7 @@ const Registration = () => {
     }
 
 
-    const UpdateEmail=(e)=>{
+    const UpdateEmail = (e) => {
         setNewUser({
             ...newUser,
             Email: e.target.value
@@ -133,26 +133,26 @@ const Registration = () => {
 
     const SubmitDetails = async (e) => {
         e.preventDefault();
-    
+
         if (verificationPassword !== newUser.Password) {
             setPasswordWarningMessage("Password Not Matching");
         } else {
             setPasswordWarningMessage("Registered Successfully");
             const URL = "https://agilewitsemploys-default-rtdb.firebaseio.com/.json";
-    
+
             try {
                 const newDetailsPosting = await axios.post(URL, newUser);
                 console.log(newDetailsPosting);
-    
+
                 navigate('/TimeSheet');
-                
+
             } catch (error) {
                 console.error("Error during registration:", error);
-            
+
             }
         }
     };
-    
+
     return (
         <div className='HomeTopLayer'>
             <Header />
@@ -164,7 +164,7 @@ const Registration = () => {
                     <form className="Registration-Form" onSubmit={SubmitDetails}>
                         <h3>{RegisterNow}</h3>
                         <div>
-                        <label htmlFor="firstName">{FirstName}</label>
+                            <label htmlFor="firstName">{FirstName}</label>
                             <input
                                 type="text"
                                 id="firstName"
@@ -185,11 +185,11 @@ const Registration = () => {
                             />
                         </div>
                         <div className="Designation-Container">
-                        <label>{SelectYourDesignation}</label>
-                        <select className="Designation" onChange={UpdateDesignation}>
-                           {listofRoles.map((each)=><option value={each}>{each}</option>)}
-                        </select>
-    
+                            <label>{SelectYourDesignation}</label>
+                            <select className="Designation" onChange={UpdateDesignation}>
+                                {listofRoles.map((each) => <option value={each}>{each}</option>)}
+                            </select>
+
                         </div>
                         <div>
                             <label htmlFor="dateOfJoining">{DateofJoining}</label>
@@ -235,7 +235,7 @@ const Registration = () => {
 
                             />
                         </div>
-            
+
                         <button type="submit" className="Login-Button">{Register}</button>
                         <p className="WarningMsg">{passwordWarningMessage}</p>
                     </form>

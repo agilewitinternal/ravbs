@@ -34,7 +34,7 @@ const Jobs = () => {
             storageBucket: "agilewit-prod.appspot.com",
             messagingSenderId: "533592934207",
             appId: "1:533592934207:web:ebe1f7b8eec1decd2c358a",
-            measurementId: "G-X2X6Z0W78C"
+            measurementId: "G-X2X6Z0W78C"
         };
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
@@ -43,6 +43,7 @@ const Jobs = () => {
           try {
             const docRef = doc(db, "JobPostings", "OpenJobs");
             const docSnap = await getDoc(docRef);
+            
  
             if (docSnap.exists()) {
               const data = docSnap.data();
@@ -235,7 +236,7 @@ const UpdateJobMode = (event) => {
     const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.JobLocation === "INDIA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
  
      
-console.log(jobArray)
+
     return (
         <div className='HomeTopLayer'>
             <Header />
