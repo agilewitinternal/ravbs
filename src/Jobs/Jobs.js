@@ -260,7 +260,7 @@ const UpdateJobMode = (event) => {
                         {CountryJobs.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
                     </div>
 
-<p>Sidd</p>
+
                 </div>
                 <div className='JobsFourthLayer'>
                     <img src={Agilewitswhite} alt="CompanyLogo" className='AgilewitJobsLogo' />
