@@ -41,7 +41,7 @@ body {
     border: 1.4px solid #08c4f3;
     padding: 8px;
     margin: 8px;
-    width: 360px;
+    width: 300px;
     height: 10px;
 }
 
@@ -60,10 +60,18 @@ body {
 }
 
 .BacktoJobs{
-    width: fit-content;
+    width: 300px;
     margin-top: 10px;
 }
-
+.NoticePeriod{
+    background: #EBFBFF;
+    border: 1.4px solid #08c4f3;
+    padding: 8px;
+    margin: 8px;
+    width: 320px;
+    height: 35px;
+    color: #08c4f3;
+}
 
 @media screen and (min-width:767px){
     .ApplicationTopLayer {

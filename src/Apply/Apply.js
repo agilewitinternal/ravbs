@@ -99,7 +99,7 @@ const Apply = () => {
                         <input type="text" value={applicantMail} required placeholder="E-mail" pattern=".*@.*" className="ApplyFirstName" name="from_name" onChange={(e) => { setApplicantMail(e.target.value) }} />
             
 
-                        <select className="Email" onChange={(e)=>{setNoticePeriod(e.target.value)}}>
+                        <select className="NoticePeriod" onChange={(e)=>{setNoticePeriod(e.target.value)}}>
                             <option>{NoticePeriod}</option>
                             <option value="Immediate Jointer">{ImmediateJointer}</option>
                             <option value="1 Month">{OneMonth}</option>
@@ -109,7 +109,7 @@ const Apply = () => {
                       
                         <input type='file' className='file-input' required  accept=".doc,.docx,.pdf" onChange={UpdateResume} />
                         
-                        <button style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === ""||resume==="") ? 0.2 : 1 }} type="submit">Send Application</button>
+                        <button className='BacktoJobs' style={{ opacity: (applicantFirstName === "" || applicantLastName === "" || applicantContact === "" || applicantMail === ""||resume==="") ? 0.2 : 1 }} type="submit">Send Application</button>
                        
                         <Link to="/Jobs">
                         <button className='BacktoJobs'>{BackToJobs}</button>

@@ -50,6 +50,9 @@ const DropDownForMobile = () => {
                     <Link to="/TimeSheet" className='Links'>TIMESHEET
 
                 </Link>
+                <Link to="/Updatecurrentopenings" className='Links'>
+                        <p>UpdatOpenings</p>
+                        </Link>
                   </details>
                 </div>
 

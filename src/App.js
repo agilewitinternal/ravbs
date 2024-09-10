@@ -16,6 +16,7 @@ import TimeSheet from './TimeSheet/TimeSheet'
 import Registration from './Registraion/Registration'
 import ResetPassword from "./ResetPassword/ResetPassword"
 import NotFound from './NotFound/NotFound'
+import Updatecurrentopenings from './Updatecurrentopenings/Updatecurrentopenings'
 import "./App.css";
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path='/TimeSheet' element={<TimeSheet/>}/>
             <Route path='/Registration' element={<Registration/>}/>
             <Route path='/ResetPassword' element={<ResetPassword/>}/>
+            <Route path='/Updatecurrentopenings' element={<Updatecurrentopenings/>}/>
             <Route path="*" element={<NotFound/>} />
           </Routes>
         </div>

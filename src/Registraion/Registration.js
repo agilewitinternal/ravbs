@@ -35,11 +35,6 @@ const Registration = () => {
 
     useEffect(() => {
        
-                // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
         const firebaseConfig = {
             apiKey: "AIzaSyA0NgdczMcmEuuSiUnNKeArdiT__5In-_c",
             authDomain: "agilewit-prod.firebaseapp.com",
@@ -60,11 +55,11 @@ const Registration = () => {
                     const data = doc.data();
                     console.log("Document data:", data);
                     if (data.ListofRoles) {
-                        roles = roles.concat(data.ListofRoles); // Concatenate arrays
+                        roles = roles.concat(data.ListofRoles);
                     }
                 });
                 setListofRoles(roles);
-                console.log("Roles set to:", roles); // Log immediately after setting state
+                console.log("Roles set to:", roles); 
             } catch (error) {
                 console.error("Error fetching employee roles:", error);
             }
