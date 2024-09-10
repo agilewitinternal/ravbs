@@ -233,7 +233,7 @@ const UpdateJobMode = (event) => {
         setSearchButton(searchResult)
     }
 
-    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
+    const CountryJobs = country?.toLowerCase() === "calcutta" ? jobArray.filter((each) => each.JobLocation === "INDIA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter):  jobArray.filter((each) => each.JobLocation === "USA" && (each.JobTitle.toLowerCase().includes(searchButton)||each.Description.toLowerCase().includes(searchButton))&& jobMode.some((mode) => each.JobType.includes(mode))&&education.some((mode) => each.Education.includes(mode))&& (new Date() - new Date(each.DateOfPosted)) / (1000 * 3600 * 24) <= timeFilter)
  
      
 
@@ -260,7 +260,7 @@ const UpdateJobMode = (event) => {
                         {CountryJobs.map((each, index) => <JobItems key={index} JobItemInfo={each} />)}
                     </div>
 
-
+<p>Sidd</p>
                 </div>
                 <div className='JobsFourthLayer'>
                     <img src={Agilewitswhite} alt="CompanyLogo" className='AgilewitJobsLogo' />
