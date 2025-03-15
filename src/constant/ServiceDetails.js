@@ -11,7 +11,7 @@ export const ServiceDetails = [
     {
         ServiceLogo: AppDevelopment,
         ServiceTitle: "MobileAppDevelopment",
-        ServiceDesription: "Agilewit Solutions is incorporated as a Technology Consulting services and Software product development firm. Head quartered in Texas and Offshore ..."
+        ServiceDesription: "Rav Business Stream is incorporated as a Technology Consulting services and Software product development firm. Head quartered in Texas and Offshore ..."
     },
     {
         ServiceLogo: Training,

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import AgileWitLogoBlue from '../Assets/AgilewitLogo.svg';
+import AgileWitLogoBlue from '../Assets/Agilewitswhite.png';
 import {DeskTopHeaderContent} from '../constant/DeskTopHeader'
 import { SocialMediaIconsArray } from '../constant/BottomPage'
 import './DeskTopHeader.css';

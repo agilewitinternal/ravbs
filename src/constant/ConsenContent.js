@@ -3,7 +3,7 @@ export const ConsenContent={
 
     ConcenTitle:"CONSEN",
     DocumentUpload:uploaddocuments,
-    ConcenDescription:"CONSEN is one of the products of the AGILEWIT SOLUTIONS INC. This application reads the coulmn data provided in excel sheet and update the word document with the data provided in the excel sheet. Save the updated word document in the local directory. The updated Word documents are then converted into PDF. This PDF files are sent as a attachment to the email address provided in the excel sheet.",
+    ConcenDescription:"CONSEN is one of the products of the RAV BUSINESS STREAM. This application reads the coulmn data provided in excel sheet and update the word document with the data provided in the excel sheet. Save the updated word document in the local directory. The updated Word documents are then converted into PDF. This PDF files are sent as a attachment to the email address provided in the excel sheet.",
     LogInTitle:"LOGIN",
     LoginArray:["Provide user name, password","Provide the SMTP/POP server name from which domain you are sending (servername: send.one.com and port number: 587(depends on the domain provider))","Make sure to check “Check label” not to repeat the details. If the details repeat close and run the application again"],
     LogInDocuments:"LOAD DOCUMENTS",

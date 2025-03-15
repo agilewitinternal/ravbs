@@ -43,8 +43,8 @@ export const CunsultingPageContent = {
             "Hundreds of built-in transformation functions.",
             "Metadata-driven productivity, enabling collaboration."
         ],
-        DataStageAdvantages: "The Agilewit Solutions Inc DataStage Advantage",
-        DataStageAdvantagesDescription: "Agilewit Solutions Inc an IBM’s SWG Software Group Direct Partner supplies IBM Certified DataStage Solution Developers with huge experience to all our clients. All our IBM InfoSphere DataStage Consultants have extensive experience and specialization which includes:",
+        DataStageAdvantages: "The Rav Business Stream Inc DataStage Advantage",
+        DataStageAdvantagesDescription: "Rav Business Stream Inc an IBM’s SWG Software Group Direct Partner supplies IBM Certified DataStage Solution Developers with huge experience to all our clients. All our IBM InfoSphere DataStage Consultants have extensive experience and specialization which includes:",
         IBMDatastageSecondList: [
             "IBM InfoSphere DataStage Capacity Planning.",
             "IBM InfoSphere DataStage Installation and Configuration.",
@@ -61,7 +61,7 @@ export const CunsultingPageContent = {
     },
     BigDataAnalyticsContent: {
         BigDataAnalyticsTitle: "Big Data Analytics",
-        BigDataAnalyticsDescription: "According to Gartner, through 2015 more than 85% of Fortune 500 organizations will fail to effectively use big data. The reason is that the size, complexity of formats, and speed of delivery will exceed the capabilities of traditional data management technologies. Having experience in installing, configuring, and tuning deployments for large-scale systems, the team of Hadoop developers at Agilewit Solutions Incs can help software companies to address their data processing needs related to data mining, analysis, scaling, etc. Agilewit Solutions Incs has implemented Hadoop solutions for a number of projects that included speeding up the search process and search filtering, building a search recommendation engine, dataset mining and aggregation, data warehousing, real-time reporting, and more.",
+        BigDataAnalyticsDescription: "According to Gartner, through 2015 more than 85% of Fortune 500 organizations will fail to effectively use big data. The reason is that the size, complexity of formats, and speed of delivery will exceed the capabilities of traditional data management technologies. Having experience in installing, configuring, and tuning deployments for large-scale systems, the team of Hadoop developers at Rav Business Stream can help software companies to address their data processing needs related to data mining, analysis, scaling, etc. Rav Business Stream has implemented Hadoop solutions for a number of projects that included speeding up the search process and search filtering, building a search recommendation engine, dataset mining and aggregation, data warehousing, real-time reporting, and more.",
         BigDataAnalyticsSubTitle: "Focused Hadoop Services",
         BigDataAnalyticsFirstList: [
             "Provide an initial Hadoop proof of concept to help enterprises to adopt the system",
@@ -84,7 +84,7 @@ export const CunsultingPageContent = {
     },
     DataScienceContent: {
         DataScienceTitle: "DATA SCIENCE",
-        DataScienceDescription: "Agilewit Solutions Inc provides an Information Technology contract Consultants specializing in Applications development, Infrastructure support, Enterprise Resource Planning (ERP), Data Warehousing, and Database. Our client-base is broad, ranging from small businesses to Fortune 500 companies and stretching across numerous verticals. Among these markets are Communications, Construction, Financial/Banking, Information Technology, Manufacturing, Oil & Gas, Transportation, Biotechnology, Government, Healthcare/Medical Institutions, Education, Insurance, Legal, Marketing/Media, Pharmaceutical, Retail, Technology and Utilities.",
+        DataScienceDescription: "Rav Business Stream Inc provides an Information Technology contract Consultants specializing in Applications development, Infrastructure support, Enterprise Resource Planning (ERP), Data Warehousing, and Database. Our client-base is broad, ranging from small businesses to Fortune 500 companies and stretching across numerous verticals. Among these markets are Communications, Construction, Financial/Banking, Information Technology, Manufacturing, Oil & Gas, Transportation, Biotechnology, Government, Healthcare/Medical Institutions, Education, Insurance, Legal, Marketing/Media, Pharmaceutical, Retail, Technology and Utilities.",
         DataSciencSubDescription: "Our success is simply the result of hard work in data science models. Data science is an interdisciplinary field that uses scientific methods, processes, algorithms, and systems to extract knowledge and insights from data in various forms, both structured and unstructured, similar to data mining."
     }
 

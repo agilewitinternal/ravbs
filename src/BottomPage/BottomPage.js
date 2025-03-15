@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import AgilewitsWhite from '../Assets/Agilewitswhite.svg';
+import AgilewitsWhite from '../Assets/Agilewitswhite.png';
 import { BottomPageContent, SocialMediaIconsArray } from '../constant/BottomPage'
 import "./BottomPage.css";
 

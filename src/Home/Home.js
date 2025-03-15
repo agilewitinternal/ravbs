@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from '../Header/Header';
 import DeskTopHeader from '../DeskTopHeader/DeskTopHeader';
-import AgilewitGrey from '../Assets/Agilewitgrey.svg';
-import AgilewitLogoBlue from '../Assets/AgilewitLogoBlue.svg';
+import AgilewitGrey from '../Assets/AgilewitPNG.png';
+import AgilewitLogoBlue from '../Assets/AgilewitPNG.png';
 import ServiceItems from '../ServiceItems/ServiceItems';
 import { ServiceDetails } from '../constant/ServiceDetails';
 import { Achievement, HomePageContent, ClienCompanyArray } from '../constant/Home';
@@ -25,8 +25,8 @@ const Home = () => {
             <div className="SubHomeSecondLayer">
                 <div className='HomeIntroduction'>
                     <img src={AgilewitGrey} className="AgilewitGreyLogo" alt="Agilewit Logo" />
-                    <p className='Title'>W E &nbsp; A R E &nbsp; A G I L E W I T</p>
-                    <h1 className="TitleHeading">{HomePageMainingHeading}</h1>
+                    <p className='Title'>W E &nbsp; A R E &nbsp; R A V B U S I N E S S</p>
+                    <h1 className="TitleHeading">{HomePageMainingHeading}</h1> 
                     <p className="TitleDescription">{HomePageTagLine}</p>
                    
                     <Link to="/ContactUs" className='Links'>

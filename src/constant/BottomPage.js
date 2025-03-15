@@ -32,11 +32,10 @@ export const BottomPageContent = {
     Consent: "CONSEN",
     Contact: "CONTACT",
     CompanyUSAAddress: `USA:
-                        405 State Hwy 121 Bypass Suite A250,
-                        Lewisville, TX 75067
+                        800 sedona st little elm 75068
                         Phone Number: (516) 888-0089`,
     CompanyIndiaAddress: ` India: H.No.1-90/7/53/P, Second Floor Blossom Heights, Plot No. 53 
     Patrika Nagar, Madhapur Hyderabad, Telangana`,
-    CompanyMail: "info@agilewits.com",
-    EndTitle: "© Agilewit Solutions Inc"
+    CompanyMail: "Reachus@ravbs.com",
+    EndTitle: "© Rav Business Stream LLC"
 };

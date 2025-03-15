@@ -4,7 +4,7 @@ import DeskTopHeader from '../DeskTopHeader/DeskTopHeader'
 import ServiceHeaders from '../ServiceHeaders/ServiceHeaders'
 import { JobContent } from '../constant/JobsFeature'
 import BottomPage from '../BottomPage/BottomPage'
-import Agilewitswhite from '../Assets/AgilewitPNG.svg'
+import Agilewitswhite from '../Assets/AgilewitPNG.png'
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { collection, doc, getDoc } from "firebase/firestore";

@@ -35,7 +35,7 @@ export const Partners = [
         PartnerName: "Raj Kumar",
         PartnerIcon: Raj,
         PartnerCompany: "HCL",
-        PartnerOpinion: "“ The Agilewit team demonstrates exceptional expertise and efficiency in problem-solving. I highly recommend Agilewit Solutions Inc. for data science projects. Their insights and support were instrumental in deriving accurate predictions and uncovering valuable business patterns.”"
+        PartnerOpinion: "“ The Agilewit team demonstrates exceptional expertise and efficiency in problem-solving. I highly recommend Rav Business Stream. for data science projects. Their insights and support were instrumental in deriving accurate predictions and uncovering valuable business patterns.”"
     },
     {
         PartnerName: "Akshara",
@@ -53,6 +53,6 @@ export const HomePageContent = {
     HomePageTagLine: "Elevate Your Business with Our Technology Consulting and Software Development Expertise",
     LetsWork: "LET'S WORK TOGETHER +",
     ShareYourIdea: `You Share your idea We get it done`,
-    IdeaDescription: `Agilewit Solutions is incorporated as a Technology Consulting services and Software product development firm. Head quartered in Texas and Offshore development centers in India, we are involved in creating strategy, implementing, deploying, and supporting a wide range of
+    IdeaDescription: `Rav Business Stream is incorporated as a Technology Consulting services and Software product development firm. Head quartered in Texas and Offshore development centers in India, we are involved in creating strategy, implementing, deploying, and supporting a wide range of
     solutions for clients worldwide.`
 }

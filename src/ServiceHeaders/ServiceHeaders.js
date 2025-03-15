@@ -1,5 +1,5 @@
 import "./ServiceHeaders.css"
-import Agilewitgrey from '../Assets/Agilewitgrey.svg'
+import Agilewitgrey from '../Assets/AgilewitPNG.png'
 const ServiceHeaders=(props)=>{
     const{ServiceHeadersInfo}=props
     return(
