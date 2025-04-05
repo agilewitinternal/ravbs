@@ -19,6 +19,7 @@ const Home = () => {
 
     return (
         <div className='HomeTopLayer'>
+         
             <Header />
             <DeskTopHeader />
             <p className="IntroDescription">{MobileViewCaption}</p>
